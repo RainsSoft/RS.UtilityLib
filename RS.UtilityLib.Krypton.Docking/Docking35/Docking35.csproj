@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7EBB7A0-FDC9-4337-B097-DEB956AE7273}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Krypton.Docking</RootNamespace>
+    <AssemblyName>Krypton.Docking</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control Docking\KryptonAutoHiddenGroup.cs" />
+    <Compile Include="Control Docking\KryptonAutoHiddenPanel.cs" />
+    <Compile Include="Control Docking\KryptonAutoHiddenProxyPage.cs" />
+    <Compile Include="Control Docking\KryptonAutoHiddenSlidePanel.cs" />
+    <Compile Include="Control Docking\KryptonDockableNavigator.cs" />
+    <Compile Include="Control Docking\KryptonDockableWorkspace.cs" />
+    <Compile Include="Control Docking\KryptonDockspace.cs" />
+    <Compile Include="Control Docking\KryptonDockspaceSeparator.cs" />
+    <Compile Include="Control Docking\KryptonDockspaceSlide.cs" />
+    <Compile Include="Control Docking\KryptonFloatingWindow.cs" />
+    <Compile Include="Control Docking\KryptonFloatspace.cs" />
+    <Compile Include="Control Docking\KryptonSpace.cs" />
+    <Compile Include="Control Docking\KryptonStorePage.cs" />
+    <Compile Include="Dragging\DockingDragManager.cs" />
+    <Compile Include="Dragging\DockingDragTargetProvider.cs" />
+    <Compile Include="Dragging\DragTargetControlEdge.cs" />
+    <Compile Include="Dragging\DragTargetNull.cs" />
+    <Compile Include="Elements Base\DockingElement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Elements Base\DockingElementClosedCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Elements Base\DockingElementOpenCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Elements Impl\KryptonDockingAutoHiddenGroup.cs" />
+    <Compile Include="Elements Impl\KryptonDockingControl.cs" />
+    <Compile Include="Elements Impl\KryptonDockingDockspace.cs" />
+    <Compile Include="Elements Impl\KryptonDockingEdge.cs" />
+    <Compile Include="Elements Impl\KryptonDockingEdgeAutoHidden.cs" />
+    <Compile Include="Elements Impl\KryptonDockingEdgeDocked.cs" />
+    <Compile Include="Elements Impl\KryptonDockingFloating.cs" />
+    <Compile Include="Elements Impl\KryptonDockingFloatingWindow.cs" />
+    <Compile Include="Elements Impl\KryptonDockingFloatspace.cs" />
+    <Compile Include="Elements Impl\KryptonDockingManager.cs" />
+    <Compile Include="Elements Impl\KryptonDockingNavigator.cs" />
+    <Compile Include="Elements Impl\KryptonDockingSpace.cs" />
+    <Compile Include="Elements Impl\KryptonDockingWorkspace.cs" />
+    <Compile Include="Event Args\AutoHiddenGroupEventArgs.cs" />
+    <Compile Include="Event Args\AutoHiddenGroupPanelEventArgs.cs" />
+    <Compile Include="Event Args\AutoHiddenSeparatorResizeEventArgs.cs" />
+    <Compile Include="Event Args\AutoHiddenShowingStateEventArgs.cs" />
+    <Compile Include="Event Args\CancelDropDownEventArgs.cs" />
+    <Compile Include="Event Args\CancelUniqueNameEventArgs.cs" />
+    <Compile Include="Event Args\CloseRequestEventArgs.cs" />
+    <Compile Include="Event Args\ContextPageEventArgs.cs" />
+    <Compile Include="Event Args\DockableNavigatorEventArgs.cs" />
+    <Compile Include="Event Args\DockableWorkspaceCellEventArgs.cs" />
+    <Compile Include="Event Args\DockableWorkspaceEventArgs.cs" />
+    <Compile Include="Event Args\DockGlobalLoadingEventArgs.cs" />
+    <Compile Include="Event Args\DockGlobalSavingEventArgs.cs" />
+    <Compile Include="Event Args\DockPageLoadingEventArgs.cs" />
+    <Compile Include="Event Args\DockPageSavingEventArgs.cs" />
+    <Compile Include="Event Args\DockspaceCellEventArgs.cs" />
+    <Compile Include="Event Args\DockspaceEventArgs.cs" />
+    <Compile Include="Event Args\DockspaceSeparatorEventArgs.cs" />
+    <Compile Include="Event Args\DockspaceSeparatorResizeEventArgs.cs" />
+    <Compile Include="Event Args\FloatingWindowEventArgs.cs" />
+    <Compile Include="Event Args\FloatspaceCellEventArgs.cs" />
+    <Compile Include="Event Args\FloatspaceEventArgs.cs" />
+    <Compile Include="Event Args\PagesEventArgs.cs" />
+    <Compile Include="Event Args\ScreenAndOffsetEventArgs.cs" />
+    <Compile Include="Event Args\StorePageEventArgs.cs" />
+    <Compile Include="Event Args\UniqueNameEventArgs.cs" />
+    <Compile Include="Event Args\UniqueNamesEventArgs.cs" />
+    <Compile Include="General\Definitions.cs" />
+    <Compile Include="General\DockingHelper.cs" />
+    <Compile Include="General\DockingMultiUpdate.cs" />
+    <Compile Include="General\ObscureControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\Class1.cs" />
+    <Compile Include="NewFolder1\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Palette\DockingManagerStrings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDraw\ViewDrawAutoHiddenTab.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NewFolder1\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Resources\CF_Logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ToolboxBitmaps\KryptonDockableNavigator.bmp" />
+    <EmbeddedResource Include="ToolboxBitmaps\KryptonDockableWorkspace.bmp" />
+    <EmbeddedResource Include="ToolboxBitmaps\KryptonDockingManager.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Navigator35\Navigator35.csproj">
+      <Project>{618a3bd6-f74d-4adc-a21e-aae6bbefda68}</Project>
+      <Name>Navigator35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toolkit35\Toolkit35.csproj">
+      <Project>{2079cc05-b5d4-4ce6-8eda-2480d7fa789e}</Project>
+      <Name>Toolkit35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workspace35\Workspace35.csproj">
+      <Project>{09afc98a-75a2-49ea-94c2-d208c71e4502}</Project>
+      <Name>Workspace35</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
