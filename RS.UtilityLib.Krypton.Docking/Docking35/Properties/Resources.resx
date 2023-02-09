@@ -130,13 +130,4 @@
   <data name="help2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KryptonDockableNavigator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ToolboxBitmaps\KryptonDockableNavigator.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KryptonDockableWorkspace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ToolboxBitmaps\KryptonDockableWorkspace.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KryptonDockingManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ToolboxBitmaps\KryptonDockingManager.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
