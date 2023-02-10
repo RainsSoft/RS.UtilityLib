@@ -79,7 +79,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Atiran.CustomDocking\Atiran.CustomDocking.csproj">
+    <ProjectReference Include="..\Atiran.CustomDocking.csproj">
       <Project>{1a79f15f-c892-46c7-bc26-79d2b6a0233b}</Project>
       <Name>Atiran.CustomDocking</Name>
     </ProjectReference>
