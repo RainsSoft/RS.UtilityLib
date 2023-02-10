@@ -1,1 +1,1 @@
-Jokedst.GetOpt.Test -v verbose true -V -B
+Jokedst.GetOpt.Test -v --verbose true -V  -h --help
