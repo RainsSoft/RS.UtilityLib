@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Atiran.CustomDocking", "Ati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atiran.CustomDocking", "RS.UtilityLib.Docking\Atiran.CustomDocking\Atiran.CustomDocking.csproj", "{1A79F15F-C892-46C7-BC26-79D2B6A0233B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "RS.UtilityLib.Docking\Atiran.CustomDocking\Test\Test.csproj", "{9960C2C7-E71D-40F4-8169-DF39A29EB788}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atiran.Test", "RS.UtilityLib.Docking\Atiran.CustomDocking\Test\Atiran.Test.csproj", "{9960C2C7-E71D-40F4-8169-DF39A29EB788}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeifenLuo.DockPanelSuite", "WeifenLuo.DockPanelSuite", "{112F2018-EA59-466C-BDEE-9EF2F848EA2B}"
 EndProject

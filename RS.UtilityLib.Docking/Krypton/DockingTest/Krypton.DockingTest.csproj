@@ -7,7 +7,7 @@
     <ProjectGuid>{594DF023-E07B-422F-95D4-57B852A8E0E9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DockingTest</RootNamespace>
-    <AssemblyName>DockingTest</AssemblyName>
+    <AssemblyName>Krypton.DockingTest</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
