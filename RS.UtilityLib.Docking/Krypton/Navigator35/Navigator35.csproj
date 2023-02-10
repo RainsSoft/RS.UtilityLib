@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>..\..\Bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -40,27 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonSpecs\ButtonSpecNavClose.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpecs\ButtonSpecNavContext.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpecs\ButtonSpecNavFixed.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ButtonSpecs\ButtonSpecNavClose.cs" />
+    <Compile Include="ButtonSpecs\ButtonSpecNavContext.cs" />
+    <Compile Include="ButtonSpecs\ButtonSpecNavFixed.cs" />
     <Compile Include="ButtonSpecs\ButtonSpecNavFixedConverter.cs" />
-    <Compile Include="ButtonSpecs\ButtonSpecNavigator.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ButtonSpecs\ButtonSpecNavigator.cs" />
     <Compile Include="ButtonSpecs\ButtonSpecNavManagerLayoutBar.cs" />
     <Compile Include="ButtonSpecs\ButtonSpecNavManagerLayoutHeaderBar.cs" />
-    <Compile Include="ButtonSpecs\ButtonSpecNavNext.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpecs\ButtonSpecNavPrevious.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ButtonSpecs\ButtonSpecNavNext.cs" />
+    <Compile Include="ButtonSpecs\ButtonSpecNavPrevious.cs" />
     <Compile Include="ButtonSpecs\ButtonSpecNavRemap.cs" />
     <Compile Include="Controller\DragViewController.cs" />
     <Compile Include="Controller\OutlookMiniController.cs" />

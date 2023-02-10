@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>..\..\Bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -42,29 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonSpec\ButtonSpecAppMenu.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpec\ButtonSpecExpandRibbon.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ButtonSpec\ButtonSpecAppMenu.cs" />
+    <Compile Include="ButtonSpec\ButtonSpecExpandRibbon.cs" />
     <Compile Include="ButtonSpec\ButtonSpecManagerLayoutAppButton.cs" />
     <Compile Include="ButtonSpec\ButtonSpecManagerLayoutRibbon.cs" />
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildClose.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildFixed.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildMin.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildRestore.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonSpec\ButtonSpecMinimizeRibbon.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildClose.cs" />
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildFixed.cs" />
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildMin.cs" />
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildRestore.cs" />
+    <Compile Include="ButtonSpec\ButtonSpecMinimizeRibbon.cs" />
     <Compile Include="ButtonSpec\ButtonSpecViewAppButton.cs" />
     <Compile Include="ButtonSpec\ButtonSpecViewRibbon.cs" />
     <Compile Include="Controller\AppButtonController.cs" />
