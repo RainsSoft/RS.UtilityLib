@@ -34,21 +34,19 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arg.cs" />
-    <Compile Include="Lazy.cs" />
-    <Compile Include="OptionAttribute.cs" />
-    <Compile Include="SetOptionDelegate.cs" />
-    <Compile Include="CommandLineException.cs" />
-    <Compile Include="CommandLineOption.cs" />
-    <Compile Include="GetOpt.cs" />
-    <Compile Include="ParameterType.cs" />
+    <Compile Include="Jokedst\Arg.cs" />
+    <Compile Include="Heyes\Heyes.GetOpt.cs" />
+    <Compile Include="Jokedst\Lazy.cs" />
+    <Compile Include="Jokedst\OptionAttribute.cs" />
+    <Compile Include="Jokedst\SetOptionDelegate.cs" />
+    <Compile Include="Jokedst\CommandLineException.cs" />
+    <Compile Include="Jokedst\CommandLineOption.cs" />
+    <Compile Include="Jokedst\GetOpt.cs" />
+    <Compile Include="Jokedst\ParameterType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

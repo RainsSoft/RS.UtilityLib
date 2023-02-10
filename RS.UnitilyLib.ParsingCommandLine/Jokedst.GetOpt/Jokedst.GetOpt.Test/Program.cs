@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-namespace Jokedst.GetOpt.Test
+using Jokedst.GetOpt;
+namespace GetOptTest
 {
     using System;
     using System.Collections.Generic;
@@ -11,6 +11,8 @@ namespace Jokedst.GetOpt.Test
     using System.IO;
     using System.Linq;
     using Jokedst.GetOpt;
+    using Jokedst.GetOpt.Test;
+
     //using Okedst.Args;
 
     public class ProgrmSettings
@@ -25,17 +27,26 @@ namespace Jokedst.GetOpt.Test
     public class Program
     {
         public static void Main(string[] args) {
-            //if (ConfigurationManager.AppSettings["tool"] == "Args") {
-            //    ArgsMain(args);
+            //try {
+            //    Heyes.GetOpt foo = new Heyes.GetOpt(args);
+            //    foo.SetOpts(new string[] { "a", "b", "foo=", "bar=?" });
+            //    foo.Parse();
             //}
-            //else {
+            //catch (ArgumentException e) {
+            //    Console.WriteLine("Heyes.GetOpt Errors:"+e.ToString());
+            //}
+            //Console.ReadLine();
+
             try {
+
+
+
                 GetOptMain(args);
             }
             catch (Exception ee) {
                 Console.WriteLine(ee.ToString());
             }
-            //}
+
             Console.ReadLine();
         }
 
@@ -92,7 +103,7 @@ namespace Jokedst.GetOpt.Test
                 .Parameter('s', "separator", o => separator = o)
                 .Parameter('f', "field", o => field = o)
                 .Parameter(o => file = o, "file");
-            
+
             if (verbose) Console.WriteLine("Starting...");
 
             // Read given file or standard input, split it up according to delimiter and sort by given field. No error handling, this is an example ;)
