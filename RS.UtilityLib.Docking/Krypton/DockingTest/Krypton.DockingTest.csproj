@@ -47,16 +47,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Docking Customized\ContentDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking Customized\ContentDocument.Designer.cs">
+      <DependentUpon>ContentDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking Customized\ContentInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking Customized\ContentInput.Designer.cs">
+      <DependentUpon>ContentInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking Customized\ContentPropertyGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking Customized\ContentPropertyGrid.Designer.cs">
+      <DependentUpon>ContentPropertyGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking Customized\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Docking Customized\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Palette Designer\FormChromeRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Palette Designer\FormChromeRibbon.Designer.cs">
+      <DependentUpon>FormChromeRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Palette Designer\FormChromeTMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Palette Designer\FormChromeTMS.Designer.cs">
+      <DependentUpon>FormChromeTMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Palette Designer\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Palette Designer\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Docking Customized\ContentDocument.resx">
+      <DependentUpon>ContentDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking Customized\ContentInput.resx">
+      <DependentUpon>ContentInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking Customized\ContentPropertyGrid.resx">
+      <DependentUpon>ContentPropertyGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking Customized\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Palette Designer\FormChromeRibbon.resx">
+      <DependentUpon>FormChromeRibbon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Palette Designer\FormChromeTMS.resx">
+      <DependentUpon>FormChromeTMS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Palette Designer\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,6 +161,51 @@
       <Project>{09afc98a-75a2-49ea-94c2-d208c71e4502}</Project>
       <Name>Krypton.Workspace35</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Palette Designer\Krypton.ico" />
+    <None Include="Resources\TopTrackBar1.png" />
+    <None Include="Resources\TopTMS.png" />
+    <None Include="Resources\TopT.png" />
+    <None Include="Resources\TopSC.png" />
+    <None Include="Resources\TopRibbon.png" />
+    <None Include="Resources\TopRB.png" />
+    <None Include="Resources\TopPanel.png" />
+    <None Include="Resources\TopNavigate.png" />
+    <None Include="Resources\TopInputControls.png" />
+    <None Include="Resources\TopHG.png" />
+    <None Include="Resources\TopH.png" />
+    <None Include="Resources\TopGroup.png" />
+    <None Include="Resources\TopGrid.png" />
+    <None Include="Resources\TopDT.png" />
+    <None Include="Resources\TopCB.png" />
+    <None Include="Resources\TopBS.png" />
+    <None Include="Resources\TopB.png" />
+    <None Include="Resources\KTextBox.png" />
+    <None Include="Resources\KryptonTrackBar.png" />
+    <None Include="Resources\KryptonTMS.bmp" />
+    <None Include="Resources\KryptonT.png" />
+    <None Include="Resources\KryptonSCActual.bmp" />
+    <None Include="Resources\KryptonRibbon.png" />
+    <None Include="Resources\KryptonPActual.bmp" />
+    <None Include="Resources\KryptonNav.png" />
+    <None Include="Resources\KryptonLActual.bmp" />
+    <None Include="Resources\KryptonHGActual.bmp" />
+    <None Include="Resources\KryptonHActual.bmp" />
+    <None Include="Resources\KryptonGActual.bmp" />
+    <None Include="Resources\KryptonCBActual.bmp" />
+    <None Include="Resources\KryptonBSActual.png" />
+    <None Include="Resources\flag_scotland.png" />
+    <None Include="Resources\flag_iceland.png" />
+    <None Include="Resources\flag_brazil.png" />
+    <None Include="Resources\environment.png" />
+    <None Include="Resources\document_new.png" />
+    <None Include="Resources\AppMenuSendMessage.png" />
+    <None Include="Resources\AppMenuSaveAs.png" />
+    <None Include="Resources\AppMenuSave.png" />
+    <None Include="Resources\AppMenuPrint.png" />
+    <None Include="Resources\AppMenuDelete.png" />
+    <None Include="Resources\AppMenuClose.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

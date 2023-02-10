@@ -1,7 +1,7 @@
 ﻿
 namespace DockingTest
 {
-    partial class Form1
+    partial class FormTest
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -101,11 +101,12 @@ namespace DockingTest
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(34, 65);
+            this.kryptonButton1.Location = new System.Drawing.Point(12, 55);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
+            this.kryptonButton1.Size = new System.Drawing.Size(112, 50);
             this.kryptonButton1.TabIndex = 2;
-            this.kryptonButton1.Values.Text = "kryptonButton1";
+            this.kryptonButton1.Values.Text = "Palette Designer";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // kryptonCheckBox1
             // 
@@ -117,11 +118,12 @@ namespace DockingTest
             // 
             // kryptonCheckButton1
             // 
-            this.kryptonCheckButton1.Location = new System.Drawing.Point(43, 106);
+            this.kryptonCheckButton1.Location = new System.Drawing.Point(12, 111);
             this.kryptonCheckButton1.Name = "kryptonCheckButton1";
-            this.kryptonCheckButton1.Size = new System.Drawing.Size(81, 25);
+            this.kryptonCheckButton1.Size = new System.Drawing.Size(112, 43);
             this.kryptonCheckButton1.TabIndex = 4;
-            this.kryptonCheckButton1.Values.Text = "kryptonCheckButton1";
+            this.kryptonCheckButton1.Values.Text = "Docking Customized";
+            this.kryptonCheckButton1.Click += new System.EventHandler(this.kryptonCheckButton1_Click);
             // 
             // kryptonCheckedListBox1
             // 
@@ -329,7 +331,7 @@ namespace DockingTest
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "00a362f2f9f041068dc628090bddadca";
             // 
-            // Form1
+            // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -355,7 +357,7 @@ namespace DockingTest
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.kryptonBreadCrumb1);
             this.Controls.Add(this.kryptonBorderEdge1);
-            this.Name = "Form1";
+            this.Name = "FormTest";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonBreadCrumb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonCheckSet1)).EndInit();
