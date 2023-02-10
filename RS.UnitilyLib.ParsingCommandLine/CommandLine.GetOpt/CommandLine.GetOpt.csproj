@@ -7,8 +7,8 @@
     <ProjectGuid>{91F1FC38-4EE3-4360-B7C7-E8E1EE7345D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jokedst.GetOpt</RootNamespace>
-    <AssemblyName>Jokedst.GetOpt</AssemblyName>
+    <RootNamespace>CommandLine.GetOpt</RootNamespace>
+    <AssemblyName>CommandLine.GetOpt</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -29,7 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Jokedst.GetOpt.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CommandLine.GetOpt.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

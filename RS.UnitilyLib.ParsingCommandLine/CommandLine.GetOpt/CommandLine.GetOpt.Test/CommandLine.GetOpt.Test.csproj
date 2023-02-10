@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{233DE2C1-5AF4-4AAC-926F-E19DB37512DA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Jokedst.GetOpt.Test</RootNamespace>
-    <AssemblyName>Jokedst.GetOpt.Test</AssemblyName>
+    <RootNamespace>CommandLine.GetOpt</RootNamespace>
+    <AssemblyName>CommandLine.GetOpt.Test</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

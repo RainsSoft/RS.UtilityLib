@@ -53,9 +53,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.DockSample", "RS.Ut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docking Customized", "..\irrlicht-1.8.5\codegenerator-master\Krypton-master\Source\Krypton Docking Examples\Docking Customized\Docking Customized.csproj", "{4715FA62-377A-4BF8-952B-EA9E96927E8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLine.GetOpt", "RS.UnitilyLib.ParsingCommandLine\Jokedst.GetOpt\CommandLine.GetOpt.csproj", "{91F1FC38-4EE3-4360-B7C7-E8E1EE7345D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLine.GetOpt", "RS.UnitilyLib.ParsingCommandLine\CommandLine.GetOpt\CommandLine.GetOpt.csproj", "{91F1FC38-4EE3-4360-B7C7-E8E1EE7345D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLine.GetOpt.Test", "RS.UnitilyLib.ParsingCommandLine\Jokedst.GetOpt\Jokedst.GetOpt.Test\CommandLine.GetOpt.Test.csproj", "{233DE2C1-5AF4-4AAC-926F-E19DB37512DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLine.GetOpt.Test", "RS.UnitilyLib.ParsingCommandLine\CommandLine.GetOpt\CommandLine.GetOpt.Test\CommandLine.GetOpt.Test.csproj", "{233DE2C1-5AF4-4AAC-926F-E19DB37512DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
