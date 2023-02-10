@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D836DC2-6487-4FDB-8496-A2FE6164CEA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WeifenLuo.WinFormsUI</RootNamespace>
+    <AssemblyName>WeifenLuo.WinFormsUI.Docking.ThemeVS2003</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThemeVS2003\InertButton.cs" />
+    <Compile Include="ThemeVS2003\Resources.Designer.cs" />
+    <Compile Include="ThemeVS2003\Strings.Designer.cs" />
+    <Compile Include="ThemeVS2003\VS2003AutoHideStrip.cs" />
+    <Compile Include="ThemeVS2003\VS2003DockPaneCaption.cs" />
+    <Compile Include="ThemeVS2003\VS2003DockPaneStrip.cs" />
+    <Compile Include="ThemeVS2003\VS2003Theme.cs" />
+    <Compile Include="ThemeVS2005\Resources.Designer.cs" />
+    <Compile Include="ThemeVS2005\Strings.Designer.cs" />
+    <Compile Include="ThemeVS2005\VS2005AutoHideStrip.cs" />
+    <Compile Include="ThemeVS2005\VS2005AutoHideWindowControl.cs" />
+    <Compile Include="ThemeVS2005\VS2005AutoHideWindowFactory.cs" />
+    <Compile Include="ThemeVS2005\VS2005DockIndicatorFactory.cs" />
+    <Compile Include="ThemeVS2005\VS2005DockOutlineFactory.cs" />
+    <Compile Include="ThemeVS2005\VS2005DockPaneCaption.cs" />
+    <Compile Include="ThemeVS2005\VS2005DockPaneSplitterControlFactory.cs" />
+    <Compile Include="ThemeVS2005\VS2005DockPaneStrip.cs" />
+    <Compile Include="ThemeVS2005\VS2005DockWindowFactory.cs" />
+    <Compile Include="ThemeVS2005\VS2005PaneIndicatorFactory.cs" />
+    <Compile Include="ThemeVS2005\VS2005PanelIndicatorFactory.cs" />
+    <Compile Include="ThemeVS2005\VS2005Theme.cs" />
+    <Compile Include="ThemeVS2005\VS2005WindowSplitterControlFactory.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ThemeVS2003\Resources.resx" />
+    <EmbeddedResource Include="ThemeVS2003\Strings.resx" />
+    <EmbeddedResource Include="ThemeVS2005\Resources.resx" />
+    <EmbeddedResource Include="ThemeVS2005\Strings.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ThemeVS2003\Resources\DockPaneCaption_AutoHideNo.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneCaption_AutoHideYes.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneCaption_CloseDisabled.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneCaption_CloseEnabled.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneStrip_CloseDisabled.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneStrip_CloseEnabled.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneStrip_ScrollLeftDisabled.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneStrip_ScrollLeftEnabled.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneStrip_ScrollRightDisabled.png" />
+    <Content Include="ThemeVS2003\Resources\DockPaneStrip_ScrollRightEnabled.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond_Bottom.png" />
+    <Content Include="ThemeVS2005\Resources\Dockindicator_PaneDiamond_Fill.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond_Hotspot.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond_HotspotIndex.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond_Left.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond_Right.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PaneDiamond_Top.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelBottom.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelBottom_Active.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelFill.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelFill_Active.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelLeft.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelLeft_Active.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelRight.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelRight_Active.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelTop.png" />
+    <Content Include="ThemeVS2005\Resources\DockIndicator_PanelTop_Active.png" />
+    <Content Include="ThemeVS2005\Resources\DockPane_AutoHide.png" />
+    <Content Include="ThemeVS2005\Resources\DockPane_Close.png" />
+    <Content Include="ThemeVS2005\Resources\DockPane_Dock.png" />
+    <Content Include="ThemeVS2005\Resources\DockPane_Option.png" />
+    <Content Include="ThemeVS2005\Resources\DockPane_OptionOverflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeifenLuo.WinFormsUI.Docking.csproj">
+      <Project>{0799cf17-dab4-4767-8dc9-fd44b0fa9e14}</Project>
+      <Name>WeifenLuo.WinFormsUI.Docking</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
