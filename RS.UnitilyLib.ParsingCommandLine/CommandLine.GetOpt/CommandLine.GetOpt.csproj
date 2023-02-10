@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Csharp-GetOpt\ArgsParse.cs" />
     <Compile Include="Jokedst\Arg.cs" />
     <Compile Include="Heyes\Heyes.GetOpt.cs" />
     <Compile Include="Jokedst\Lazy.cs" />
