@@ -29,8 +29,14 @@ namespace Jokedst.GetOpt.Test
             //    ArgsMain(args);
             //}
             //else {
+            try {
                 GetOptMain(args);
+            }
+            catch (Exception ee) {
+                Console.WriteLine(ee.ToString());
+            }
             //}
+            Console.ReadLine();
         }
 
         //private static void ArgsMain(string[] args) {
@@ -65,7 +71,7 @@ namespace Jokedst.GetOpt.Test
                         new CommandLineOption('s', "separator", "Field separator", ParameterType.String, o => separator = (string)o),
                         new CommandLineOption('v', "verbose", "Show more info about found files", ParameterType.None, o => verbose = true),
                         new CommandLineOption('V', null, "Show version", ParameterType.None, o => Console.WriteLine("Version: 1.0")),
-                        new CommandLineOption('B', null, "set B", ParameterType.String, o => Console.WriteLine("Version: 1.0")),
+                        new CommandLineOption('B', null, "set B", ParameterType.String, o => Console.WriteLine("Version: 2.0")),
                         new CommandLineOption('\0', "numeric", "sort numerically", ParameterType.None, o => numeric = true),
                         new CommandLineOption('f', "field", "Which field to sort by. Default = 0", ParameterType.Integer, o => field = (int)o),
                         new CommandLineOption("file", ParameterType.String, o => file = (string)o),
@@ -73,6 +79,7 @@ namespace Jokedst.GetOpt.Test
                     });
 
             try {
+                System.Diagnostics.Debugger.Launch();
                 opts.ParseOptions(args);
             }
             catch (CommandLineException e) {
@@ -85,7 +92,7 @@ namespace Jokedst.GetOpt.Test
                 .Parameter('s', "separator", o => separator = o)
                 .Parameter('f', "field", o => field = o)
                 .Parameter(o => file = o, "file");
-
+            
             if (verbose) Console.WriteLine("Starting...");
 
             // Read given file or standard input, split it up according to delimiter and sort by given field. No error handling, this is an example ;)
