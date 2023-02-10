@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A79F15F-C892-46C7-BC26-79D2B6A0233B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atiran.CustomDocking</RootNamespace>
+    <AssemblyName>Atiran.CustomDocking</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Docking\AutoHideStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Configuration\PatchSection.cs" />
+    <Compile Include="Docking\Desk\DeskTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DockAreasEditor.cs" />
+    <Compile Include="Docking\DockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DockContentCollection.cs" />
+    <Compile Include="Docking\DockContentEventArgs.cs" />
+    <Compile Include="Docking\DockContentHandler.cs" />
+    <Compile Include="Docking\DockOutlineBase.cs" />
+    <Compile Include="Docking\DockPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPane.SplitterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPaneCaptionBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPaneCollection.cs" />
+    <Compile Include="Docking\DockPanel.Appearance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.AutoHideWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.cs" />
+    <Compile Include="Docking\DockPanel.DockDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.DragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.FocusManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.MdiClientController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.Persistor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.SplitterDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanelColorPalette.cs" />
+    <Compile Include="Docking\DockPanelExtender.cs" />
+    <Compile Include="Docking\DockPanelSkin.cs" />
+    <Compile Include="Docking\DockPaneStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindowCollection.cs" />
+    <Compile Include="Docking\DragForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DrawingRoutines.cs" />
+    <Compile Include="Docking\DummyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Enums.cs" />
+    <Compile Include="Docking\FloatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FloatWindowCollection.cs" />
+    <Compile Include="Docking\Helpers\DockHelper.cs" />
+    <Compile Include="Docking\Helpers\DrawHelper.cs" />
+    <Compile Include="Docking\Helpers\ResourceHelper.cs" />
+    <Compile Include="Docking\Helpers\Win32Helper.cs" />
+    <Compile Include="Docking\IImageService.cs" />
+    <Compile Include="Docking\InertButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Interfaces.cs" />
+    <Compile Include="Docking\IPaintingService.cs" />
+    <Compile Include="Docking\LayoutUtils.cs" />
+    <Compile Include="Docking\Localization.cs" />
+    <Compile Include="Docking\Measures.cs" />
+    <Compile Include="Docking\NestedDockingStatus.cs" />
+    <Compile Include="Docking\NestedPaneCollection.cs" />
+    <Compile Include="Docking\PatchController.cs" />
+    <Compile Include="Docking\SplitterBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\ThemeBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2005\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2005\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005AutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005AutoHideWindowControl.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005AutoHideWindowFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005DockIndicatorFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005DockOutlineFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005DockPaneSplitterControlFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005DockWindowFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005PaneIndicatorFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005PanelIndicatorFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005Theme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2005\VS2005WindowSplitterControlFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\ImageService.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\PaintingService.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012AutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012AutoHideStripFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012AutoHideWindowControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012AutoHideWindowFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012BlueTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DarkTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockIndicatorFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockOutlineFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockPaneCaptionFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockPaneCaptionInertButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockPaneSplitterControlFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockPaneStripFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012DockWindowFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012LightTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012PaletteFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012PaneIndicatorFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012PanelIndicatorFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012SplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012ThemeBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012WindowSplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2012\VS2012WindowSplitterControlFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2013\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013BlueTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DarkTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DockPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DockPaneCaptionFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DockPaneFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DockPaneSplitterControlFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013DockPaneStripFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013LightTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013SplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013ThemeBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013WindowSplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2013\VS2013WindowSplitterControlFactory.cs" />
+    <Compile Include="Docking\Theme\ThemeVS2015\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2015\VS2015BlueTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2015\VS2015DarkTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2015\VS2015LightTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2015\VS2015ThemeBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2017\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2017\VS2017DarkTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2017\VS2017LightTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Theme\ThemeVS2017\VS2017ThemeBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VisibleNestedPaneCollection.cs" />
+    <Compile Include="Docking\VisualStudioColorTable.cs" />
+    <Compile Include="Docking\VisualStudioToolStripExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VisualStudioToolStripExtender.Designer.cs" />
+    <Compile Include="Docking\VisualStudioToolStripRenderer.cs" />
+    <Compile Include="Docking\Win32\Enums.cs" />
+    <Compile Include="Docking\Win32\NativeMethods.cs" />
+    <Compile Include="MessageBox\ConfirmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox\ShowPersianMessageBox.cs" />
+    <Compile Include="MessageBox\YesNoMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Docking\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Theme\ThemeVS2005\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Theme\ThemeVS2005\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Theme\ThemeVS2012\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Theme\ThemeVS2012\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Theme\ThemeVS2013\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Theme\ThemeVS2015\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\Theme\ThemeVS2017\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox\YesNoMessageBox.resx">
+      <DependentUpon>YesNoMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond_Bottom.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\Dockindicator_PaneDiamond_Fill.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond_Hotspot.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond_HotspotIndex.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond_Left.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond_Right.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PaneDiamond_Top.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelBottom.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelBottom_Active.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelFill.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelFill_Active.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelLeft.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelLeft_Active.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelRight.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelRight_Active.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelTop.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockIndicator_PanelTop_Active.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockPane_AutoHide.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockPane_Close.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockPane_Dock.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockPane_Option.png" />
+    <Content Include="Docking\Theme\ThemeVS2005\Resources\DockPane_OptionOverflow.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\Dockindicator_PaneDiamond_Hotspot.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\DockIndicator_PaneDiamond_HotspotIndex.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskArrowBottom.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskArrowLeft.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskArrowRight.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskArrowTop.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskCoreBottom.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskCoreCenter.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskCoreLeft.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskCoreRight.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskCoreTop.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskDock.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskDockFive.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskTabClose.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskTabList.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskTabOverflow.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskToolWindowAutoHide.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskToolWindowClose.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskToolWindowDock.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskToolWindowOption.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskWindowBottom.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskWindowCenter.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskWindowLeft.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskWindowRight.png" />
+    <Content Include="Docking\Theme\ThemeVS2012\Resources\MaskWindowTop.png" />
+    <Content Include="MessageBox\Resources\Close.png" />
+    <Content Include="MessageBox\Resources\Close1.png" />
+    <Content Include="MessageBox\Resources\CloseMouseHover.png" />
+    <Content Include="MessageBox\Resources\confirm.png" />
+    <Content Include="MessageBox\Resources\Question.png" />
+    <Content Include="Resources\Exit_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Docking\Theme\ThemeVS2012\Resources\vs2012blue.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2012\Resources\vs2012dark.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2012\Resources\vs2012light.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2013\Resources\vs2013blue.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2013\Resources\vs2013dark.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2013\Resources\vs2013light.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2015\Resources\vs2015blue.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2015\Resources\vs2015dark.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2015\Resources\vs2015light.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2017\Resources\vs2017Dark.vstheme.gz" />
+    <None Include="Docking\Theme\ThemeVS2017\Resources\vs2017Light.vstheme.gz" />
+    <None Include="MessageBox\Resources\Confirm1.png.xar" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
