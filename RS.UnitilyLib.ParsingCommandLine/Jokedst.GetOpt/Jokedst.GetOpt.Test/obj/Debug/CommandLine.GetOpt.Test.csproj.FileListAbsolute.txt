@@ -1,0 +1,7 @@
+G:\GitHub\RS.UtilityLib\RS.UnitilyLib.ParsingCommandLine\Bin\Jokedst.GetOpt.Test.exe
+G:\GitHub\RS.UtilityLib\RS.UnitilyLib.ParsingCommandLine\Bin\Jokedst.GetOpt.Test.pdb
+G:\GitHub\RS.UtilityLib\RS.UnitilyLib.ParsingCommandLine\Jokedst.GetOpt\Jokedst.GetOpt.Test\obj\Debug\CommandLine.GetOpt.Test.csproj.AssemblyReference.cache
+G:\GitHub\RS.UtilityLib\RS.UnitilyLib.ParsingCommandLine\Jokedst.GetOpt\Jokedst.GetOpt.Test\obj\Debug\CommandLine.GetOpt.Test.csproj.CoreCompileInputs.cache
+G:\GitHub\RS.UtilityLib\RS.UnitilyLib.ParsingCommandLine\Jokedst.GetOpt\Jokedst.GetOpt.Test\obj\Debug\CommandLine.GetOpt.Test.csproj.CopyComplete
+G:\GitHub\RS.UtilityLib\RS.UnitilyLib.ParsingCommandLine\Jokedst.GetOpt\Jokedst.GetOpt.Test\obj\Debug\Jokedst.GetOpt.Test.exe
+G:\GitHub\RS.UtilityLib\RS.UnitilyLib.ParsingCommandLine\Jokedst.GetOpt\Jokedst.GetOpt.Test\obj\Debug\Jokedst.GetOpt.Test.pdb

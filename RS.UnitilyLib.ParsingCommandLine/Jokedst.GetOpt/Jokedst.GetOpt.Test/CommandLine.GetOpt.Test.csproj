@@ -44,9 +44,9 @@
     <Compile Include="Tuple.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Jokedst.GetOpt.csproj">
+    <ProjectReference Include="..\CommandLine.GetOpt.csproj">
       <Project>{91f1fc38-4ee3-4360-b7c7-e8e1ee7345d3}</Project>
-      <Name>Jokedst.GetOpt</Name>
+      <Name>CommandLine.GetOpt</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
