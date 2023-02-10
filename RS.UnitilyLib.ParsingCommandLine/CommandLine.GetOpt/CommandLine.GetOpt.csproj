@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CmdLine\CommandLineParser.cs" />
     <Compile Include="Csharp-GetOpt\ArgsParse.cs" />
     <Compile Include="Jokedst\Arg.cs" />
     <Compile Include="Heyes\Heyes.GetOpt.cs" />
