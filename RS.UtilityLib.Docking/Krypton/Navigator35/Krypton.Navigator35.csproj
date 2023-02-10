@@ -40,15 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonSpecs\ButtonSpecNavClose.cs" />
-    <Compile Include="ButtonSpecs\ButtonSpecNavContext.cs" />
-    <Compile Include="ButtonSpecs\ButtonSpecNavFixed.cs" />
+    <Compile Include="ButtonSpecs\ButtonSpecNavClose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpecs\ButtonSpecNavContext.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpecs\ButtonSpecNavFixed.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ButtonSpecs\ButtonSpecNavFixedConverter.cs" />
-    <Compile Include="ButtonSpecs\ButtonSpecNavigator.cs" />
+    <Compile Include="ButtonSpecs\ButtonSpecNavigator.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ButtonSpecs\ButtonSpecNavManagerLayoutBar.cs" />
     <Compile Include="ButtonSpecs\ButtonSpecNavManagerLayoutHeaderBar.cs" />
-    <Compile Include="ButtonSpecs\ButtonSpecNavNext.cs" />
-    <Compile Include="ButtonSpecs\ButtonSpecNavPrevious.cs" />
+    <Compile Include="ButtonSpecs\ButtonSpecNavNext.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpecs\ButtonSpecNavPrevious.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ButtonSpecs\ButtonSpecNavRemap.cs" />
     <Compile Include="Controller\DragViewController.cs" />
     <Compile Include="Controller\OutlookMiniController.cs" />
@@ -251,9 +263,9 @@
     <EmbeddedResource Include="ToolboxBitmaps\KryptonPage.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Toolkit35\Toolkit35.csproj">
+    <ProjectReference Include="..\Toolkit35\Krypton.Toolkit35.csproj">
       <Project>{2079cc05-b5d4-4ce6-8eda-2480d7fa789e}</Project>
-      <Name>Toolkit35</Name>
+      <Name>Krypton.Toolkit35</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

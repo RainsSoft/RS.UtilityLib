@@ -155,17 +155,17 @@
     <EmbeddedResource Include="ToolboxBitmaps\KryptonDockingManager.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Navigator35\Navigator35.csproj">
+    <ProjectReference Include="..\Navigator35\Krypton.Navigator35.csproj">
       <Project>{618a3bd6-f74d-4adc-a21e-aae6bbefda68}</Project>
-      <Name>Navigator35</Name>
+      <Name>Krypton.Navigator35</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Toolkit35\Toolkit35.csproj">
+    <ProjectReference Include="..\Toolkit35\Krypton.Toolkit35.csproj">
       <Project>{2079cc05-b5d4-4ce6-8eda-2480d7fa789e}</Project>
-      <Name>Toolkit35</Name>
+      <Name>Krypton.Toolkit35</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Workspace35\Workspace35.csproj">
+    <ProjectReference Include="..\Workspace35\Krypton.Workspace35.csproj">
       <Project>{09afc98a-75a2-49ea-94c2-d208c71e4502}</Project>
-      <Name>Workspace35</Name>
+      <Name>Krypton.Workspace35</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

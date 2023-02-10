@@ -42,15 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonSpec\ButtonSpecAppMenu.cs" />
-    <Compile Include="ButtonSpec\ButtonSpecExpandRibbon.cs" />
+    <Compile Include="ButtonSpec\ButtonSpecAppMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpec\ButtonSpecExpandRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ButtonSpec\ButtonSpecManagerLayoutAppButton.cs" />
     <Compile Include="ButtonSpec\ButtonSpecManagerLayoutRibbon.cs" />
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildClose.cs" />
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildFixed.cs" />
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildMin.cs" />
-    <Compile Include="ButtonSpec\ButtonSpecMdiChildRestore.cs" />
-    <Compile Include="ButtonSpec\ButtonSpecMinimizeRibbon.cs" />
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildClose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildFixed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildMin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpec\ButtonSpecMdiChildRestore.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonSpec\ButtonSpecMinimizeRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ButtonSpec\ButtonSpecViewAppButton.cs" />
     <Compile Include="ButtonSpec\ButtonSpecViewRibbon.cs" />
     <Compile Include="Controller\AppButtonController.cs" />
@@ -428,9 +442,9 @@
     <EmbeddedResource Include="ToolboxBitmaps\KryptonRibbonTab.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Toolkit35\Toolkit35.csproj">
+    <ProjectReference Include="..\Toolkit35\Krypton.Toolkit35.csproj">
       <Project>{2079cc05-b5d4-4ce6-8eda-2480d7fa789e}</Project>
-      <Name>Toolkit35</Name>
+      <Name>Krypton.Toolkit35</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

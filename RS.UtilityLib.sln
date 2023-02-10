@@ -21,17 +21,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "..\irrlicht-1.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docking", "Docking", "{3CB4E1DD-0B49-41FB-9F5B-E83E69324C0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docking35", "RS.UtilityLib.Docking\Krypton\Docking35\Docking35.csproj", "{C7EBB7A0-FDC9-4337-B097-DEB956AE7273}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.Docking35", "RS.UtilityLib.Docking\Krypton\Docking35\Krypton.Docking35.csproj", "{C7EBB7A0-FDC9-4337-B097-DEB956AE7273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockingTest", "RS.UtilityLib.Docking\Krypton\DockingTest\DockingTest.csproj", "{594DF023-E07B-422F-95D4-57B852A8E0E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.DockingTest", "RS.UtilityLib.Docking\Krypton\DockingTest\Krypton.DockingTest.csproj", "{594DF023-E07B-422F-95D4-57B852A8E0E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navigator35", "RS.UtilityLib.Docking\Krypton\Navigator35\Navigator35.csproj", "{618A3BD6-F74D-4ADC-A21E-AAE6BBEFDA68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.Navigator35", "RS.UtilityLib.Docking\Krypton\Navigator35\Krypton.Navigator35.csproj", "{618A3BD6-F74D-4ADC-A21E-AAE6BBEFDA68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ribbon35", "RS.UtilityLib.Docking\Krypton\Ribbon35\Ribbon35.csproj", "{A949EF6C-F7F8-4982-969E-1EA2E619EFB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.Ribbon35", "RS.UtilityLib.Docking\Krypton\Ribbon35\Krypton.Ribbon35.csproj", "{A949EF6C-F7F8-4982-969E-1EA2E619EFB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit35", "RS.UtilityLib.Docking\Krypton\Toolkit35\Toolkit35.csproj", "{2079CC05-B5D4-4CE6-8EDA-2480D7FA789E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.Toolkit35", "RS.UtilityLib.Docking\Krypton\Toolkit35\Krypton.Toolkit35.csproj", "{2079CC05-B5D4-4CE6-8EDA-2480D7FA789E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workspace35", "RS.UtilityLib.Docking\Krypton\Workspace35\Workspace35.csproj", "{09AFC98A-75A2-49EA-94C2-D208C71E4502}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.Workspace35", "RS.UtilityLib.Docking\Krypton\Workspace35\Krypton.Workspace35.csproj", "{09AFC98A-75A2-49EA-94C2-D208C71E4502}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Atiran.CustomDocking", "Atiran.CustomDocking", "{34604B42-E021-47DF-B01C-E3C5DEA08095}"
 EndProject
@@ -45,17 +45,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.WinFormsUI.Dockin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2003_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2003_35\WeifenLuo.ThemeVS2003_35.csproj", "{4D836DC2-6487-4FDB-8496-A2FE6164CEA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo..ThemeVS2005_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2005_35\WeifenLuo..ThemeVS2005_35.csproj", "{C19FBB99-970C-42ED-8E3F-32EFEC2DF85C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2005_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2005_35\WeifenLuo.ThemeVS2005_35.csproj", "{C19FBB99-970C-42ED-8E3F-32EFEC2DF85C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo..ThemeVS2005Multithreading35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2005Multithreading35\WeifenLuo..ThemeVS2005Multithreading35.csproj", "{E17DF1C3-8A34-423F-971F-51EFA5AD4AE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2005Multithreading35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2005Multithreading35\WeifenLuo.ThemeVS2005Multithreading35.csproj", "{E17DF1C3-8A34-423F-971F-51EFA5AD4AE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo..ThemeVS2012_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2012_35\WeifenLuo..ThemeVS2012_35.csproj", "{EB2C368F-AF61-4996-A159-C08EF23AD03C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2012_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2012_35\WeifenLuo.ThemeVS2012_35.csproj", "{EB2C368F-AF61-4996-A159-C08EF23AD03C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2013_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2013_35\WeifenLuo.ThemeVS2013_35.csproj", "{5A6F9A5B-9691-4711-A76D-E7AE6E8EF304}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2015_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2015_35\WeifenLuo.ThemeVS2015_35.csproj", "{4F507AC0-0803-41D4-BF85-F59B9D5DCFCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockSample", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\DockSample\DockSample.csproj", "{40793A27-478B-4357-B4C3-FC8943131F3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.DockSample", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\DockSample\Krypton.DockSample.csproj", "{40793A27-478B-4357-B4C3-FC8943131F3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
