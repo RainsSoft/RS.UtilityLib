@@ -1,0 +1,10 @@
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Krypton.Workspace.NewFolder1.Form1.resources
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Krypton.Workspace.Properties.Resources.resources
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Workspace35.csproj.GenerateResource.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Workspace35.csproj.CoreCompileInputs.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Workspace35.csproj.AssemblyReference.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Bin\Krypton.Workspace.dll
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Bin\Krypton.Workspace.pdb
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Workspace35.csproj.CopyComplete
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Krypton.Workspace.dll
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Workspace35\obj\Debug\Krypton.Workspace.pdb

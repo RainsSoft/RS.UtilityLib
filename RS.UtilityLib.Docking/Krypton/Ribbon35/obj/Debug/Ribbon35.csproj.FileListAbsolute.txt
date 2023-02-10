@@ -1,0 +1,10 @@
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Ribbon35.csproj.AssemblyReference.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Ribbon35.NewFolder1.Form1.resources
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Krypton.Ribbon.Properties.Resources.resources
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Ribbon35.csproj.GenerateResource.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Ribbon35.csproj.CoreCompileInputs.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Bin\Krypton.Ribbon.dll
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Bin\Krypton.Ribbon.pdb
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Ribbon35.csproj.CopyComplete
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Krypton.Ribbon.dll
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.Krypton.Docking\Ribbon35\obj\Debug\Krypton.Ribbon.pdb
