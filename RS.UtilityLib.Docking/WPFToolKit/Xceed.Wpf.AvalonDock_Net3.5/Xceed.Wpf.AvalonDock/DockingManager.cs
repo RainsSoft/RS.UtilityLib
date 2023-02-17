@@ -62,7 +62,7 @@ namespace Xceed.Wpf.AvalonDock
     {
       DefaultStyleKeyProperty.OverrideMetadata( typeof( DockingManager ), new FrameworkPropertyMetadata( typeof( DockingManager ) ) );
       FocusableProperty.OverrideMetadata( typeof( DockingManager ), new FrameworkPropertyMetadata( false ) );
-      HwndSource.DefaultAcquireHwndFocusInMenuMode = false;
+      //HwndSource.DefaultAcquireHwndFocusInMenuMode = false;
     }
 
 

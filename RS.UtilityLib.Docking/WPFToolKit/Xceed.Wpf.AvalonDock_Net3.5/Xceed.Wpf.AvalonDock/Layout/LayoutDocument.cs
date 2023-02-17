@@ -93,7 +93,7 @@ namespace Xceed.Wpf.AvalonDock.Layout
     {
       base.WriteXml( writer );
 
-      if( !string.IsNullOrWhiteSpace( this.Description ) )
+      if( !string.IsNullOrEmpty( this.Description ) && !string.IsNullOrEmpty(this.Description.Trim()))
         writer.WriteAttributeString( "Description", this.Description );
       if( !CanMove )
         writer.WriteAttributeString( "CanMove", CanMove.ToString() );

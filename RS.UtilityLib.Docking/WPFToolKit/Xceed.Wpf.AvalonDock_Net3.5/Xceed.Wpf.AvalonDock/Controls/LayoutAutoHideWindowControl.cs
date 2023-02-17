@@ -174,10 +174,10 @@ namespace Xceed.Wpf.AvalonDock.Controls
       }
     }
 
-    protected override bool HasFocusWithinCore()
-    {
-      return false;
-    }
+    //protected override bool HasFocusWithinCore()
+    //{
+    //  return false;
+    //}
 
     protected override System.Collections.IEnumerator LogicalChildren
     {

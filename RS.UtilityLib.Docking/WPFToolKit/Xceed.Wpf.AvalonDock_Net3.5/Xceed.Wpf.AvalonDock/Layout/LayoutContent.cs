@@ -105,7 +105,7 @@ namespace Xceed.Wpf.AvalonDock.Layout
         if( _contentId == null )
         {
           var contentAsControl = _content as FrameworkElement;
-          if( contentAsControl != null && !string.IsNullOrWhiteSpace( contentAsControl.Name ) )
+          if( contentAsControl != null && !string.IsNullOrEmpty( contentAsControl.Name )&&!string.IsNullOrEmpty(contentAsControl.Name.Trim()) )
             return contentAsControl.Name;
         }
         return _contentId;
@@ -653,7 +653,7 @@ namespace Xceed.Wpf.AvalonDock.Layout
 
     public virtual void WriteXml( System.Xml.XmlWriter writer )
     {
-      if( !string.IsNullOrWhiteSpace( Title ) )
+      if( !string.IsNullOrEmpty( Title ) && !string.IsNullOrEmpty(Title.Trim()))
         writer.WriteAttributeString( "Title", Title );
 
       //if (IconSource != null)
@@ -665,12 +665,12 @@ namespace Xceed.Wpf.AvalonDock.Layout
       if( IsLastFocusedDocument )
         writer.WriteAttributeString( "IsLastFocusedDocument", IsLastFocusedDocument.ToString() );
 
-      if( !string.IsNullOrWhiteSpace( ContentId ) )
+      if( !string.IsNullOrEmpty( ContentId ) && !string.IsNullOrEmpty(ContentId.Trim()))
         writer.WriteAttributeString( "ContentId", ContentId );
 
 
       if( ToolTip != null && ToolTip is string )
-        if( !string.IsNullOrWhiteSpace( ( string )ToolTip ) )
+        if( !string.IsNullOrEmpty( ( string )ToolTip ) && !string.IsNullOrEmpty(((string)ToolTip).Trim()))
           writer.WriteAttributeString( "ToolTip", ( string )ToolTip );
 
       if( FloatingLeft != 0.0 )
