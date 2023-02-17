@@ -54,10 +54,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WPFToolkit">
-      <HintPath>..\..\..\..\ExtendedWPFToolkitSolution\Libs\NET35\WPFToolkit.dll</HintPath>
+      <HintPath>..\NET35\WPFToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.Toolkit">
-      <HintPath>..\..\..\..\ExtendedWPFToolkitSolution\Libs\NET35\Xceed.Wpf.Toolkit.dll</HintPath>
+      <HintPath>..\NET35\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
