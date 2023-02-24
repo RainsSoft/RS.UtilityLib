@@ -16,9 +16,19 @@
         }
 
         private ThemeBase m_dockPanelTheme;
-
+        [DisplayName("_Theme风格")]
+        public ThemeBase _Theme {
+            get {
+                return m_dockPanelTheme;
+            }
+            set {
+                this.Theme = value;
+            }
+        }
         [LocalizedCategory("Category_Docking")]
         [LocalizedDescription("DockPanel_DockPanelTheme")]
+        //
+        [Browsable(false)]
         public ThemeBase Theme
         {
             get { return m_dockPanelTheme; }

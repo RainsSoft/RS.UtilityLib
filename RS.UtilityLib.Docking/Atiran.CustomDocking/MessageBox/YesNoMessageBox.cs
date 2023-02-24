@@ -69,7 +69,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.lblCaption.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblCaption.Size = new System.Drawing.Size(436, 32);
             this.lblCaption.TabIndex = 1;
-            this.lblCaption.Text = "توضيحات";
+            this.lblCaption.Text = "标题";
             this.lblCaption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ClosePictureBox
@@ -131,7 +131,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.btnNoAll.Name = "btnNoAll";
             this.btnNoAll.Size = new System.Drawing.Size(75, 30);
             this.btnNoAll.TabIndex = 0;
-            this.btnNoAll.Text = "انصراف";
+            this.btnNoAll.Text = "非全部";
             this.btnNoAll.UseVisualStyleBackColor = false;
             this.btnNoAll.Enter += new System.EventHandler(this.Button_Enter);
             this.btnNoAll.Leave += new System.EventHandler(this.Button_Leave);
@@ -146,7 +146,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(75, 30);
             this.btnNo.TabIndex = 2;
-            this.btnNo.Text = "خير";
+            this.btnNo.Text = "否";
             this.btnNo.UseVisualStyleBackColor = false;
             this.btnNo.Enter += new System.EventHandler(this.Button_Enter);
             this.btnNo.Leave += new System.EventHandler(this.Button_Leave);
@@ -161,7 +161,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.btnYesAll.Name = "btnYesAll";
             this.btnYesAll.Size = new System.Drawing.Size(75, 30);
             this.btnYesAll.TabIndex = 1;
-            this.btnYesAll.Text = "بلي(همه)";
+            this.btnYesAll.Text = "全部";
             this.btnYesAll.UseVisualStyleBackColor = false;
             this.btnYesAll.Enter += new System.EventHandler(this.Button_Enter);
             this.btnYesAll.Leave += new System.EventHandler(this.Button_Leave);
@@ -176,7 +176,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(75, 30);
             this.btnYes.TabIndex = 3;
-            this.btnYes.Text = "بلي";
+            this.btnYes.Text = "是";
             this.btnYes.UseVisualStyleBackColor = false;
             this.btnYes.Enter += new System.EventHandler(this.Button_Enter);
             this.btnYes.Leave += new System.EventHandler(this.Button_Leave);

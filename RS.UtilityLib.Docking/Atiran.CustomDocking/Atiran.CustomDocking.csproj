@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Atiran.CustomDocking</RootNamespace>
     <AssemblyName>Atiran.CustomDocking</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -34,14 +34,15 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Linq.Net20, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\System.Xml.Linq.Net20.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Docking\AutoHideStripBase.cs">
@@ -311,6 +312,8 @@
     <Compile Include="Docking\VisualStudioToolStripRenderer.cs" />
     <Compile Include="Docking\Win32\Enums.cs" />
     <Compile Include="Docking\Win32\NativeMethods.cs" />
+    <Compile Include="LinqHelper\ExtensionAttribute.cs" />
+    <Compile Include="LinqHelper\LinqHelper.cs" />
     <Compile Include="MessageBox\ConfirmMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>

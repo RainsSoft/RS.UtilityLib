@@ -44,21 +44,21 @@ namespace Atiran.CustomDocking.Docking.Desk
             // 
             this.miClose.Name = "miClose";
             this.miClose.Size = new System.Drawing.Size(160, 22);
-            this.miClose.Text = "بستن";
+            this.miClose.Text = "关闭";
             this.miClose.Click += new System.EventHandler(this.miClose_Click);
             // 
             // miCloseAllButThis
             // 
             this.miCloseAllButThis.Name = "miCloseAllButThis";
             this.miCloseAllButThis.Size = new System.Drawing.Size(160, 22);
-            this.miCloseAllButThis.Text = "بستن  ساير تب ها";
+            this.miCloseAllButThis.Text = "除此关闭所有";
             this.miCloseAllButThis.Click += new System.EventHandler(this.miCloseAllButThis_Click);
             // 
             // miCloseAll
             // 
             this.miCloseAll.Name = "miCloseAll";
             this.miCloseAll.Size = new System.Drawing.Size(160, 22);
-            this.miCloseAll.Text = "بستن همه";
+            this.miCloseAll.Text = "关闭所有";
             this.miCloseAll.Click += new System.EventHandler(this.miCloseAll_Click);
             // 
             // DeskTab
@@ -135,7 +135,7 @@ namespace Atiran.CustomDocking.Docking.Desk
         {
             if (Kind == 1)
             {
-                if (ShowPersianMessageBox.ShowMessge("پيغام", "آيا تب " + Text + " بسته شود",
+                if (ShowPersianMessageBox.ShowMessge("关闭",   "是否要关闭选项卡:"+this.Text+"?",
                         MessageBoxButtons.YesNo, false, false) == DialogResult.Yes)
                 {
                     Close();
@@ -183,7 +183,7 @@ namespace Atiran.CustomDocking.Docking.Desk
                     {
                         TextTabs += "\n" + tab.Text;
                     }
-                    var result = ShowPersianMessageBox.ShowMessge("آيا تب ها بسته شوند؟", TextTabs,
+                    var result = ShowPersianMessageBox.ShowMessge("确定退出吗？", TextTabs,
                         MessageBoxButtons.YesNo, false);
                     if (result == DialogResult.Yes)
                     {

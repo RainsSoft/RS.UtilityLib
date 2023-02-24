@@ -270,10 +270,9 @@ namespace Atiran.CustomDocking.Docking
             if (index >= 0 || index < Tabs.Count)
             {
                 IDockContent content = Tabs[index].Content;
-
-                if ((Tabs[index].Content.DockHandler.Form as DeskTab).Kind == 1)
-                {
-                    if (ShowPersianMessageBox.ShowMessge("پيغام", "آيا تب " + Tabs[index].Content.DockHandler.TabText + " بسته شود",
+                DockContent dc = (Tabs[index].Content.DockHandler.Form as DockContent);
+                if ((dc is DeskTab) && (dc as DeskTab).Kind == 1) {
+                    if (ShowPersianMessageBox.ShowMessge("关闭", "退出 " + Tabs[index].Content.DockHandler.TabText + " ?",
                               MessageBoxButtons.YesNo,false,false) == DialogResult.Yes)
                     {
 

@@ -57,7 +57,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.lblCaption.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblCaption.Size = new System.Drawing.Size(436, 32);
             this.lblCaption.TabIndex = 1;
-            this.lblCaption.Text = "توضيحات";
+            this.lblCaption.Text = "标题";
             this.lblCaption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnConfirm
@@ -71,7 +71,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 31);
             this.btnConfirm.TabIndex = 0;
-            this.btnConfirm.Text = "تاييد";
+            this.btnConfirm.Text = "确定";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Enter += new System.EventHandler(this.Button_Enter);
             this.btnConfirm.Leave += new System.EventHandler(this.Button_Leave);
@@ -99,7 +99,7 @@ namespace Atiran.CustomDocking.MassageBox
             this.txtMessage.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.txtMessage.Size = new System.Drawing.Size(382, 60);
             this.txtMessage.TabIndex = 2;
-            this.txtMessage.Text = "توضيحات";
+            this.txtMessage.Text = "消息";
             // 
             // pictureBox1
             // 

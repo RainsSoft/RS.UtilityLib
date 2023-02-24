@@ -572,7 +572,8 @@ namespace Atiran.CustomDocking.Docking
         {
             int index = -1;
             var allDocuments = ActiveDocumentPane.Contents;
-            for (int i =0 ; i< allDocuments.Count();i++)
+            int count = allDocuments.Count;// allDocuments.Count()
+            for (int i =0 ; i<count;i++)
             {
                 if (allDocuments[i] == ActiveContent)
                 {
