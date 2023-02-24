@@ -112,8 +112,16 @@ namespace Atiran.CustomDocking.Docking
                     //drow image close
                     if (e.Item.Tag != null)
                     {
-                        e.Graphics.DrawImage(CloseButtom,
-                            GetCloseButtonRect(itemRect));
+                        var dc = e.Item.Tag as DockContent;
+                        bool CloseButtonVisible = true;
+                        if (dc != null && dc.DockHandler != null) {
+                            CloseButtonVisible = dc.DockHandler.CloseButtonVisible;
+                        }
+                        if (CloseButtonVisible) {
+                            //绘制下拉菜单关闭按钮
+                            e.Graphics.DrawImage(CloseButtom,
+                                GetCloseButtonRect(itemRect));
+                        }
 
                     }
                 }

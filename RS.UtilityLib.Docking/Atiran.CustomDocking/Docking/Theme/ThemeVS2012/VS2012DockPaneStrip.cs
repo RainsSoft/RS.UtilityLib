@@ -1200,9 +1200,16 @@ namespace Atiran.CustomDocking.Docking.Theme.ThemeVS2012
 
             g.FillRectangle(DockPane.DockPanel.Theme.PaintingService.GetBrush(paint), rect);
             TextRenderer.DrawText(g, tab.Content.DockHandler.TabText, TextFont, rectText, text, DocumentTextFormat);
-            if (image != null)
-                g.DrawImage(image, rectCloseButton);
-
+            if (image != null) {
+                //绘制dock的关闭按钮
+                bool CloseButtonVisible = true;
+                if (tab.Content != null && tab.Content.DockHandler != null) {
+                    CloseButtonVisible = tab.Content.DockHandler.CloseButtonVisible;
+                }
+                if (CloseButtonVisible) {
+                    g.DrawImage(image, rectCloseButton);
+                }
+            }
             if (rectTab.Contains(rectIcon) && DockPane.DockPanel.ShowDocumentIcon)
                 g.DrawIcon(tab.Content.DockHandler.Icon, rectIcon);
         }
