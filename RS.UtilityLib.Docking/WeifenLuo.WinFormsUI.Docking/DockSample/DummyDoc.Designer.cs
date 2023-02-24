@@ -45,6 +45,7 @@ namespace DockSample
             // 
             // mainMenu
             // 
+            this.mainMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItem1});
             this.mainMenu.Location = new System.Drawing.Point(0, 4);
@@ -61,56 +62,57 @@ namespace DockSample
             this.menuItem1.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.menuItem1.MergeIndex = 1;
             this.menuItem1.Name = "menuItem1";
-            this.menuItem1.Size = new System.Drawing.Size(89, 20);
+            this.menuItem1.Size = new System.Drawing.Size(100, 20);
             this.menuItem1.Text = "&MDI Document";
             // 
             // menuItem2
             // 
             this.menuItem2.Name = "menuItem2";
-            this.menuItem2.Size = new System.Drawing.Size(127, 22);
+            this.menuItem2.Size = new System.Drawing.Size(180, 22);
             this.menuItem2.Text = "Test";
             this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
             // 
             // menuItemCheckTest
             // 
             this.menuItemCheckTest.Name = "menuItemCheckTest";
-            this.menuItemCheckTest.Size = new System.Drawing.Size(127, 22);
+            this.menuItemCheckTest.Size = new System.Drawing.Size(180, 22);
             this.menuItemCheckTest.Text = "Check Test";
             this.menuItemCheckTest.Click += new System.EventHandler(this.menuItemCheckTest_Click);
             // 
             // contextMenuTabPage
             // 
+            this.contextMenuTabPage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.contextMenuTabPage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItem3,
             this.menuItem4,
             this.menuItem5});
             this.contextMenuTabPage.Name = "contextMenuTabPage";
-            this.contextMenuTabPage.Size = new System.Drawing.Size(116, 70);
+            this.contextMenuTabPage.Size = new System.Drawing.Size(121, 70);
             // 
             // menuItem3
             // 
             this.menuItem3.Name = "menuItem3";
-            this.menuItem3.Size = new System.Drawing.Size(115, 22);
+            this.menuItem3.Size = new System.Drawing.Size(120, 22);
             this.menuItem3.Text = "Option &1";
             // 
             // menuItem4
             // 
             this.menuItem4.Name = "menuItem4";
-            this.menuItem4.Size = new System.Drawing.Size(115, 22);
+            this.menuItem4.Size = new System.Drawing.Size(120, 22);
             this.menuItem4.Text = "Option &2";
             // 
             // menuItem5
             // 
             this.menuItem5.Name = "menuItem5";
-            this.menuItem5.Size = new System.Drawing.Size(115, 22);
+            this.menuItem5.Size = new System.Drawing.Size(120, 22);
             this.menuItem5.Text = "Option &3";
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 4);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 28);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(448, 389);
+            this.richTextBox1.Size = new System.Drawing.Size(448, 365);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 

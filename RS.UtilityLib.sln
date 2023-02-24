@@ -49,7 +49,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2013_35", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.ThemeVS2015_35", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\ThemeVS2015_35\WeifenLuo.ThemeVS2015_35.csproj", "{4F507AC0-0803-41D4-BF85-F59B9D5DCFCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krypton.DockSample", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\DockSample\Krypton.DockSample.csproj", "{40793A27-478B-4357-B4C3-FC8943131F3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeifenLuo.DockSample", "RS.UtilityLib.Docking\WeifenLuo.WinFormsUI.Docking\DockSample\WeifenLuo.DockSample.csproj", "{40793A27-478B-4357-B4C3-FC8943131F3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docking Customized", "..\irrlicht-1.8.5\codegenerator-master\Krypton-master\Source\Krypton Docking Examples\Docking Customized\Docking Customized.csproj", "{4715FA62-377A-4BF8-952B-EA9E96927E8B}"
 EndProject
