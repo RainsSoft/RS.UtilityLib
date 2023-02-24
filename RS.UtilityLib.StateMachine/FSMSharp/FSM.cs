@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FSMSharp
+namespace RS.UtilityLib.StateMachine.FSMSharp
 {
     /// <summary>
     /// A Finite State Machine. 

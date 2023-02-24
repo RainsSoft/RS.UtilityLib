@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FSMSharp
+namespace RS.UtilityLib.StateMachine.FSMSharp
 {
     public struct FsmSnapshot<T>
     {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RS.UtilityLib.StateMachine
 {
-    public class Class1
+    public class FSM_Helper
     {
     }
 }

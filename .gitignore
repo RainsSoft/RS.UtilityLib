@@ -327,3 +327,6 @@ RS.UtilityLib.Docking/Atiran.CustomDocking/obj/Debug/TempPE/Docking.Theme.ThemeV
 RS.UtilityLib.Docking/Atiran.CustomDocking/obj/Debug/TempPE/MessageBox.Resources.Designer.cs.dll
 RS.UtilityLib.Docking/Atiran.CustomDocking/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
 RS.UtilityLib.Docking/Atiran.CustomDocking/Test/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
+RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.csproj.FileListAbsolute.txt
+RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.dll
+RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.pdb

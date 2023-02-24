@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RSG
+namespace RS.UtilityLib.StateMachine.RSG
 {
     /// <summary>
     /// Non-generic state interface.

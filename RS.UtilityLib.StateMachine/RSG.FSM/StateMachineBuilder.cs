@@ -1,4 +1,4 @@
-﻿namespace RSG
+﻿namespace RS.UtilityLib.StateMachine.RSG
 {
     /// <summary>
     /// Entry point for fluent API for constructing states.

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RSG
+namespace RS.UtilityLib.StateMachine.RSG
 {
     /// <summary>
     /// Builder providing a fluent API for constructing states.
