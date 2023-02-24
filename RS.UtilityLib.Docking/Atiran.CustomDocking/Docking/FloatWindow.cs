@@ -299,8 +299,9 @@ namespace Atiran.CustomDocking.Docking
                     if (content.DockHandler.DockState != DockState.Float)
                         continue;
 
-                    if (content.DockHandler.CloseButton && content.DockHandler.CloseButtonVisible)
-                    {
+                    //这里处理不够,要分开处理
+                    //if (content.DockHandler.CloseButton && content.DockHandler.CloseButtonVisible)
+                    if (content.DockHandler.CloseButtonVisible) {
                         ControlBox = true;
                         return;
                     }
