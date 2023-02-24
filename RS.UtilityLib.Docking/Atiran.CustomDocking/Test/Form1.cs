@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using Atiran.CustomDocking.Docking;
 using Atiran.CustomDocking.Docking.Desk;
@@ -26,6 +26,11 @@ namespace Test
             var control = new UserControl();
             control.Dock = DockStyle.Fill;
             DeskTab sh = new DeskTab();
+            sh.Kind = 1;
+            //sh.CloseButton = false;
+            //sh.CloseButtonVisible = false;
+            //sh.ControlBox = false;
+           
             sh.Text = "Alireza" + ali++;
             sh.Controls.Add(control);
             if (dockPanel1.DocumentStyle == DocumentStyle.SystemMdi)
