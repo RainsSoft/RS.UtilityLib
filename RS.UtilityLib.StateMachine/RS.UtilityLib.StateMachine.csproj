@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RS.UtilityLib.StateMachine</RootNamespace>
     <AssemblyName>RS.UtilityLib.StateMachine</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,13 +48,13 @@
     <Compile Include="FSMSharp\FsmStateBehaviour.cs" />
     <Compile Include="FSMSharp\FsmStateData.cs" />
     <Compile Include="FSMSharp\FSM_QueueExtensions.cs" />
+    <Compile Include="LinqHelper\ExtensionAttribute.cs" />
+    <Compile Include="LinqHelper\LinqHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSG.FSM\State.cs" />
     <Compile Include="RSG.FSM\StateBuilder.cs" />
     <Compile Include="RSG.FSM\StateMachineBuilder.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="LinqHelper\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
