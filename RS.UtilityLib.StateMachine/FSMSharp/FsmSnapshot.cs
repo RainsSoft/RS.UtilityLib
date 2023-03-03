@@ -7,8 +7,7 @@ namespace RS.UtilityLib.StateMachine.FSMSharp
         internal T CurrentState { get; private set; }
         internal float StateAge { get; private set; }
 
-        internal FsmSnapshot(float age, T currentState)
-        {
+        internal FsmSnapshot(float age, T currentState) {
             CurrentState = currentState;
             StateAge = age;
         }

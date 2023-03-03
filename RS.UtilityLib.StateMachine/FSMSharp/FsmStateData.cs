@@ -33,8 +33,7 @@
         /// <summary>
         /// Shortcut for Machine.Next();
         /// </summary>
-        public void Next()
-        {
+        public void Next() {
             Machine.Next();
         }
     }
