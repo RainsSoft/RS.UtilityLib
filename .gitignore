@@ -330,3 +330,5 @@ RS.UtilityLib.Docking/Atiran.CustomDocking/Test/obj/Debug/TempPE/Properties.Reso
 RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.csproj.FileListAbsolute.txt
 RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.dll
 RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.pdb
+RS.UtilityLib.StateMachine/bin/Debug/RS.UtilityLib.StateMachine.dll
+RS.UtilityLib.StateMachine/bin/Debug/RS.UtilityLib.StateMachine.pdb
