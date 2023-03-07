@@ -198,7 +198,8 @@ namespace RS.UtilityLib.StateMachine
 }
 
 namespace System.Linq {
-    public class CustomDockingHelper { 
+    internal class StateMachineLinqHelper
+    { 
         
     }
 }

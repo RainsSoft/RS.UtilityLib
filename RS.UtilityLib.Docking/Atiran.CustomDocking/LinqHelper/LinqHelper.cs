@@ -194,7 +194,7 @@ namespace Atiran.CustomDocking {
 }
 
 namespace System.Linq {
-    public class CustomDockingHelper { 
+    internal class CustomDockingLinqHelper { 
         
     }
 }

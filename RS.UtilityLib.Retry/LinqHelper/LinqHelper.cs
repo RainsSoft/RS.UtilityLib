@@ -400,11 +400,13 @@ namespace RS.UtilityLib.RetryLib
         }
 
         #endregion
+
+        
     }
 }
 
 namespace System.Linq {
-    public class CustomDockingHelper { 
+    internal class RetryLinqHelper { 
         
     }
 }
