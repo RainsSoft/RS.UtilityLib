@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RSG
+namespace RS.UtilityLib.PromiseLib.RSG
 {
 
     public class PromiseCancelledException : Exception

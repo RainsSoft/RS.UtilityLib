@@ -1,10 +1,10 @@
-using RSG.Promises;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using RSG.Exceptions;
+using RS.UtilityLib.PromiseLib.RSG.Exceptions;
 
-namespace RSG
+namespace RS.UtilityLib.PromiseLib.RSG
 {
     /// <summary>
     /// Implements a non-generic C# promise, this is a promise that simply resolves without delivering a value.

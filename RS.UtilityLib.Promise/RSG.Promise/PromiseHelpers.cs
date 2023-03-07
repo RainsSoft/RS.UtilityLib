@@ -1,4 +1,4 @@
-namespace RSG
+namespace RS.UtilityLib.PromiseLib.RSG
 {
     public static class PromiseHelpers
     {

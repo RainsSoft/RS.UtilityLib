@@ -1,10 +1,10 @@
-using RSG.Promises;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using RSG.Exceptions;
+using RS.UtilityLib.PromiseLib.RSG.Exceptions;
 
-namespace RSG
+namespace RS.UtilityLib.PromiseLib.RSG
 {
     /// <summary>
     /// Implements a C# promise.
@@ -981,7 +981,7 @@ namespace RSG
             var promisesArray = promises.ToArray();
             if (promisesArray.Length == 0)
             {
-                return Promise<IEnumerable<PromisedT>>.Resolved(Enumerable.Empty<PromisedT>());
+                return Promise<IEnumerable<PromisedT>>.Resolved(LinqHelper.Empty<PromisedT>());
             }
 
             var remainingCount = promisesArray.Length;

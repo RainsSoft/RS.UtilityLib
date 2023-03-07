@@ -1,4 +1,4 @@
-namespace RSG
+namespace RS.UtilityLib.PromiseLib.RSG
 {
     /// <summary>
     /// Provides static methods for creating tuple objects.
