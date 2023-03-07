@@ -339,3 +339,6 @@ RS.UtilityLib.Assert/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttributes.cs
 RS.UtilityLib.Assert/obj/Debug/RS.UtilityLib.Assert.csproj.FileListAbsolute.txt
 RS.UtilityLib.Assert/obj/Debug/RS.UtilityLib.Assert.dll
 RS.UtilityLib.Assert/obj/Debug/RS.UtilityLib.Assert.pdb
+RS.UtilityLib.Docking/Atiran.CustomDocking/obj/Debug/Atiran.CustomDocking.Desk.DeskDoc.resources
+RS.UtilityLib.Docking/Atiran.CustomDocking/obj/Debug/Atiran.CustomDocking.Desk.DeskMain.resources
+RS.UtilityLib.Docking/Atiran.CustomDocking/obj/Debug/Atiran.CustomDocking.Desk.DeskToolWindow.resources

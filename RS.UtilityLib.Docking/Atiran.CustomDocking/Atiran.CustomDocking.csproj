@@ -45,11 +45,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Desk\DeskDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desk\DeskDoc.designer.cs">
+      <DependentUpon>DeskDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desk\DeskMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desk\DeskMain.designer.cs">
+      <DependentUpon>DeskMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desk\DeskToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desk\DeskToolWindow.designer.cs">
+      <DependentUpon>DeskToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desk\DockHelper.cs" />
     <Compile Include="Docking\AutoHideStripBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\Configuration\PatchSection.cs" />
-    <Compile Include="Docking\Desk\DeskTab.cs">
+    <Compile Include="Desk\DeskTab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Docking\DockAreasEditor.cs" />
@@ -335,6 +354,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Desk\DeskDoc.resx">
+      <DependentUpon>DeskDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desk\DeskMain.resx">
+      <DependentUpon>DeskMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desk\DeskToolWindow.resx">
+      <DependentUpon>DeskToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Docking\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
