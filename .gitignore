@@ -335,3 +335,7 @@ RS.UtilityLib.StateMachine/bin/Debug/RS.UtilityLib.StateMachine.pdb
 RS.UtilityLib.Retry/obj/Debug/RS.UtilityLib.Retry.pdb
 RS.UtilityLib.Retry/obj/Debug/RS.UtilityLib.Retry.dll
 RS.UtilityLib.Retry/obj/Debug/RS.UtilityLib.Retry.csproj.FileListAbsolute.txt
+RS.UtilityLib.Assert/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttributes.cs
+RS.UtilityLib.Assert/obj/Debug/RS.UtilityLib.Assert.csproj.FileListAbsolute.txt
+RS.UtilityLib.Assert/obj/Debug/RS.UtilityLib.Assert.dll
+RS.UtilityLib.Assert/obj/Debug/RS.UtilityLib.Assert.pdb

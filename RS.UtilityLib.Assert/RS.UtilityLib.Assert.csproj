@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F7250EC-B98A-438F-9409-C00F1A2CB885}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RS.UtilityLib.Assert</RootNamespace>
+    <AssemblyName>RS.UtilityLib.Assert</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assert.cs" />
+    <Compile Include="Assert_Helper.cs" />
+    <Compile Include="Exceptions\AssertException.cs" />
+    <Compile Include="Exceptions\ShouldNotReachHereException.cs" />
+    <Compile Include="Private Methods\Count.cs" />
+    <Compile Include="Private Methods\Default.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public Methods\DoesNotReachHere.cs" />
+    <Compile Include="Public Methods\HasElements.cs" />
+    <Compile Include="Public Methods\HasExactly.cs" />
+    <Compile Include="Public Methods\HasLess.cs" />
+    <Compile Include="Public Methods\HasMore.cs" />
+    <Compile Include="Public Methods\IsEqual.cs" />
+    <Compile Include="Public Methods\IsFalse.cs" />
+    <Compile Include="Public Methods\IsIn.cs" />
+    <Compile Include="Public Methods\IsInEnum.cs" />
+    <Compile Include="Public Methods\IsLess.cs" />
+    <Compile Include="Public Methods\IsMore.cs" />
+    <Compile Include="Public Methods\IsNegative.cs" />
+    <Compile Include="Public Methods\IsNotDefault.cs" />
+    <Compile Include="Public Methods\IsNotEqual.cs" />
+    <Compile Include="Public Methods\IsNotNull.cs" />
+    <Compile Include="Public Methods\IsNotSingle.cs" />
+    <Compile Include="Public Methods\IsNotZero.cs" />
+    <Compile Include="Public Methods\IsOfType.cs" />
+    <Compile Include="Public Methods\IsPositive.cs" />
+    <Compile Include="Public Methods\IsSingle.cs" />
+    <Compile Include="Public Methods\IsTrue.cs" />
+    <Compile Include="Public Methods\PropertyExists.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
