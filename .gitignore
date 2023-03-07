@@ -332,3 +332,6 @@ RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.dll
 RS.UtilityLib.StateMachine/obj/Debug/RS.UtilityLib.StateMachine.pdb
 RS.UtilityLib.StateMachine/bin/Debug/RS.UtilityLib.StateMachine.dll
 RS.UtilityLib.StateMachine/bin/Debug/RS.UtilityLib.StateMachine.pdb
+RS.UtilityLib.Retry/obj/Debug/RS.UtilityLib.Retry.pdb
+RS.UtilityLib.Retry/obj/Debug/RS.UtilityLib.Retry.dll
+RS.UtilityLib.Retry/obj/Debug/RS.UtilityLib.Retry.csproj.FileListAbsolute.txt
