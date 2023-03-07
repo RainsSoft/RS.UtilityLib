@@ -1,4 +1,4 @@
-﻿namespace AssertLibrary
+﻿namespace RS.UtilityLib.AssertLib
 {
     using System.Diagnostics;
     using System.Globalization;

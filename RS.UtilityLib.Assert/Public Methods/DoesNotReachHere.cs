@@ -1,4 +1,4 @@
-﻿namespace AssertLibrary
+﻿namespace RS.UtilityLib.AssertLib
 {
     public static partial class Assert
     {

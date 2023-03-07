@@ -7,9 +7,9 @@
     <ProjectGuid>{7F7250EC-B98A-438F-9409-C00F1A2CB885}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RS.UtilityLib.Assert</RootNamespace>
+    <RootNamespace>RS.UtilityLib.AssertLib</RootNamespace>
     <AssemblyName>RS.UtilityLib.Assert</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -41,6 +41,8 @@
     <Compile Include="Assert_Helper.cs" />
     <Compile Include="Exceptions\AssertException.cs" />
     <Compile Include="Exceptions\ShouldNotReachHereException.cs" />
+    <Compile Include="LinqHelper\ExtensionAttribute.cs" />
+    <Compile Include="LinqHelper\LinqHelper.cs" />
     <Compile Include="Private Methods\Count.cs" />
     <Compile Include="Private Methods\Default.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
