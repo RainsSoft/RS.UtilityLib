@@ -8,11 +8,13 @@ using System.Windows.Forms;
 using Atiran.CustomDocking.Docking;
 
 
-namespace Atiran.CustomDocking.Desk {
+namespace Atiran.CustomDocking.Desk
+{
     /// <summary>
     /// DockPanel容器主窗口,封装了一些实用的方法
     /// </summary>
-    public partial class DeskMain : Form {
+    public partial class DeskMain : Form
+    {
         public DeskMain() {
             InitializeComponent();
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -33,7 +35,7 @@ namespace Atiran.CustomDocking.Desk {
         public static extern bool SetForegroundWindow(IntPtr hWnd); //WINAPI 设置当前活动窗体的句柄
         public static void SetTop(IntPtr formHandle, bool top) {
             int hwnd = formHandle.ToInt32();
-            if(top) {
+            if (top) {
                 SetWindowPos(hwnd, -1, 0, 0, 0, 0, 0x001 | 0x002 | 0x040);
             }
             else {
@@ -45,12 +47,12 @@ namespace Atiran.CustomDocking.Desk {
             CustomOnVisibleChanged(e);
         }
         protected virtual void CustomOnVisibleChanged(EventArgs e) {
-            if(Visible) {
+            if (Visible) {
                 //SetTop(this.Handle, true);
                 ////this.Focus();
                 //this.Activate();
                 //SetTop(this.Handle, false);
-                SetForegroundWindow(this.Handle);
+                //SetForegroundWindow(this.Handle);
             }
         }
         protected override void OnShown(EventArgs e) {
@@ -89,18 +91,18 @@ namespace Atiran.CustomDocking.Desk {
         /// <param name="text"></param>
         /// <returns></returns>
         public IDockContent FindDocument(string text) {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return null;
-            if(dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
-                foreach(Form form in MdiChildren)
-                    if(form.Text == text)
+            if (dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
+                foreach (Form form in MdiChildren)
+                    if (form.Text == text)
                         return form as IDockContent;
 
                 return null;
             }
             else {
-                foreach(IDockContent content in dockPanel.Documents)
-                    if(content.DockHandler.TabText == text)
+                foreach (IDockContent content in dockPanel.Documents)
+                    if (content.DockHandler.TabText == text)
                         return content;
 
                 return FindDeskDocInSelfCreated(text);
@@ -112,8 +114,8 @@ namespace Atiran.CustomDocking.Desk {
         /// <param name="text"></param>
         /// <returns></returns>
         public DeskDoc FindDeskDocInSelfCreated(string text) {
-            for(int i = 0; i < m_AllDeskDocSelfCreated.Count; i++) {
-                if(m_AllDeskDocSelfCreated[i].Text == text) {
+            for (int i = 0; i < m_AllDeskDocSelfCreated.Count; i++) {
+                if (m_AllDeskDocSelfCreated[i].Text == text) {
                     return m_AllDeskDocSelfCreated[i];
                 }
             }
@@ -127,13 +129,13 @@ namespace Atiran.CustomDocking.Desk {
         /// 显示新doc
         /// </summary>
         public void ShowNewDocument(out DeskDoc dummyDoc, string titleName = "") {
-            if(dockPanel == null) {
+            if (dockPanel == null) {
                 dummyDoc = null;
                 return;
             }
-            dummyDoc = string.IsNullOrEmpty(titleName) ? CreateNewDocument():CreateNewDocument(titleName) ;
+            dummyDoc = string.IsNullOrEmpty(titleName) ? CreateNewDocument() : CreateNewDocument(titleName);
             //
-            if(dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
+            if (dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
                 dummyDoc.MdiParent = this;
                 dummyDoc.Show();
             }
@@ -154,7 +156,7 @@ namespace Atiran.CustomDocking.Desk {
         /// <returns></returns>
         protected DeskDoc CreateNewDocument() {
             DeskDoc dummyDoc = null;
-            if(this.DeskDocFrm != null) {
+            if (this.DeskDocFrm != null) {
                 dummyDoc = (DeskDoc)System.Activator.CreateInstance(this.DeskDocFrm);
             }
             else {
@@ -162,7 +164,7 @@ namespace Atiran.CustomDocking.Desk {
             }
             int count = 1;
             string text = $"Document{count}";
-            while(FindDocument(text) != null) {
+            while (FindDocument(text) != null) {
                 count++;
                 text = $"Document{count}";
             }
@@ -178,13 +180,13 @@ namespace Atiran.CustomDocking.Desk {
         /// <returns></returns>
         protected DeskDoc CreateNewDocument(string text) {
             DeskDoc dummyDoc = null;
-            if(this.DeskDocFrm != null) {
+            if (this.DeskDocFrm != null) {
                 dummyDoc = (DeskDoc)System.Activator.CreateInstance(this.DeskDocFrm);
             }
             else {
                 dummyDoc = new DeskDoc();
             }
-            dummyDoc.Text = text;           
+            dummyDoc.Text = text;
             m_AllDeskDocSelfCreated.Add(dummyDoc);
             dummyDoc.FormClosed += DummyDoc_FormClosed;
             return dummyDoc;
@@ -192,8 +194,8 @@ namespace Atiran.CustomDocking.Desk {
 
         private void DummyDoc_FormClosed(object sender, FormClosedEventArgs e) {
             DeskDoc doc = sender as DeskDoc;
-            for(int i = m_AllDeskDocSelfCreated.Count-1; i>=0; i--) {
-                if(m_AllDeskDocSelfCreated[i] == doc) {
+            for (int i = m_AllDeskDocSelfCreated.Count - 1; i >= 0; i--) {
+                if (m_AllDeskDocSelfCreated[i] == doc) {
                     m_AllDeskDocSelfCreated.RemoveAt(i);
                     break;
                 }
@@ -204,14 +206,14 @@ namespace Atiran.CustomDocking.Desk {
         /// 关闭指定Document类型的所有dock窗口
         /// </summary>
         public virtual void CloseAllDocuments() {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return;
-            if(dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
-                foreach(Form form in MdiChildren)
+            if (dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
+                foreach (Form form in MdiChildren)
                     form.Close();
             }
             else {
-                foreach(IDockContent document in dockPanel.DocumentsToArray()) {
+                foreach (IDockContent document in dockPanel.DocumentsToArray()) {
                     // IMPORANT: dispose all panes.
                     document.DockHandler.DockPanel = null;
                     document.DockHandler.Close();
@@ -222,7 +224,7 @@ namespace Atiran.CustomDocking.Desk {
         /// 关闭所有类型的dock窗口
         /// </summary>
         public virtual void CloseAllContents() {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return;
             // we don't want to create another instance of tool window, set DockPanel to null
             //m_solutionExplorer.DockPanel = null;
@@ -235,7 +237,7 @@ namespace Atiran.CustomDocking.Desk {
             CloseAllDocuments();
 
             // IMPORTANT: dispose all float windows.
-            foreach(var window in dockPanel.FloatWindows.ToList())
+            foreach (var window in dockPanel.FloatWindows.ToList())
                 window.Dispose();
 
             System.Diagnostics.Debug.Assert(dockPanel.Panes.Count == 0);
@@ -328,11 +330,11 @@ namespace Atiran.CustomDocking.Desk {
         /// <param name="vsVersion"></param>
         /// <param name="theme"></param>
         protected virtual void SetTheme(VisualStudioToolStripExtender.VsVersion vsVersion, ThemeBase theme) {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return;
             this.dockPanel.Theme = theme;
             this.EnableVSRenderer(vsVersion, theme);
-            if(dockPanel.Theme.ColorPalette != null) {
+            if (dockPanel.Theme.ColorPalette != null) {
                 //
                 //var c = this.Controls.Count;
                 //for(int i = 0; i < c; i++) {
@@ -350,9 +352,9 @@ namespace Atiran.CustomDocking.Desk {
         /// <param name="theme"></param>
         protected virtual void EnableVSRenderer(VisualStudioToolStripExtender.VsVersion version, ThemeBase theme) {
             var c = this.Controls.Count;
-            for(int i = 0; i < c; i++) {
+            for (int i = 0; i < c; i++) {
                 var ctl = this.Controls[i];
-                if(ctl is System.Windows.Forms.ToolStrip) {
+                if (ctl is System.Windows.Forms.ToolStrip) {
                     vsToolStripExtender1.SetStyle(ctl as System.Windows.Forms.ToolStrip, version, theme);
                 }
             }
@@ -364,15 +366,15 @@ namespace Atiran.CustomDocking.Desk {
         /// </summary>
         /// <param name="newDocumentStyle"></param>
         protected virtual void SetDocumentStyle(DocumentStyle newDocumentStyle) {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return;
             DocumentStyle oldStyle = dockPanel.DocumentStyle;
             DocumentStyle newStyle = newDocumentStyle;
             //
-            if(oldStyle == newStyle)
+            if (oldStyle == newStyle)
                 return;
 
-            if(oldStyle == DocumentStyle.SystemMdi || newStyle == DocumentStyle.SystemMdi)
+            if (oldStyle == DocumentStyle.SystemMdi || newStyle == DocumentStyle.SystemMdi)
                 CloseAllDocuments();
 
             dockPanel.DocumentStyle = newStyle;
@@ -389,19 +391,19 @@ namespace Atiran.CustomDocking.Desk {
         /// 除选择项外关闭所有
         /// </summary>
         public virtual void CloseAllButThisOne() {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return;
-            if(dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
+            if (dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
                 Form activeMdi = ActiveMdiChild;
-                foreach(Form form in MdiChildren) {
-                    if(form != activeMdi) {
+                foreach (Form form in MdiChildren) {
+                    if (form != activeMdi) {
                         form.Close();
                     }
                 }
             }
             else {
-                foreach(IDockContent document in dockPanel.DocumentsToArray()) {
-                    if(!document.DockHandler.IsActivated) {
+                foreach (IDockContent document in dockPanel.DocumentsToArray()) {
+                    if (!document.DockHandler.IsActivated) {
                         document.DockHandler.DockPanel = null;
                         //
                         document.DockHandler.Close();
@@ -410,11 +412,11 @@ namespace Atiran.CustomDocking.Desk {
             }
         }
         public virtual void CloseDocument(string text) {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return;
             var document = FindDocument(text);
-            if(document != null) {
-                if(dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
+            if (document != null) {
+                if (dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
                     (document as Form).Close();
                 }
                 else {
@@ -437,7 +439,7 @@ namespace Atiran.CustomDocking.Desk {
         /// 重新构建布局dock窗口
         /// </summary>
         public virtual void ReBuildDockLayout() {
-            if(dockPanel == null)
+            if (dockPanel == null)
                 return;
             dockPanel.SuspendLayout(true);
 
