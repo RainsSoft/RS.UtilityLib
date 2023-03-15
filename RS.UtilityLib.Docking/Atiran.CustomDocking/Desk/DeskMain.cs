@@ -108,6 +108,26 @@ namespace Atiran.CustomDocking.Desk
                 return FindDeskDocInSelfCreated(text);
             }
         }
+        public IDockContent FindDocumentByDocID(string docID) {
+            if (dockPanel == null)
+                return null;
+            if (dockPanel.DocumentStyle == DocumentStyle.SystemMdi) {
+                foreach (Form form in MdiChildren) {
+                    DeskDoc doc = form as DeskDoc;
+                    if (doc != null && doc.ID == docID)
+                        return form as IDockContent;
+                }
+                return null;
+            }
+            else {
+                foreach (IDockContent content in dockPanel.Documents) {
+                    DeskDoc doc = content as DeskDoc;
+                    if (doc != null && doc.ID == docID)
+                        return content;
+                }
+                return FindDeskDocInSelfCreated(docID);
+            }
+        }
         /// <summary>
         /// 通过ShowNewDocument(out DeskDoc dummyDoc, string titleName = "")创建的所有窗口中查找
         /// </summary>
@@ -116,6 +136,14 @@ namespace Atiran.CustomDocking.Desk
         public DeskDoc FindDeskDocInSelfCreated(string text) {
             for (int i = 0; i < m_AllDeskDocSelfCreated.Count; i++) {
                 if (m_AllDeskDocSelfCreated[i].Text == text) {
+                    return m_AllDeskDocSelfCreated[i];
+                }
+            }
+            return null;
+        }
+        public DeskDoc FindDeskDocInSelfCreatedByID(string docID) {
+            for (int i = 0; i < m_AllDeskDocSelfCreated.Count; i++) {
+                if (m_AllDeskDocSelfCreated[i].ID == docID) {
                     return m_AllDeskDocSelfCreated[i];
                 }
             }

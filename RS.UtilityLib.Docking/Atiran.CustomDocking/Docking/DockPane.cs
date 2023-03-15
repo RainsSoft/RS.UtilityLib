@@ -449,7 +449,10 @@ namespace Atiran.CustomDocking.Docking
 
         public bool IsActivePane
         {
-            get { return this == DockPanel.ActivePane; }
+            get {
+                if (DockPanel == null) return false;
+                return this == DockPanel.ActivePane;
+            }
         }
 
         public bool IsDockStateValid(DockState dockState)

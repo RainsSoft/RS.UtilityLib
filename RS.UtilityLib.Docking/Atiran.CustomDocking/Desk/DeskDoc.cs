@@ -9,6 +9,16 @@ namespace Atiran.CustomDocking.Desk {
             InitializeComponent();
             AutoScaleMode = AutoScaleMode.Dpi;
             DockAreas = DockAreas.Document | DockAreas.Float;
+            m_Global_ID++;
+            ID = "Doc_" + m_Global_ID;
+        }
+        static int m_Global_ID = 0;
+        /// <summary>
+        /// ID±àºÅ
+        /// </summary>
+        public string ID {
+            get;
+            set;
         }
         /*
         private string m_fileName = string.Empty;
