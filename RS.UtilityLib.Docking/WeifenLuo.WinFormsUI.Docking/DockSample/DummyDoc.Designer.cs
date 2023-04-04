@@ -110,9 +110,9 @@ namespace DockSample
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 28);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(448, 365);
+            this.richTextBox1.Size = new System.Drawing.Size(448, 389);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
