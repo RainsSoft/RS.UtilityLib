@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractAction.cs" />
@@ -42,6 +41,9 @@
     <Compile Include="Actions\AddItemAction.cs" />
     <Compile Include="Actions\CallMethodAction.cs" />
     <Compile Include="Actions\SetPropertyAction.cs" />
+    <Compile Include="Apos.History\History.cs" />
+    <Compile Include="Apos.History\HistoryHandler.cs" />
+    <Compile Include="Apos.History\HistorySet.cs" />
     <Compile Include="History\IActionHistory.cs" />
     <Compile Include="History\SimpleHistory.cs" />
     <Compile Include="History\SimpleHistoryNode.cs" />

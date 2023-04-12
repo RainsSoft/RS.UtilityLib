@@ -349,3 +349,6 @@ RS.UtilityLib.Promise/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttributes.cs
 RS.UtilityLib.AlgorithmiaLib/SD.Algorithmia/obj/Debug/SD.Algorithmia.Net20.pdb
 RS.UtilityLib.AlgorithmiaLib/SD.Algorithmia/obj/Debug/SD.Algorithmia.Net20.dll
 RS.UtilityLib.AlgorithmiaLib/SD.Algorithmia/obj/Debug/SD.Algorithmia.Net20.csproj.FileListAbsolute.txt
+RS.UtilityLib.UndoRedo/UndoRedoFramework/obj/Debug/UndoRedoFramework.csproj.FileListAbsolute.txt
+RS.UtilityLib.UndoRedo/UndoRedoFramework/obj/Debug/UndoRedoFramework.dll
+RS.UtilityLib.UndoRedo/UndoRedoFramework/obj/Debug/UndoRedoFramework.pdb
