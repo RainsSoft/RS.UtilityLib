@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -86,7 +86,7 @@
     <None Include="Resources\UndoImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UndoRedo\UndoRedo.csproj">
+    <ProjectReference Include="..\UndoRedo.csproj">
       <Project>{4A174712-5A13-420A-98F6-1179CADECF8F}</Project>
       <Name>UndoRedo</Name>
     </ProjectReference>

@@ -50,6 +50,7 @@
     <Compile Include="IAction.cs" />
     <Compile Include="LinqHelper\ExtensionAttribute.cs" />
     <Compile Include="LinqHelper\LinqHelper.cs" />
+    <Compile Include="nossey.History\History.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction.cs" />
   </ItemGroup>
