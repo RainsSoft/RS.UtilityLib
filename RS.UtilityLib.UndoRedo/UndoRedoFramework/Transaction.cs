@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace GuiLabs.Undo
 {
+    /// <summary>
+    /// Dispose时候如果Aborted==false则自动Commit
+    /// </summary>
     public sealed class Transaction : IAction, IDisposable
     {
         readonly List<IAction> Actions;
@@ -31,10 +34,12 @@ namespace GuiLabs.Undo
         }
 
         /// <summary>
+        /// 默认情况下，操作会延迟，仅在顶级事务提交后执行。
         /// By default, the actions are delayed and executed only after
         /// the top-level transaction commits.
         /// </summary>
         /// <remarks>
+        /// 确保在完成(Dispose)后处理事务 - 它实际上会为您调用 Commit
         /// Make sure to dispose of the transaction once you're done - it will actually call Commit for you
         /// </remarks>
         /// <example>

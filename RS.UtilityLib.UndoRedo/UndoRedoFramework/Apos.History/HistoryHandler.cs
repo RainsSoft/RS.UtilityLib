@@ -2,19 +2,23 @@
 using GuiLabs.Undo;
 namespace Apos.History {
     /// <summary>
+    /// 此类使在多个数据结构上提供撤消和重做变得容易。
     /// This class makes it easy to provide undo and redo over multiple data structures.
     /// </summary>
     public class HistoryHandler : History {
         /// <summary>
+        /// 本地管理的历史记录。
         /// History that is managed locally.
         /// </summary>
         public HistoryHandler() { }
         /// <summary>
+        /// 当 null 时，历史记录是本地的。否则，它由历史记录处理程序管理。
         /// The history is local when null. Otherwise it's managed by a HistoryHandler.
         /// </summary>
         public HistoryHandler(HistoryHandler historyHandler) : base(historyHandler) { }
 
         /// <summary>
+        /// 将历史记录集添加到挂起列表并尝试提交它。
         /// Adds a HistorySet to the pending list and tries to commit it.
         /// </summary>
         public void Add(HistorySet hs) {
@@ -24,6 +28,7 @@ namespace Apos.History {
             TryCommit();
         }
         /// <summary>
+        /// 将撤消和重做操作添加到挂起列表中，并尝试提交它们。
         /// Adds undo and redo actions to the pending list and tries to commit them.
         /// </summary>
         public void Add(Action undo, Action redo) {

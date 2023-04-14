@@ -1,6 +1,7 @@
 namespace GuiLabs.Undo
 {
     /// <summary>
+    /// 表示双链表简单历史记录的节点
     /// Represents a node of the doubly linked-list SimpleHistory
     /// (StateX in the following diagram:)
 

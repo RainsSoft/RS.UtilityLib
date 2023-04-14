@@ -5,6 +5,12 @@ namespace GuiLabs.Undo
 {
     /// <summary>
     /// https://github.com/KirillOsenkov/Undo
+    /// 操作管理器是撤消框架的中心类。您的域模型（业务对象）将具有负责执行操作的 ActionManager 引用。
+    /// 以下是它的工作原理：
+    /// 1. 声明一个实现 IAction 的类 
+    /// 2.您创建它的实例，并为其提供应用或回滚更改所需的所有必要信息 
+    /// 3.你调用 ActionManager.RecordAction（yourAction） 
+    /// 然后你也可以调用 ActionManager.Undo（） 或 ActionManager.Redo（）
     /// Action Manager is a central class for the Undo Framework.
     /// Your domain model (business objects) will have an ActionManager reference that would 
     /// take care of executing actions.
@@ -27,6 +33,7 @@ namespace GuiLabs.Undo
         #region Events
 
         /// <summary>
+        /// 侦听此事件，以便在添加新操作、执行、撤消或重做时收到通知
         /// Listen to this event to be notified when a new action is added, executed, undone or redone
         /// </summary>
         public event EventHandler CollectionChanged;
@@ -45,12 +52,15 @@ namespace GuiLabs.Undo
         #region Running
 
         /// <summary>
+        /// 当前正在运行的操作（在撤消或重做过程中）
         /// Currently running action (during an Undo or Redo process)
         /// </summary>
-        /// <remarks>null if no Undo or Redo is taking place</remarks>
+        /// <remarks>如果没有发生撤消或重做，则为 null.
+        /// null if no Undo or Redo is taking place</remarks>
         public IAction CurrentAction { get; internal set; }
 
         /// <summary>
+        /// 检查我们是否在撤消或重做操作中
         /// Checks if we're inside an Undo or Redo operation
         /// </summary>
         public bool ActionIsExecuting
@@ -64,15 +74,18 @@ namespace GuiLabs.Undo
         #endregion
 
         /// <summary>
+        /// 定义我们是否应该将操作记录到 Undo 缓冲区然后执行，或者只是执行它而不成为历史记录的一部分
         /// Defines whether we should record an action to the Undo buffer and then execute,
         /// or just execute it without it becoming a part of history
         /// </summary>
         public bool ExecuteImmediatelyWithoutRecording { get; set; }
 
         /// <summary>
+        /// 用于添加和执行新操作的中心方法。
         /// Central method to add and execute a new action.
         /// </summary>
-        /// <param name="existingAction">An action to be recorded in the buffer and executed</param>
+        /// <param name="existingAction">要在缓冲区中记录并执行的操作.
+        /// An action to be recorded in the buffer and executed</param>
         public void RecordAction(IAction action)
         {
             if (action == null)
@@ -131,6 +144,7 @@ namespace GuiLabs.Undo
         }
 
         /// <summary>
+        /// 将操作添加到缓冲区并运行它
         /// Adds the action to the buffer and runs it
         /// </summary>
         void RunActionDirectly(IAction actionToRun)

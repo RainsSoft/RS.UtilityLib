@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using GuiLabs.Undo;
 namespace Apos.History {
     /// <summary>
+    /// 历史类的基类。提供撤消、重做。
     /// Base class for History classes. Provides undo, redo.
     /// </summary>
     public class History {
         /// <summary>
+        /// 本地管理的历史记录。
         /// History that is managed locally.
         /// </summary>
         public History() { }
         /// <summary>
+        /// 当 null 时，历史记录是本地的。否则，它由历史记录处理程序管理。
         /// The history is local when null. Otherwise it's managed by a HistoryHandler.
         /// </summary>
         public History(HistoryHandler historyHandler) {
@@ -18,24 +21,29 @@ namespace Apos.History {
         }
 
         /// <summary>
+        /// 如果为 false，则历史记录将延迟到手动调用 Commit（）。
         /// When false, the history is delayed until Commit() is called manually.
         /// </summary>
         public bool AutoCommit { get; set; } = true;
 
         /// <summary>
+        /// 获取撤消堆栈中的元素数。
         /// Gets the number of elements in the undo stack.
         /// </summary>
         public int UndoCount => _undo.Count;
         /// <summary>
+        /// 获取重做堆栈中的元素数。
         /// Gets the number of elements in the redo stack.
         /// </summary>
         public int RedoCount => _redo.Count;
         /// <summary>
+        /// 获取元素总数。（撤消计数 + 重做计数）
         /// Gets the number of elements in total. (UndoCount + RedoCount)
         /// </summary>
         public int Count => UndoCount + RedoCount;
 
         /// <summary>
+        /// 当自动提交设置为 true 时提交。
         /// Commits when AutoCommit is set to true.
         /// </summary>
         public void TryCommit() {
@@ -44,6 +52,7 @@ namespace Apos.History {
             }
         }
         /// <summary>
+        /// 将挂起的撤消和重做提交到撤消和重做堆栈并执行重做。仅当自动提交设置为 false 时，才需要调用此功能。
         /// Commits pending undo and redo to the undo and redo stacks and executes redo.
         /// This only needs to be called when AutoCommit is set to false.
         /// </summary>
@@ -65,6 +74,7 @@ namespace Apos.History {
             }
         }
         /// <summary>
+        /// 将挂起的撤消和重做提交到撤消和重做堆栈，而不执行重做。仅当自动提交设置为 false 时，才需要调用此功能。
         /// Commits pending undo and redo to the undo and redo stacks without executing redo.
         /// This only needs to be called when AutoCommit is set to false.
         /// </summary>
@@ -85,6 +95,7 @@ namespace Apos.History {
             }
         }
         /// <summary>
+        /// 恢复以前的状态。
         /// Restores the previous state.
         /// </summary>
         public void Undo() {
@@ -96,6 +107,7 @@ namespace Apos.History {
             }
         }
         /// <summary>
+        /// 还原下一个状态。
         /// Restores the next state.
         /// </summary>
         public void Redo() {
@@ -108,6 +120,7 @@ namespace Apos.History {
         }
 
         /// <summary>
+        /// 从撤消堆栈中删除一系列元素，仅保留最新元素。
         /// Removes a range of elements from the undo stack keeping only the newest elements.
         /// </summary>
         /// <param name="count">The number of elements to keep.</param>
@@ -118,6 +131,7 @@ namespace Apos.History {
             }
         }
         /// <summary>
+        /// 从撤消堆栈中删除一系列元素，仅保留最新元素。
         /// Removes a range of elements from the undo stack keeping only the newest elements.
         /// </summary>
         /// <param name="count">The number of elements to remove.</param>
@@ -145,6 +159,7 @@ namespace Apos.History {
         /// </summary>
         protected List<Action> _pendingRedo = new List<Action>();
         /// <summary>
+        /// 如果不为 null，则在其他地方管理历史记录。
         /// When not null, the history is managed elsewhere.
         /// </summary>
         protected HistoryHandler _historyHandler;
