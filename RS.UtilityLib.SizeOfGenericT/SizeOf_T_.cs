@@ -258,6 +258,31 @@ namespace RS.UtilityLib.SizeOfGenericT
 
         #region Unmanaged
         private static Dictionary<Type, bool> _unmanagedCachedTypes = new Dictionary<Type, bool>();
+#if NET_4_0
+        
+        private class UnmanagedChecker<T> where T : unmanaged
+        {
+            //需要.net4.0
+        }
+        public static bool IsUnmanaged<T>() {
+            return IsUnmanaged(typeof(T));
+        }
+        public static bool IsUnmanaged(Type type) {
+            //https://github.com/Sonozuki/NovaEngine/blob/main/NovaEngine/Extensions/TypeExtensions.cs
+            try {
+                // if   type is not unmanaged, MakeGenericType will throw
+                //   due 到 type restrictions 于 UnmanagedChecker
+                typeof(UnmanagedChecker<>).MakeGenericType(type);
+                _unmanagedCachedTypes.Add(type, true);
+                return true;
+            }
+            catch {
+                _unmanagedCachedTypes.Add(type, false);
+                return false;
+            }
+        }
+        
+#else
         public static bool IsUnManaged(this Type t) {
             bool result;
             if (_unmanagedCachedTypes.TryGetValue(t, out result))
@@ -311,28 +336,6 @@ namespace RS.UtilityLib.SizeOfGenericT
             //}
             //return false;
         }
-#if !NET_4_0
-        /*
-        private class UnmanagedChecker<T> where T : unmanaged
-        {
-            //需要.net4.0
-        }
-        public static bool IsUnmanaged<T>() {
-            return IsUnmanaged(typeof(T));
-        }
-        public static bool IsUnmanaged(Type type) {
-            //https://github.com/Sonozuki/NovaEngine/blob/main/NovaEngine/Extensions/TypeExtensions.cs
-            try {
-                // if   type is not unmanaged, MakeGenericType will throw
-                //   due 到 type restrictions 于 UnmanagedChecker
-                typeof(UnmanagedChecker<>).MakeGenericType(type);
-                return true;
-            }
-            catch {
-                return false;
-            }
-        }
-        */
 #endif
         #endregion
 
