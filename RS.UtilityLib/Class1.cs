@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-namespace RS.UtilityLib
+namespace RS.UtilityLib.SizeOfGenericT
 {
-    
+    class Class1
+    {
+    }
 }

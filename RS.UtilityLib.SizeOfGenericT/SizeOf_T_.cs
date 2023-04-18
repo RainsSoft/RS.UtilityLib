@@ -336,8 +336,6 @@ namespace RS.UtilityLib.SizeOfGenericT
 #endif
         #endregion
 
-
-
         #region Layout
         //public static List<object> GetStructFields(object obj) {
         //    List<object> fields = new List<object>();
