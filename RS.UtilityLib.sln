@@ -103,6 +103,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UDP", "UDP", "{FA98A7B3-034
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MQTT", "MQTT", "{31E881FB-7A18-443C-848B-DBE124A57FD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RS.UtilityLib.WinFormCommon", "RS.UtilityLib.WinFormCommon\RS.UtilityLib.WinFormCommon.csproj", "{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -521,6 +523,18 @@ Global
 		{577FDE47-F7CD-4C99-AFBF-9B0E43B3CE4D}.ReleaseCS|Any CPU.Build.0 = Release|Any CPU
 		{577FDE47-F7CD-4C99-AFBF-9B0E43B3CE4D}.ReleaseCS|x86.ActiveCfg = Release|Any CPU
 		{577FDE47-F7CD-4C99-AFBF-9B0E43B3CE4D}.ReleaseCS|x86.Build.0 = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Debug|x86.Build.0 = Debug|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Release|x86.ActiveCfg = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.Release|x86.Build.0 = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.ReleaseCS|Any CPU.ActiveCfg = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.ReleaseCS|Any CPU.Build.0 = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.ReleaseCS|x86.ActiveCfg = Release|Any CPU
+		{C1078E4C-CF3C-4B19-8E20-E8C875A1057B}.ReleaseCS|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
