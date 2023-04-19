@@ -11,15 +11,15 @@ namespace RS.UtilityLib.WinFormCommon.UI
 
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TextBox))]
-    public class TextBoxNumEx : TextBox
+    public class TextBoxNumEx : TextBoxEx
     {
 
         public TextBoxNumEx() : base() {
-            this.SetStyle(ControlStyles.UserPaint, true);
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            this.SetStyle(ControlStyles.DoubleBuffer, true);
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
-            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //this.SetStyle(ControlStyles.UserPaint, true);
+            //this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            //this.SetStyle(ControlStyles.DoubleBuffer, true);
+            //this.SetStyle(ControlStyles.ResizeRedraw, true);
+            //this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
 
             //base.ReadOnly = true;
             base.ReadOnly = false;
@@ -27,8 +27,8 @@ namespace RS.UtilityLib.WinFormCommon.UI
             base.TextAlign = HorizontalAlignment.Left;
             base.Text = "0";
             //
-            this.BackColor = Color.Transparent;
-            this.ForeColor = SystemColors.ControlLightLight;
+            //this.BackColor = Color.Transparent;
+            //this.ForeColor = SystemColors.ControlLightLight;
             //
             System.Globalization.CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentCulture;
             m_decimalSeparator = ci.NumberFormat.CurrencyDecimalSeparator[0];
@@ -49,7 +49,7 @@ namespace RS.UtilityLib.WinFormCommon.UI
         private const int WM_PASTE = 0x0302;
         private const int WM_CLEAR = 0x0303;
 
-        private int m_decimalLength = 0;
+        private int m_decimalLength = 1;
         private bool m_allowNegative = true;
         private string m_valueFormatStr = string.Empty;
 
@@ -329,6 +329,7 @@ namespace RS.UtilityLib.WinFormCommon.UI
         }
 
         #endregion
+        /*
         public override System.Drawing.Color ForeColor {
             get {
                 return base.ForeColor;
@@ -341,6 +342,7 @@ namespace RS.UtilityLib.WinFormCommon.UI
                 ForeColorBrush = new SolidBrush(value);
             }
         }
+        
         public Brush ForeColorBrush {
             get;
             set;
@@ -356,7 +358,7 @@ namespace RS.UtilityLib.WinFormCommon.UI
             pevent.Graphics.Clear(Color.Transparent);
             base.OnPaintBackground(pevent);
         }
-
+        */
         #region  custom private methods
 
         private void SetValueFormatStr() {
@@ -499,9 +501,10 @@ namespace RS.UtilityLib.WinFormCommon.UI
 
         #endregion
         protected override void Dispose(bool disposing) {
+            /*
             if (this.ForeColorBrush != null) {
                 this.ForeColorBrush.Dispose();
-            }
+            }*/
             base.Dispose(disposing);
         }
     }

@@ -26,22 +26,12 @@ namespace RS.UtilityLib.WinFormCommon
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.textBoxNumEx1 = new RS.UtilityLib.WinFormCommon.UI.TextBoxNumEx();
             this.textBoxEx2 = new RS.UtilityLib.WinFormCommon.UI.TextBoxEx();
             this.textBoxEx1 = new RS.UtilityLib.WinFormCommon.UI.TextBoxEx();
             this.waterMarkTextBox2 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.waterMarkTextBox1 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
+            this.textBoxNumEx1 = new RS.UtilityLib.WinFormCommon.UI.TextBoxNumEx();
             this.SuspendLayout();
-            // 
-            // textBoxNumEx1
-            // 
-            this.textBoxNumEx1.BackColor = System.Drawing.Color.White;
-            this.textBoxNumEx1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxNumEx1.Location = new System.Drawing.Point(48, 111);
-            this.textBoxNumEx1.Name = "textBoxNumEx1";
-            this.textBoxNumEx1.Size = new System.Drawing.Size(100, 21);
-            this.textBoxNumEx1.TabIndex = 4;
-            this.textBoxNumEx1.Text = "111";
             // 
             // textBoxEx2
             // 
@@ -96,6 +86,24 @@ namespace RS.UtilityLib.WinFormCommon
             this.waterMarkTextBox1.TabIndex = 0;
             this.waterMarkTextBox1.WaterMarkColor = System.Drawing.Color.Gray;
             this.waterMarkTextBox1.WaterMarkText = "Water Mark";
+            // 
+            // textBoxNumEx1
+            // 
+            this.textBoxNumEx1.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.textBoxNumEx1.DecimalLength = 1;
+            this.textBoxNumEx1.Font = new System.Drawing.Font("宋体", 10.5F);
+            this.textBoxNumEx1.Location = new System.Drawing.Point(48, 129);
+            this.textBoxNumEx1.Name = "textBoxNumEx1";
+            this.textBoxNumEx1.ShowSpaces = true;
+            this.textBoxNumEx1.ShowTabs = true;
+            this.textBoxNumEx1.Size = new System.Drawing.Size(100, 23);
+            this.textBoxNumEx1.SpaceKeyColor = System.Drawing.Color.Red;
+            this.textBoxNumEx1.TabIndex = 4;
+            this.textBoxNumEx1.Text = "23.0";
+            this.textBoxNumEx1.WaterMarkText = "请输入...";
+            this.textBoxNumEx1.WaterMarkTextFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Italic);
+            this.textBoxNumEx1.WaterMarkTextOffsetX = 4F;
+            this.textBoxNumEx1.WaterMarkTextOffsetY = 4F;
             // 
             // FormUIControlTest
             // 
