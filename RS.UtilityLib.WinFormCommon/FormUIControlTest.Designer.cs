@@ -34,10 +34,12 @@ namespace RS.UtilityLib.WinFormCommon
             "44"}, -1);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "11",
-            "11-1"}, -1);
+            "11-1",
+            "56"}, -1);
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "22",
-            "22-2"}, -1);
+            "22-2",
+            "fsdfsfs"}, -1);
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "11",
             "22"}, -1);
@@ -50,6 +52,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.listViewEx21 = new RS.UtilityLib.WinFormCommon.UI.ListViewExp();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewEx1 = new RS.UtilityLib.WinFormCommon.UI.ListViewEx();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,7 +84,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.listViewEx21.AllowColumnReorder = true;
             this.listViewEx21.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader7});
             this.listViewEx21.DoubleClickActivation = false;
             this.listViewEx21.FullRowSelect = true;
             this.listViewEx21.HideSelection = false;
@@ -93,19 +97,23 @@ namespace RS.UtilityLib.WinFormCommon
             this.listViewEx21.OwnerDraw = true;
             this.listViewEx21.ProgressColor = System.Drawing.Color.Red;
             this.listViewEx21.ProgressTextColor = System.Drawing.Color.Black;
-            this.listViewEx21.Size = new System.Drawing.Size(161, 97);
+            this.listViewEx21.Size = new System.Drawing.Size(223, 97);
             this.listViewEx21.TabIndex = 7;
             this.listViewEx21.UseCompatibleStateImageBehavior = false;
             this.listViewEx21.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "progress";
+            this.columnHeader5.Text = "index";
             this.columnHeader5.Width = 70;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "link";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "progress";
             // 
             // listViewEx1
             // 
@@ -234,5 +242,6 @@ namespace RS.UtilityLib.WinFormCommon
         private UI.ListViewExp listViewEx21;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }

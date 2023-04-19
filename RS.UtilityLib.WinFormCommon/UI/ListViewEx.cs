@@ -431,7 +431,7 @@ namespace RS.UtilityLib.WinFormCommon.UI
         #endregion
     }
     /// <summary>
-    /// 进度条/链接
+    /// 进度条/链接 [ 第一列不支持进度条/链接 ]
     /// </summary>
     public class ListViewExp : ListViewEx
     {
@@ -578,12 +578,13 @@ namespace RS.UtilityLib.WinFormCommon.UI
             if (e.ItemIndex == -1) {
                 return;
             }
-            Rectangle bounds = e.Bounds;
-            ListViewItemStates itemState = e.ItemState;
-            Graphics g = e.Graphics;
+            Rectangle eBounds = e.Bounds;           
+            bool eItemSelected = e.Item.Selected;
+            Graphics eGraphics = e.Graphics;
+         
             //if ((itemState & ListViewItemStates.Selected)
             //    == ListViewItemStates.Selected) {
-            if (e.Item.Selected) {
+            if (eItemSelected) {
                 //e.DrawFocusRectangle(e.Bounds);
                 //e.DrawBackground();
                 //e.Graphics.FillRectangle(SystemBrushes.WindowFrame, e.Bounds);
@@ -593,8 +594,8 @@ namespace RS.UtilityLib.WinFormCommon.UI
                 Color innerBorderColor = Color.FromArgb(200, 255, 255);
 
                 RenderBackgroundInternal(
-                    g,
-                    bounds,
+                    eGraphics,
+                    eBounds,
                     baseColor,
                     borderColor,
                     innerBorderColor,
@@ -608,11 +609,12 @@ namespace RS.UtilityLib.WinFormCommon.UI
                 _rowBackColor1 : _rowBackColor2;
 
                 using (SolidBrush brush = new SolidBrush(backColor)) {
-                    g.FillRectangle(brush, bounds);
+                    eGraphics.FillRectangle(brush, eBounds);
                 }
             }
+            //           
             TextFormatFlags flags = GetFormatFlags(e.Header.TextAlign);
-
+            //
             if (e.ColumnIndex == 0) {
                 //g.FillRectangle(SystemBrushes.Info, bounds);
                 if (e.Item.ImageList == null) {
@@ -626,19 +628,19 @@ namespace RS.UtilityLib.WinFormCommon.UI
                     return;
                 }
                 Rectangle imageRect = new Rectangle(
-                    bounds.X + 4,
-                    bounds.Y + 2,
-                    bounds.Height - 4,
-                    bounds.Height - 4);
-                g.DrawImage(image, imageRect);
+                    eBounds.X + 4,
+                    eBounds.Y + 2,
+                    eBounds.Height - 4,
+                    eBounds.Height - 4);
+                eGraphics.DrawImage(image, imageRect);
 
                 Rectangle textRect = new Rectangle(
                     imageRect.Right + 3,
-                    bounds.Y,
-                    bounds.Width - imageRect.Right - 3,
-                    bounds.Height);
+                    eBounds.Y,
+                    eBounds.Width - imageRect.Right - 3,
+                    eBounds.Height);
                 TextRenderer.DrawText(
-                    g,
+                    eGraphics,
                     e.Item.Text,
                     e.Item.Font,
                     textRect,
@@ -646,25 +648,37 @@ namespace RS.UtilityLib.WinFormCommon.UI
                     flags);
                 return;
             }
+            //
+            ListViewItemStates itemState = e.ItemState;
+            string eSubItemText = e.SubItem.Text;
+            HorizontalAlignment textAlign = e.Header.TextAlign;
             //绘制进度条
             if (e.Header.Text == mProgressColumnText) {
-                if (CheckIsFloat(e.SubItem.Text)) {
-                    float tmpf = float.Parse(e.SubItem.Text);
+                if (CheckIsFloat(eSubItemText)) {
+                    float tmpf = float.Parse(eSubItemText);
                     if (tmpf >= 1.0f) {
                         tmpf = tmpf / 100.0f;
                     }
                     DrawProgress(
-                        new Rectangle(e.Bounds.X + 2, e.Bounds.Y + 2, e.Bounds.Width - 4, e.Bounds.Height - 6),
-                        tmpf, e.Graphics, e.Item.Selected);
+                        new Rectangle(eBounds.X + 2, eBounds.Y + 2, eBounds.Width - 4, eBounds.Height - 6),
+                        tmpf, eGraphics, eItemSelected);
+                }
+                else {
+                    //文本非数字
+                    Rectangle rect = eBounds;
+                    DrawString(rect, eSubItemText, textAlign, eGraphics, eItemSelected);
                 }
             }
             else if (e.Header.Text == mLinkColumnText) {
                 //绘制可链接文本
-                e.DrawText(flags);
-                Rectangle rect = e.Bounds;
-                Size size = rect.Size;
-                //SizeF sf= e.Graphics.MeasureString("复制下载地址",this.Font);
-                g.DrawLine(System.Drawing.Pens.Blue, rect.X + 5, rect.Y + size.Height * 3 / 4, rect.X + 90, rect.Y + size.Height * 3 / 4);
+                //e.DrawText(flags);
+                Rectangle rect = eBounds;
+                //Size size = rect.Size;
+                //SizeF sf= e.Graphics.MeasureString(string.IsNullOrEmpty(e.Item.Text)?"aa":e.Item.Text,this.Font);
+                //float w = sf.Width ;
+                //g.DrawLine(System.Drawing.Pens.Blue, rect.X + 2, rect.Y + size.Height * 3 / 4, rect.X + w-2, rect.Y + size.Height * 3 / 4);
+                bool over = rect.Contains(mMouseX, mMouseY);
+                DrawLinkString(rect, eSubItemText, textAlign, eGraphics, eItemSelected, true);
             }
             else {
                 bool isimage = false;
@@ -673,11 +687,11 @@ namespace RS.UtilityLib.WinFormCommon.UI
                     isimage = true;
                     btnImg = mBtnImgs[e.Header.Text];
                 }
-                Rectangle tmpRect = e.Bounds;
+                Rectangle tmpRect = eBounds;
                 if (isimage && btnImg != null) {
                     bool over = tmpRect.Contains(mMouseX, mMouseY);
-                    DrawButtonImg(tmpRect, btnImg, e.Header.TextAlign, e.Graphics,
-                    e.Item.Selected, over);
+                    DrawButtonImg(tmpRect, btnImg, textAlign, eGraphics,
+                    eItemSelected, over);
                 }
                 else {
                     e.DrawText(flags);
@@ -814,16 +828,19 @@ namespace RS.UtilityLib.WinFormCommon.UI
         protected override void OnColumnWidthChanging(ColumnWidthChangingEventArgs e) {
             //base.OnColumnWidthChanging(e);
             //return;
-            //
-          
+            //          
             if (e.NewWidth < 48) {
-                e.NewWidth = 48; 
+                e.NewWidth = 48;
                 e.Cancel = true;
-                return;
+                //return;
             }
-            e.NewWidth = this.Columns[e.ColumnIndex].Width;
+            //else {
+            //    e.Cancel = false;
+            //}
+            //e.NewWidth = this.Columns[e.ColumnIndex].Width;
             base.OnColumnWidthChanging(e);
         }
+       
         //protected override void OnColumnReordered(ColumnReorderedEventArgs e) {
         //    e.Cancel = true;
         //}
@@ -979,21 +996,30 @@ namespace RS.UtilityLib.WinFormCommon.UI
             if (!isSelect) {
                 g.DrawString(s, this.Font, Brushes.Blue, rect, sf);
                 if (mouseover) {
-                    this.Cursor = Cursors.Hand;
+                    //this.Cursor = Cursors.Hand;
                     SizeF size = g.MeasureString(s, this.Font);
-                    g.DrawLine(System.Drawing.Pens.Blue, rect.X, rect.Y + size.Height, rect.X + size.Width, rect.Y + size.Height);
+                    float offset = 0; 
+                    if (aglin == HorizontalAlignment.Center) {
+                        offset=System.Math.Max(0f,(rect.Width-size.Width)*0.5f);
+                    }
+                    else if (aglin == HorizontalAlignment.Right) { 
+                        offset= System.Math.Max(0f, (rect.Width - size.Width));
+                    }
+                    g.DrawLine(System.Drawing.Pens.Blue, rect.X+offset, rect.Y + size.Height, rect.X + offset+size.Width, rect.Y + size.Height);                  
+                    
                 }
                 else {
                     //this.Cursor = Cursors.Arrow;
                 }
             }
             else {
-                g.FillRectangle(Brushes.RoyalBlue, rect);
+                //g.FillRectangle(Brushes.RoyalBlue, rect);
                 g.DrawString(s, this.Font, Brushes.White, rect, sf);
                 if (mouseover) {
+                    //this.Cursor = Cursors.Hand;
                     SizeF size = g.MeasureString(s, this.Font);
                     g.DrawLine(System.Drawing.Pens.White, rect.X, rect.Y + size.Height, rect.Right, rect.Y + size.Height);
-
+                   
                 }
                 else {
                     //this.Cursor = Cursors.Arrow;
