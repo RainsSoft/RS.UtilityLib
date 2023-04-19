@@ -50,6 +50,9 @@
     <Compile Include="UI\TextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\TextBoxNumEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\WaterMarkTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
