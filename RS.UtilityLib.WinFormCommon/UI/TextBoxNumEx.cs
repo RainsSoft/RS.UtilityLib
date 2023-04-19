@@ -27,6 +27,8 @@ namespace RS.UtilityLib.WinFormCommon.UI
             base.TextAlign = HorizontalAlignment.Left;
             base.Text = "0";
             //
+
+            //
             //this.BackColor = Color.Transparent;
             //this.ForeColor = SystemColors.ControlLightLight;
             //
