@@ -130,7 +130,9 @@ namespace RS.UtilityLib.WinFormCommon.UI
                 return (int)val;
             }
         }
-
+        /// <summary>
+        /// 是否允许负数
+        /// </summary>
         [Category("Custom")]
         [Description("Number can be negative or not.")]
         [DefaultValue(true)]

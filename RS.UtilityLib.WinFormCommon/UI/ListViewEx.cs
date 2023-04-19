@@ -812,14 +812,17 @@ namespace RS.UtilityLib.WinFormCommon.UI
         //    }
         //}
         protected override void OnColumnWidthChanging(ColumnWidthChangingEventArgs e) {
-            base.OnColumnWidthChanging(e);
-            return;
+            //base.OnColumnWidthChanging(e);
+            //return;
             //
-            e.Cancel = true;
-            if (e.NewWidth < 60) {
-                e.NewWidth = 60;
+          
+            if (e.NewWidth < 48) {
+                e.NewWidth = 48; 
+                e.Cancel = true;
+                return;
             }
             e.NewWidth = this.Columns[e.ColumnIndex].Width;
+            base.OnColumnWidthChanging(e);
         }
         //protected override void OnColumnReordered(ColumnReorderedEventArgs e) {
         //    e.Cancel = true;
