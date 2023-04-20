@@ -26,12 +26,14 @@ namespace RS.UtilityLib.WinFormCommon
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "11",
             "22"}, -1);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "33",
             "44"}, -1);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUIControlTest));
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "11",
             "11-1",
@@ -49,6 +51,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ToolStripColorPicker();
             this.comboBoxColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ComboBoxColorPicker();
             this.listViewEx21 = new RS.UtilityLib.WinFormCommon.UI.ListViewExp();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,6 +66,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.textBoxEx1 = new RS.UtilityLib.WinFormCommon.UI.TextBoxEx();
             this.waterMarkTextBox2 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.waterMarkTextBox1 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
+            this.toolTipEx1 = new RS.UtilityLib.WinFormCommon.UI.ToolTipEx(this.components);
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -80,6 +86,30 @@ namespace RS.UtilityLib.WinFormCommon
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripColorPicker1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 26);
+            this.toolStrip1.TabIndex = 9;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripColorPicker1
+            // 
+            this.toolStripColorPicker1.AutoSize = false;
+            this.toolStripColorPicker1.ButtonDisplayStyle = RS.UtilityLib.WinFormCommon.UI.ToolStripColorPickerDisplayType.UnderLineAndImage;
+            this.toolStripColorPicker1.Color = System.Drawing.Color.Black;
+            this.toolStripColorPicker1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripColorPicker1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripColorPicker1.Image")));
+            this.toolStripColorPicker1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripColorPicker1.Name = "toolStripColorPicker1";
+            this.toolStripColorPicker1.Size = new System.Drawing.Size(30, 23);
+            this.toolStripColorPicker1.Text = "toolStripColorPicker1";
+            this.toolStripColorPicker1.ToolTipText = "";
+            // 
             // comboBoxColorPicker1
             // 
             this.comboBoxColorPicker1.Color = System.Drawing.Color.Black;
@@ -97,6 +127,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.comboBoxColorPicker1.Name = "comboBoxColorPicker1";
             this.comboBoxColorPicker1.Size = new System.Drawing.Size(90, 22);
             this.comboBoxColorPicker1.TabIndex = 8;
+            this.toolTipEx1.SetToolTip(this.comboBoxColorPicker1, "hhhhhhhhhhhh");
             // 
             // listViewEx21
             // 
@@ -226,11 +257,24 @@ namespace RS.UtilityLib.WinFormCommon
             this.waterMarkTextBox1.WaterMarkColor = System.Drawing.Color.Gray;
             this.waterMarkTextBox1.WaterMarkText = "Water Mark";
             // 
+            // toolTipEx1
+            // 
+            this.toolTipEx1.AutoPopDelay = 5000;
+            this.toolTipEx1.BackImage = null;
+            this.toolTipEx1.InitialDelay = 500;
+            this.toolTipEx1.IsShowWidget = false;
+            this.toolTipEx1.OwnerDraw = true;
+            this.toolTipEx1.ReshowDelay = 800;
+            this.toolTipEx1.Size = new System.Drawing.Size(32, 32);
+            this.toolTipEx1.TipTxtOffset = new System.Drawing.Point(0, 0);
+            this.toolTipEx1.TitleTxtOffset = new System.Drawing.Point(0, 0);
+            // 
             // FormUIControlTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.comboBoxColorPicker1);
             this.Controls.Add(this.listViewEx21);
             this.Controls.Add(this.listViewEx1);
@@ -242,6 +286,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.Controls.Add(this.waterMarkTextBox1);
             this.Name = "FormUIControlTest";
             this.Text = "FormUIControlTest";
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +311,8 @@ namespace RS.UtilityLib.WinFormCommon
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private UI.ComboBoxColorPicker comboBoxColorPicker1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private UI.ToolStripColorPicker toolStripColorPicker1;
+        private UI.ToolTipEx toolTipEx1;
     }
 }
