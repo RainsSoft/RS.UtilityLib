@@ -12,13 +12,20 @@ namespace RS.UtilityLib.WinFormCommon.UI
         private Boolean waterMarkTextEnabled = false;
 
         #region Attributes 
+        private SolidBrush _drawWaterMarkBrush = new SolidBrush(Color.Gray);
         private Color _waterMarkColor = Color.Gray;
         public Color WaterMarkColor {
             get {
                 return _waterMarkColor;
             }
             set {
-                _waterMarkColor = value;
+                if (value != _waterMarkColor) {
+                    if (_drawWaterMarkBrush != null) {
+                        _drawWaterMarkBrush.Dispose();
+                    }
+                    _drawWaterMarkBrush = new SolidBrush(value);
+                }
+                _waterMarkColor = value;                
                 Invalidate();/*thanks to Bernhard Elbl
                                                               for Invalidate()*/
             }
@@ -53,10 +60,10 @@ namespace RS.UtilityLib.WinFormCommon.UI
             System.Drawing.Font drawFont = new System.Drawing.Font(Font.FontFamily,
                 Font.Size, Font.Style, Font.Unit);
             //Create new brush with gray color or 
-            SolidBrush drawBrush = new SolidBrush(WaterMarkColor);//use Water mark color
+            SolidBrush drawWaterMarkBrush = _drawWaterMarkBrush;//new SolidBrush(WaterMarkColor);//use Water mark color
                                                                   //Draw Text or WaterMark
             args.Graphics.DrawString((waterMarkTextEnabled ? WaterMarkText : Text),
-                drawFont, drawBrush, new PointF(0.0F, 0.0F));
+                drawFont, drawWaterMarkBrush, new PointF(0.0F, 0.0F));
             base.OnPaint(args);
         }
 
@@ -128,5 +135,11 @@ namespace RS.UtilityLib.WinFormCommon.UI
             base.OnPaint(e);
         }
          */
+        protected override void Dispose(bool disposing) {
+            if (_drawWaterMarkBrush != null) {
+                _drawWaterMarkBrush = null;
+            }
+            base.Dispose(disposing);
+        }
     }
 }

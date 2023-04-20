@@ -432,6 +432,7 @@ namespace RS.UtilityLib.WinFormCommon.UI
         //}
         protected override void WndProc(ref Message m) {
             base.WndProc(ref m);
+
             //return;
             //if(m.Msg == 15 || m.Msg == 7 || m.Msg == 8) {
             //}

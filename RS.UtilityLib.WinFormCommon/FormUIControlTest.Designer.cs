@@ -49,6 +49,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBoxColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ComboBoxColorPicker();
             this.listViewEx21 = new RS.UtilityLib.WinFormCommon.UI.ListViewExp();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -78,6 +79,24 @@ namespace RS.UtilityLib.WinFormCommon
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // comboBoxColorPicker1
+            // 
+            this.comboBoxColorPicker1.Color = System.Drawing.Color.Black;
+            this.comboBoxColorPicker1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxColorPicker1.DropDownHeight = 1;
+            this.comboBoxColorPicker1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxColorPicker1.DropDownWidth = 1;
+            this.comboBoxColorPicker1.FormattingEnabled = true;
+            this.comboBoxColorPicker1.IntegralHeight = false;
+            this.comboBoxColorPicker1.ItemHeight = 16;
+            this.comboBoxColorPicker1.Items.AddRange(new object[] {
+            "Color",
+            "Color"});
+            this.comboBoxColorPicker1.Location = new System.Drawing.Point(314, 55);
+            this.comboBoxColorPicker1.Name = "comboBoxColorPicker1";
+            this.comboBoxColorPicker1.Size = new System.Drawing.Size(90, 22);
+            this.comboBoxColorPicker1.TabIndex = 8;
             // 
             // listViewEx21
             // 
@@ -180,6 +199,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.textBoxEx1.Size = new System.Drawing.Size(100, 23);
             this.textBoxEx1.SpaceKeyColor = System.Drawing.Color.Red;
             this.textBoxEx1.TabIndex = 2;
+            this.textBoxEx1.Text = "sdf aa";
             this.textBoxEx1.WaterMarkText = "请输入...";
             this.textBoxEx1.WaterMarkTextFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Italic);
             this.textBoxEx1.WaterMarkTextOffsetX = 4F;
@@ -211,6 +231,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxColorPicker1);
             this.Controls.Add(this.listViewEx21);
             this.Controls.Add(this.listViewEx1);
             this.Controls.Add(this.listView1);
@@ -243,5 +264,6 @@ namespace RS.UtilityLib.WinFormCommon
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private UI.ComboBoxColorPicker comboBoxColorPicker1;
     }
 }
