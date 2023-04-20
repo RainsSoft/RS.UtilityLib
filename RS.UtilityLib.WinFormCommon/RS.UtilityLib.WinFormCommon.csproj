@@ -68,6 +68,9 @@
     <Compile Include="UI\ComboBoxColorPicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\ListViewExp.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\ListViewEx.cs" />
     <Compile Include="UI\TextBoxEx.cs">
       <SubType>Component</SubType>
