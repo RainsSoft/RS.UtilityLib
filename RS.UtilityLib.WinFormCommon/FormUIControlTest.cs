@@ -13,6 +13,8 @@ namespace RS.UtilityLib.WinFormCommon
     {
         public FormUIControlTest() {
             InitializeComponent();
+        
+            this.myScrollPanel1.AddControl(this.groupBox1,new Point(4,400));
         }
         void initToolTipEx() {
             string tipImageBackPath = "Skin\\Res\\roomuserinfo.bmp";//
@@ -55,6 +57,20 @@ namespace RS.UtilityLib.WinFormCommon
             if (this.toolTipEx1.ActionMouseMove()) return;
             base.OnMouseMove(e);
         }
-       
+
+        private void FormUIControlTest_Load(object sender, EventArgs e) {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            for (int i = 0; i < 100; i++) {
+                Button btn = new Button();
+                btn.Size = new Size(100,48);
+                btn.Text = "按钮："+i.ToString();
+                btn.Location = new Point(10, 10 + i * 48);
+                this.myScrollPanel1.AddControl(btn,false);
+            }
+            this.myScrollPanel1.ReCaculScrollPosAndSize();
+        }
     }
 }

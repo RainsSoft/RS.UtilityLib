@@ -53,6 +53,10 @@ namespace RS.UtilityLib.WinFormCommon
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ToolStripColorPicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.myScrollPanel1 = new RS.UtilityLib.WinFormCommon.UI.ScrollPanel.MyVScrollPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBoxColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ComboBoxColorPicker();
             this.listViewEx21 = new RS.UtilityLib.WinFormCommon.UI.ListViewExp();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,7 +71,9 @@ namespace RS.UtilityLib.WinFormCommon
             this.waterMarkTextBox2 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.waterMarkTextBox1 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.toolTipEx1 = new RS.UtilityLib.WinFormCommon.UI.ToolTipEx(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -110,6 +116,46 @@ namespace RS.UtilityLib.WinFormCommon
             this.toolStripColorPicker1.Text = "toolStripColorPicker1";
             this.toolStripColorPicker1.ToolTipText = "";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(329, 247);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // myScrollPanel1
+            // 
+            this.myScrollPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.myScrollPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.myScrollPanel1.Location = new System.Drawing.Point(427, 140);
+            this.myScrollPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.myScrollPanel1.Name = "myScrollPanel1";
+            this.myScrollPanel1.Size = new System.Drawing.Size(230, 279);
+            this.myScrollPanel1.TabIndex = 10;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Location = new System.Drawing.Point(224, 115);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(58, 41);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(78, 16);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // comboBoxColorPicker1
             // 
             this.comboBoxColorPicker1.Color = System.Drawing.Color.Black;
@@ -121,6 +167,10 @@ namespace RS.UtilityLib.WinFormCommon
             this.comboBoxColorPicker1.IntegralHeight = false;
             this.comboBoxColorPicker1.ItemHeight = 16;
             this.comboBoxColorPicker1.Items.AddRange(new object[] {
+            "Color",
+            "Color",
+            "Color",
+            "Color",
             "Color",
             "Color"});
             this.comboBoxColorPicker1.Location = new System.Drawing.Point(314, 55);
@@ -269,11 +319,24 @@ namespace RS.UtilityLib.WinFormCommon
             this.toolTipEx1.TipTxtOffset = new System.Drawing.Point(0, 0);
             this.toolTipEx1.TitleTxtOffset = new System.Drawing.Point(0, 0);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(476, 187);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "label1";
+            // 
             // FormUIControlTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.myScrollPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.comboBoxColorPicker1);
             this.Controls.Add(this.listViewEx21);
@@ -286,8 +349,11 @@ namespace RS.UtilityLib.WinFormCommon
             this.Controls.Add(this.waterMarkTextBox1);
             this.Name = "FormUIControlTest";
             this.Text = "FormUIControlTest";
+            this.Load += new System.EventHandler(this.FormUIControlTest_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +380,10 @@ namespace RS.UtilityLib.WinFormCommon
         private System.Windows.Forms.ToolStrip toolStrip1;
         private UI.ToolStripColorPicker toolStripColorPicker1;
         private UI.ToolTipEx toolTipEx1;
+        private UI.ScrollPanel.MyVScrollPanel myScrollPanel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

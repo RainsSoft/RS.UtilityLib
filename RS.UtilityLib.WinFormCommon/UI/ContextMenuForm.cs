@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace RS.UtilityLib.WinFormCommon.UI.ColorPicker
+namespace RS.UtilityLib.WinFormCommon.UI
 {
     /// <summary>
     /// Provides a System.Windows.Forms.Form that have a ContextMenu behavior.
@@ -78,10 +78,7 @@ namespace RS.UtilityLib.WinFormCommon.UI.ColorPicker
         new public void Hide() {
             base.Hide();
         }
-    }
 
-    partial class ContextMenuForm
-    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -114,7 +111,7 @@ namespace RS.UtilityLib.WinFormCommon.UI.ColorPicker
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(292, 266);
             this.ControlBox = false;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;            
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ContextMenuForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

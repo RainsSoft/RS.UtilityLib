@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -57,7 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\ColorPicker\ContextMenuForm.cs">
+    <Compile Include="UI\ContextMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\ColorPicker\SelectableColor.cs" />
@@ -72,6 +73,15 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\ListViewEx.cs" />
+    <Compile Include="UI\ScrollPanel\CustomScrollbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ScrollPanel\CustomScrollPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ScrollPanel\MyVScrollPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\TextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,6 +93,9 @@
     </Compile>
     <Compile Include="UI\ToolTipEx.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolTipWindow.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\WaterMarkTextBox.cs">
       <SubType>Component</SubType>
@@ -97,6 +110,27 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ContextMenuForm.resx">
+      <DependentUpon>ContextMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScrollPanel\CustomScrollPanel.resx">
+      <DependentUpon>CustomScrollPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScrollPanel\MyVScrollPanel.resx">
+      <DependentUpon>MyVScrollPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelScrollBar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\滚动条.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListScrollBar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tempScrollBar.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
