@@ -211,7 +211,73 @@ namespace RS.UtilityLib.WinFormCommon.UI
             }
 
         }
+        /*
+         // int文本输入处理
+          /// <summary>
+        /// On key down event.
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
 
+            // If the key pressed is a valid number
+            // then allow the key to be visible
+            // else do not display the key.
+            if ((e.KeyValue > 47 && e.KeyValue < 58) ||
+                (e.KeyValue > 95 && e.KeyValue < 106))
+                e.SuppressKeyPress = false;
+            else
+                e.SuppressKeyPress = true;
+        
+            // If the back space or delete
+            // key is pressed then allow.
+            if (e.KeyCode == Keys.Back || 
+                e.KeyCode == Keys.Delete || 
+                e.KeyCode == Keys.Left || 
+                e.KeyCode == Keys.Right)
+
+                e.SuppressKeyPress = false;
+        }
+        //float数字处理
+          /// <summary>
+        /// On key down event.
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+
+            // If the key pressed is a valid number
+            // then allow the key to be visible
+            // else do not display the key.
+            if ((e.KeyValue > 47 && e.KeyValue < 58) ||
+                (e.KeyValue > 95 && e.KeyValue < 106))
+                e.SuppressKeyPress = false;
+            else
+                e.SuppressKeyPress = true;
+
+            // If the back space or delete
+            // key is pressed then allow.
+            if (e.KeyCode == Keys.Back || 
+                e.KeyCode == Keys.Delete || 
+                e.KeyCode == Keys.OemPeriod || 
+                e.KeyCode == Keys.Left || 
+                e.KeyCode == Keys.Right || 
+                e.KeyCode == Keys.Decimal)
+
+                e.SuppressKeyPress = false;
+
+            // If the text contains one decimal point
+            // an the next key pressed is a decimal point
+            // the suppress the key stroke.
+            if ((this.Text.Count(o => o == '.') == 1) &&
+                (e.KeyCode == Keys.OemPeriod ||
+                 e.KeyCode == Keys.Decimal))
+
+                e.SuppressKeyPress = true;
+        }
+         */
         /// <summary>
         /// repostion SelectionStart, recalculate SelectedLength
         /// </summary>

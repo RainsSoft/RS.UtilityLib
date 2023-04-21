@@ -69,10 +69,31 @@
     <Compile Include="UI\ComboBoxColorPicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\GroupListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\HtmlRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ImageComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\ListViewExp.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\ListViewEx.cs" />
+    <Compile Include="UI\PictureSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PingClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PrintRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\RadioListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\ScrollPanel\CustomScrollbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
