@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
@@ -7,8 +8,20 @@ using System.Windows.Forms;
 
 namespace RS.UtilityLib.WinFormCommon.RibbonUI
 {
+    /// <summary>
+    /// treeview
+    /// </summary>
     public class RibbonTreeView : TreeView
     {
+        private bool IsDesignerHosted {
+            get {
+                if (DesignMode)
+                    return DesignMode;
+                if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+                    return true;
+                return Process.GetCurrentProcess().ProcessName == "devenv";
+            }
+        }
         private const int TV_FIRST = 0x1100;
         private const int TVM_EXPAND = TV_FIRST + 2;
         private const int TVM_INSERTITEMW = TV_FIRST + 50;
@@ -67,8 +80,8 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
         }
         private RibbonScrollbar m_VScroll;
         private RibbonScrollbar m_HScroll;
-        public RibbonTreeView() {
-
+        public RibbonTreeView():base() {
+            this.SuspendLayout();
             m_VScroll = new RibbonScrollbar();
             m_VScroll.Visible = true;
             m_VScroll.Scroll += new ScrollEventHandler(OnScroll);
@@ -77,9 +90,15 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
             m_HScroll.Orientation = ScrollOrientation.HorizontalScroll;
             m_HScroll.Visible = true;
             m_HScroll.Scroll += new ScrollEventHandler(OnScroll);
-
+            //
+            this.Controls.Add(m_VScroll);
+            this.Controls.Add(m_HScroll);
+          
+            //
             NativeAPI.ShowScrollBar(this.Handle, 0, false);
-            NativeAPI.ShowScrollBar(this.Handle, 1, false);
+            NativeAPI.ShowScrollBar(this.Handle, 1, false);  
+            //
+            this.ResumeLayout();
 
         }
 
@@ -117,6 +136,10 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
             m_HScroll.Height = 16;
             m_VScroll.Height = this.Height - m_HScroll.Height;
             m_HScroll.Width = this.Width - m_VScroll.Width;
+            if (this.IsDesignerHosted) {
+                m_VScroll.Location = new Point(this.Width - m_VScroll.Width - 1, 0);
+                m_HScroll.Location = new Point(0, this.Height - m_HScroll.Height - 1);
+            }
             //需要动态获取此类控件的LargeChange信息,通常是一整个ClientRect的量.
             Win32Native.SCROLLINFO lsi;
             if (Win32Native.GetScrollPos(this.Handle, 1, out lsi)) {
@@ -130,16 +153,24 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
             base.OnSizeChanged(e);
         }
         protected override void OnLocationChanged(EventArgs e) {
-            m_VScroll.Location = new Point(this.Left + this.Width - m_VScroll.Width - 1, this.Top);
-            m_HScroll.Location = new Point(this.Left, this.Top + this.Height - m_HScroll.Height - 1);
+            if (this.IsDesignerHosted) {
+                m_VScroll.Location = new Point( this.Width - m_VScroll.Width - 1, 0);
+                m_HScroll.Location = new Point(0, this.Height - m_HScroll.Height - 1);
+            }
+            else {
+                m_VScroll.Location = new Point(this.Left + this.Width - m_VScroll.Width - 1, this.Top);
+                m_HScroll.Location = new Point(this.Left, this.Top + this.Height - m_HScroll.Height - 1);
+            }
             base.OnLocationChanged(e);
         }
         protected override void OnParentChanged(EventArgs e) {
-            m_VScroll.Parent = this.Parent;
-            m_VScroll.BringToFront();
+            if (this.IsDesignerHosted==false) {
+                m_VScroll.Parent = this.Parent;
+                m_VScroll.BringToFront();
 
-            m_HScroll.Parent = this.Parent;
-            m_HScroll.BringToFront();
+                m_HScroll.Parent = this.Parent;
+                m_HScroll.BringToFront();
+            }
             base.OnParentChanged(e);
         }
         protected override void OnAfterExpand(TreeViewEventArgs e) {
@@ -188,15 +219,20 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
         }
 
         protected override void Dispose(bool disposing) {
-            if (m_VScroll != null && !m_VScroll.IsDisposed) {
-                m_VScroll.Scroll = null;
-                m_VScroll.Dispose();
-                m_VScroll = null;
+            try {
+                if (m_VScroll != null && !m_VScroll.IsDisposed) {
+                    m_VScroll.Scroll = null;
+                    m_VScroll.Dispose();
+                    m_VScroll = null;
+                }
+                if (m_HScroll != null && !m_HScroll.IsDisposed) {
+                    m_HScroll.Scroll = null;
+                    m_HScroll.Dispose();
+                    m_HScroll = null;
+                }
             }
-            if (m_HScroll != null && !m_HScroll.IsDisposed) {
-                m_HScroll.Scroll = null;
-                m_HScroll.Dispose();
-                m_HScroll = null;
+            catch { 
+            
             }
             base.Dispose(disposing);
         }
