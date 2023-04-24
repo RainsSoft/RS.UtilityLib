@@ -208,6 +208,95 @@
   <ItemGroup>
     <None Include="Resources\tempScrollBar.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\滚动条背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\large1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮选中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chilun_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chilun_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nofind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room_NoMission.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hall.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TaskbarNotifier_Close.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TaskbarNotifier_Back.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tooltip_room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\个人.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fileinfoback.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomback.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\官网.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\清空数据.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginchoose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suolue.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
