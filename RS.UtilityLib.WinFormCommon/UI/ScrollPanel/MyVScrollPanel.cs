@@ -38,8 +38,8 @@ namespace RS.UtilityLib.WinFormCommon.UI.ScrollPanel
             //this.m_ScorllPanel.MouseWheel += new MouseEventHandler(m_ScorllPanel_MouseWheel);
             this.m_ScorllPanel.SizeChanged += new EventHandler(m_ScorllPanel_SizeChanged);
             //
-            //this.GotFocus += IRQ_PanelScroll_GotFocus;
-            //this.m_ScorllPanel.GotFocus += IRQ_PanelScroll_GotFocus;
+            //this.GotFocus += PanelScroll_GotFocus;
+            //this.m_ScorllPanel.GotFocus += PanelScroll_GotFocus;
         }
 
         public override Color BackColor {

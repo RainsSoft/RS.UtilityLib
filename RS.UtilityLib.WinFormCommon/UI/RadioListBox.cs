@@ -9,7 +9,6 @@ namespace RS.UtilityLib.WinFormCommon.UI
 {
     public class RadioListBox : ListBox
     {
-
         private StringFormat Align;
         private bool IsTransparent = false;
         private Brush BackBrush;
@@ -120,6 +119,17 @@ namespace RS.UtilityLib.WinFormCommon.UI
             glyphLocation.Y += (e.Bounds.Height - glyphSize.Height) / 2;
 
             Rectangle bounds = new Rectangle(e.Bounds.X + glyphSize.Width, e.Bounds.Y, e.Bounds.Width - glyphSize.Width, e.Bounds.Height);
+            //增加绘制选择项目
+            if (state == RadioButtonState.CheckedHot || state == RadioButtonState.CheckedNormal || state == RadioButtonState.CheckedPressed) {
+                if (ProgressBarRenderer.IsSupported) {
+                    System.Windows.Forms.ProgressBarRenderer.DrawHorizontalBar(e.Graphics, bounds);
+                }
+                else {
+                    if (state == System.Windows.Forms.VisualStyles.RadioButtonState.CheckedHot || state == System.Windows.Forms.VisualStyles.RadioButtonState.CheckedNormal || state == System.Windows.Forms.VisualStyles.RadioButtonState.CheckedPressed) {
+                        e.Graphics.FillRectangle(System.Drawing.Brushes.Yellow, bounds);//背景色变化
+                    }
+                }
+            }
 
             // Draws the radio button
             RadioButtonRenderer.DrawRadioButton(e.Graphics, glyphLocation, state);
@@ -168,6 +178,5 @@ namespace RS.UtilityLib.WinFormCommon.UI
             // Force to change backcolor
             this.BackColor = this.BackColor;
         }
-
     }
 }
