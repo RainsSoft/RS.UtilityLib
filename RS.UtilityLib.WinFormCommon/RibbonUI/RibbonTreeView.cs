@@ -170,6 +170,9 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
 
                 m_HScroll.Parent = this.Parent;
                 m_HScroll.BringToFront();
+                //修改位置
+                m_VScroll.Location = new Point(this.Left + this.Width - m_VScroll.Width - 1, this.Top);
+                m_HScroll.Location = new Point(this.Left, this.Top + this.Height - m_HScroll.Height - 1);
             }
             base.OnParentChanged(e);
         }
