@@ -14,7 +14,7 @@ namespace RS.UtilityLib.WinFormCommon
         public FormUIControlTest() {
             InitializeComponent();
         
-            this.myScrollPanel1.AddControl(this.groupBox1,new Point(4,400));
+            this.myScrollPanel1.AddControl(this.pingClient1, new Point(4,400));
         }
         void initToolTipEx() {
             string tipImageBackPath = "Skin\\Res\\roomuserinfo.bmp";//

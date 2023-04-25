@@ -59,9 +59,9 @@ namespace RS.UtilityLib.WinFormCommon
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
+            this.radioListBox1 = new RS.UtilityLib.WinFormCommon.UI.RadioListBox();
             this.imageComboBox1 = new RS.UtilityLib.WinFormCommon.UI.ImageComboBox();
             this.pingClient1 = new RS.UtilityLib.WinFormCommon.UI.PingClient();
             this.printRichTextBox1 = new RS.UtilityLib.WinFormCommon.UI.PrintRichTextBox();
@@ -77,17 +77,13 @@ namespace RS.UtilityLib.WinFormCommon
             this.listViewEx1 = new RS.UtilityLib.WinFormCommon.UI.ListViewEx();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBoxNumEx1 = new RS.UtilityLib.WinFormCommon.UI.TextBoxNumEx();
             this.textBoxEx2 = new RS.UtilityLib.WinFormCommon.UI.TextBoxEx();
-            this.textBoxEx1 = new RS.UtilityLib.WinFormCommon.UI.TextBoxEx();
             this.waterMarkTextBox2 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.waterMarkTextBox1 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.toolTipEx1 = new RS.UtilityLib.WinFormCommon.UI.ToolTipEx(this.components);
-            this.radioListBox1 = new RS.UtilityLib.WinFormCommon.UI.RadioListBox();
             this.pictureSelector1 = new RS.UtilityLib.WinFormCommon.UI.PictureSelector();
             this.toolStripColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ToolStripColorPicker();
             this.toolStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSelector1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,26 +124,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(224, 115);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(58, 41);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(78, 16);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -156,6 +132,37 @@ namespace RS.UtilityLib.WinFormCommon
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 12;
             this.label1.Text = "label1";
+            // 
+            // degreePiePicture1
+            // 
+            this.degreePiePicture1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.degreePiePicture1.Degree = 0F;
+            this.degreePiePicture1.DegreeColor = System.Drawing.Color.Green;
+            this.degreePiePicture1.DegreeFont = new System.Drawing.Font("宋体", 10F);
+            this.degreePiePicture1.DegreeTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.degreePiePicture1.DegreeTextAlignVertical = RS.UtilityLib.WinFormCommon.UI.DegreePiePicture.VerticalAlignment.Center;
+            this.degreePiePicture1.FrontImage = null;
+            this.degreePiePicture1.Location = new System.Drawing.Point(894, 84);
+            this.degreePiePicture1.Name = "degreePiePicture1";
+            this.degreePiePicture1.ShowPie = true;
+            this.degreePiePicture1.ShowText = true;
+            this.degreePiePicture1.Size = new System.Drawing.Size(150, 150);
+            this.degreePiePicture1.TabIndex = 20;
+            // 
+            // radioListBox1
+            // 
+            this.radioListBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.radioListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.radioListBox1.FormattingEnabled = true;
+            this.radioListBox1.ItemHeight = 14;
+            this.radioListBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.radioListBox1.Location = new System.Drawing.Point(224, 523);
+            this.radioListBox1.Name = "radioListBox1";
+            this.radioListBox1.Size = new System.Drawing.Size(120, 88);
+            this.radioListBox1.TabIndex = 19;
             // 
             // imageComboBox1
             // 
@@ -249,8 +256,14 @@ namespace RS.UtilityLib.WinFormCommon
             "Color",
             "Color",
             "Color",
+            "Color",
+            "Color",
+            "Color",
+            "Color",
+            "Color",
+            "Color",
             "Color"});
-            this.comboBoxColorPicker1.Location = new System.Drawing.Point(314, 55);
+            this.comboBoxColorPicker1.Location = new System.Drawing.Point(170, 56);
             this.comboBoxColorPicker1.Name = "comboBoxColorPicker1";
             this.comboBoxColorPicker1.Size = new System.Drawing.Size(90, 22);
             this.comboBoxColorPicker1.TabIndex = 8;
@@ -311,29 +324,11 @@ namespace RS.UtilityLib.WinFormCommon
             this.listViewEx1.UseCompatibleStateImageBehavior = false;
             this.listViewEx1.View = System.Windows.Forms.View.Details;
             // 
-            // textBoxNumEx1
-            // 
-            this.textBoxNumEx1.BorderColor = System.Drawing.Color.LightSeaGreen;
-            this.textBoxNumEx1.DecimalLength = 1;
-            this.textBoxNumEx1.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.textBoxNumEx1.Location = new System.Drawing.Point(48, 129);
-            this.textBoxNumEx1.Name = "textBoxNumEx1";
-            this.textBoxNumEx1.ShowSpaces = true;
-            this.textBoxNumEx1.ShowTabs = true;
-            this.textBoxNumEx1.Size = new System.Drawing.Size(100, 23);
-            this.textBoxNumEx1.SpaceKeyColor = System.Drawing.Color.Red;
-            this.textBoxNumEx1.TabIndex = 4;
-            this.textBoxNumEx1.Text = "23.0";
-            this.textBoxNumEx1.WaterMarkText = "请输入...";
-            this.textBoxNumEx1.WaterMarkTextFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Italic);
-            this.textBoxNumEx1.WaterMarkTextOffsetX = 4F;
-            this.textBoxNumEx1.WaterMarkTextOffsetY = 4F;
-            // 
             // textBoxEx2
             // 
             this.textBoxEx2.BorderColor = System.Drawing.Color.LightSeaGreen;
             this.textBoxEx2.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.textBoxEx2.Location = new System.Drawing.Point(184, 86);
+            this.textBoxEx2.Location = new System.Drawing.Point(48, 111);
             this.textBoxEx2.Name = "textBoxEx2";
             this.textBoxEx2.ShowSpaces = true;
             this.textBoxEx2.ShowTabs = true;
@@ -345,23 +340,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.textBoxEx2.WaterMarkTextFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Italic);
             this.textBoxEx2.WaterMarkTextOffsetX = 4F;
             this.textBoxEx2.WaterMarkTextOffsetY = 4F;
-            // 
-            // textBoxEx1
-            // 
-            this.textBoxEx1.BorderColor = System.Drawing.Color.LightSeaGreen;
-            this.textBoxEx1.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.textBoxEx1.Location = new System.Drawing.Point(184, 56);
-            this.textBoxEx1.Name = "textBoxEx1";
-            this.textBoxEx1.ShowSpaces = true;
-            this.textBoxEx1.ShowTabs = true;
-            this.textBoxEx1.Size = new System.Drawing.Size(100, 23);
-            this.textBoxEx1.SpaceKeyColor = System.Drawing.Color.Red;
-            this.textBoxEx1.TabIndex = 2;
-            this.textBoxEx1.Text = "sdf aa";
-            this.textBoxEx1.WaterMarkText = "请输入...";
-            this.textBoxEx1.WaterMarkTextFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Italic);
-            this.textBoxEx1.WaterMarkTextOffsetX = 4F;
-            this.textBoxEx1.WaterMarkTextOffsetY = 4F;
             // 
             // waterMarkTextBox2
             // 
@@ -396,21 +374,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.toolTipEx1.TipTxtOffset = new System.Drawing.Point(0, 0);
             this.toolTipEx1.TitleTxtOffset = new System.Drawing.Point(0, 0);
             // 
-            // radioListBox1
-            // 
-            this.radioListBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.radioListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.radioListBox1.FormattingEnabled = true;
-            this.radioListBox1.ItemHeight = 14;
-            this.radioListBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.radioListBox1.Location = new System.Drawing.Point(224, 523);
-            this.radioListBox1.Name = "radioListBox1";
-            this.radioListBox1.Size = new System.Drawing.Size(120, 88);
-            this.radioListBox1.TabIndex = 19;
-            // 
             // pictureSelector1
             // 
             this.pictureSelector1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -422,7 +385,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.pictureSelector1.DefaultRect = new System.Drawing.Rectangle(0, 0, 32, 32);
             this.pictureSelector1.EffectImage = global::RS.UtilityLib.WinFormCommon.Properties.Resources.PanelScrollBar;
             this.pictureSelector1.HoverMaskRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.pictureSelector1.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.suolue;
+            this.pictureSelector1.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.官方;
             this.pictureSelector1.Location = new System.Drawing.Point(48, 501);
             this.pictureSelector1.Name = "pictureSelector1";
             this.pictureSelector1.Size = new System.Drawing.Size(161, 128);
@@ -447,6 +410,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1113, 657);
+            this.Controls.Add(this.degreePiePicture1);
             this.Controls.Add(this.radioListBox1);
             this.Controls.Add(this.pictureSelector1);
             this.Controls.Add(this.imageComboBox1);
@@ -456,16 +420,13 @@ namespace RS.UtilityLib.WinFormCommon
             this.Controls.Add(this.groupListView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.myScrollPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.comboBoxColorPicker1);
             this.Controls.Add(this.listViewEx21);
             this.Controls.Add(this.listViewEx1);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.textBoxNumEx1);
             this.Controls.Add(this.textBoxEx2);
-            this.Controls.Add(this.textBoxEx1);
             this.Controls.Add(this.waterMarkTextBox2);
             this.Controls.Add(this.waterMarkTextBox1);
             this.Name = "FormUIControlTest";
@@ -473,8 +434,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.Load += new System.EventHandler(this.FormUIControlTest_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSelector1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -485,9 +444,7 @@ namespace RS.UtilityLib.WinFormCommon
 
         private UI.WaterMarkTextBox waterMarkTextBox1;
         private UI.WaterMarkTextBox waterMarkTextBox2;
-        private UI.TextBoxEx textBoxEx1;
         private UI.TextBoxEx textBoxEx2;
-        private UI.TextBoxNumEx textBoxNumEx1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -504,8 +461,6 @@ namespace RS.UtilityLib.WinFormCommon
         private UI.ToolTipEx toolTipEx1;
         private UI.ScrollPanel.MyVScrollPanel myScrollPanel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
         private UI.GroupListView groupListView1;
         private System.Windows.Forms.ColumnHeader columnHeader8;
@@ -515,5 +470,6 @@ namespace RS.UtilityLib.WinFormCommon
         private UI.ImageComboBox imageComboBox1;
         private UI.PictureSelector pictureSelector1;
         private UI.RadioListBox radioListBox1;
+        private UI.DegreePiePicture degreePiePicture1;
     }
 }
