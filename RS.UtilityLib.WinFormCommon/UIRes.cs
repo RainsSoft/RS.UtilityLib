@@ -4,9 +4,9 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 
-namespace RS.UtilityLib.WinFormCommon.RibbonUI
+namespace RS.UtilityLib.WinFormCommon
 {
-    public static class RibbonUIRes
+    public static class UIRes
     {
         static IResAccess m_resAccess=new UIResAccess();
         public static void Init(IResAccess resAccess) {

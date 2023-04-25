@@ -42,6 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FastBitmap.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="PinyinHelper.cs" />
     <Compile Include="ContorlSafeCallHelper.cs" />
     <Compile Include="FormUIControlTest.cs">
@@ -60,7 +67,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RibbonUI\ControlAnimation.cs" />
-    <Compile Include="RibbonUI\RibbonUIRes.cs" />
+    <Compile Include="UIRes.cs" />
     <Compile Include="RibbonUI\NativeAPI.cs" />
     <Compile Include="RibbonUI\RibbonButton.cs">
       <SubType>Component</SubType>
@@ -124,6 +131,9 @@
     <Compile Include="UI\ComboBoxColorPicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\DegreePiePicture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\GroupListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -132,6 +142,9 @@
     </Compile>
     <Compile Include="UI\ImageComboBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\LineEditor.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\ListViewExp.cs">
       <SubType>Component</SubType>
@@ -158,6 +171,7 @@
     <Compile Include="UI\ScrollPanel\MyVScrollPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ShineControlHelper.cs" />
     <Compile Include="UI\TextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -179,6 +193,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUIControlTest.resx">
       <DependentUpon>FormUIControlTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +314,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\suolue.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UIRender\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\region-circle32x32-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\region-circle32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\region-circle32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sprite-zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sprite-zoomin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sprite-zoomreset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug-red32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug-green32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle-expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandDown_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magnifier - Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data-Collapse-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shine1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\官方.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

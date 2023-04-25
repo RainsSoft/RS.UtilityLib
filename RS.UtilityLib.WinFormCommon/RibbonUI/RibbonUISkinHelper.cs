@@ -150,7 +150,7 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
             //}
             //else {
             try {
-                Image img = RibbonUIRes.GetImage(pathImgName);
+                Image img = UIRes.GetImage(pathImgName);
                 //Image ret = Clone((Bitmap)img, PixelFormat.Format32bppPArgb); //new Bitmap(img);
                 Image ret = new Bitmap(img);
                 img.Dispose();
