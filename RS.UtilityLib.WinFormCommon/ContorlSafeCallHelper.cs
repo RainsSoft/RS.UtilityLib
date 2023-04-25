@@ -11,6 +11,49 @@ namespace RS.UtilityLib.WinFormCommon
 
         #region 跨线程访问控件辅助方法
         /// <summary>
+        /// 非安全模式执行 修改控件属性
+        /// 前提需要设置  System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls=false;
+        /// 先检查contrl c是否创建并没有销毁 然后执行action ac对contrl c的属性直接修改
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="ac"></param>
+        public static void UnSafeAction(this Control c, Action ac) {
+            if (CheckHasCreatedControl(c) == false) {               
+                return;
+            }
+            try {
+                ac();
+            }
+            catch (Exception ee) {
+                System.Diagnostics.Debug.Assert(true, "UnSafeAction-action()错误");
+                Debug.WriteLine("UnSafeAction: 执行action()异常" + ee.ToString());
+            }
+
+        }
+        /// <summary>
+        /// 非安全模式执行 获取控件属性
+        /// 前提需要设置  System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls=false;
+        /// 先检查contrl c是否创建并没有销毁 然后执行获取Func func对contrl c的属性对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="c"></param>
+        /// <param name="func"></param>
+        /// <param name="_default"></param>
+        /// <returns></returns>
+        public static T UnSafeFunc<T>(this Control c, Func<T> func, T _default) {
+            if (CheckHasCreatedControl(c)) {
+                try {
+                    var TR = func();
+                    return TR;
+                }
+                catch (Exception ee) {
+                    System.Diagnostics.Debug.Assert(true, "SafeFunc<T>-action()错误");
+                    Debug.WriteLine("SafeFunc<T>: 执行func()异常" + ee.ToString());
+                }
+            }
+            return _default;//default(T);
+        }
+        /// <summary>
         /// 安全读写Control属性
         /// </summary>
         /// <param name="c"></param>
