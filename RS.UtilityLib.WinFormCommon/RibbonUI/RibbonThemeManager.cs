@@ -8,8 +8,8 @@ using System.Windows.Forms;
 namespace RS.UtilityLib.WinFormCommon.RibbonUI
 {
     //class RibbonThemeManager
-    
-    
+
+
     /// <summary>
     /// 管理Theme的公共资源
     /// </summary>
@@ -25,6 +25,23 @@ namespace RS.UtilityLib.WinFormCommon.RibbonUI
         //    }
         //}
         static RibbonThemeManager() {
+            if (ImageAttr == null) {
+                // AlphaBlend an image, alpha [0.01,1]
+                float alpha = 0.9f;
+                if (alpha > 1f)
+                    alpha = 1f;
+                else if (alpha < 0.01f)
+                    alpha = 0.01f;
+                using (ImageAttributes ia = new ImageAttributes()) {
+                    ColorMatrix cm = new ColorMatrix();
+                    cm.Matrix00 = 1f;
+                    cm.Matrix11 = 1f;
+                    cm.Matrix22 = 1f;
+                    cm.Matrix44 = 1f;
+                    cm.Matrix33 = alpha;
+                    ia.SetColorMatrix(cm);
+                }
+            }
             if (DisableImageAttr == null) {
                 float[][] newColorMatrix = new float[5][];
                 //newColorMatrix[0] = new float[] { 0.2125f, 0.2125f, 0.2125f, 0f, 0f };
