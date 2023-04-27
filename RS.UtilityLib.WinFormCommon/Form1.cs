@@ -27,6 +27,7 @@ namespace RS.UtilityLib.WinFormCommon
 
         private void Form1_Load(object sender, EventArgs e) {
             this.lV_ModelList.Hint = new RibbonHintWindowMemo();
+            this.lV_ModelList.Hint.ShowTipEvent += Hint_ShowTipEvent;
             this.lV_ModelList.BeginUpdate();
             for (int i = 0; i < 32; i++) {
                 RibbonListViewItem li = new RibbonListViewItem();
@@ -37,6 +38,18 @@ namespace RS.UtilityLib.WinFormCommon
                 this.lV_ModelList.AddItem(li);
             }
             this.lV_ModelList.EndUpdate();
+        }
+
+        private void Hint_ShowTipEvent() {
+            if (this.lV_ModelList.HoverItem == null) {
+                return;
+            }
+            var mi = this.lV_ModelList.HoverItem;
+            if (mi != null) {
+                //目前只显示名称和说明,其中,说明在Hint内部做了额外的处理
+                (this.lV_ModelList.Hint as RibbonHintWindowMemo).SetHint(mi);
+            }
+
         }
     }
 }

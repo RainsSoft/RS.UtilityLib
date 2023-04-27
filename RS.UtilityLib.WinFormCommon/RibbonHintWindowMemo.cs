@@ -213,30 +213,30 @@ namespace RS.UtilityLib.WinFormCommon
             }
             //this.BackgroundImage.Save("memo.bmp");
         }
-        /*
-        public void SetHint(ModelInfo model) {
-            Image memoImage = null;
-            if (!string.IsNullOrEmpty(model.ModelLargeImage)) {
-                memoImage = RibbonUISkinHelper.GetPathImage(model.ModelLargeImage);
-                if (memoImage == null) {
-                    memoImage = RibbonUISkinHelper.GetPathImage("skin\\res\\nofind_large.png");
-                }
-            }
-            if (this.pb_Thumbnail.BackgroundImage != null) {
-                this.pb_Thumbnail.BackgroundImage.Dispose();
-            }
-            this.pb_Thumbnail.BackgroundImage = memoImage;
-            m_lblName.Text = model.FlagName;
-            if (model.Memo.Contains("#")) {
-                string[] s = model.Memo.Split('#');
-                m_lblVer.Text = s[0];
-                m_lblMemo.Text = s[1];
-            }
-            else {
-                m_lblVer.Text = "";
-                m_lblMemo.Text = model.Memo;
-            }
+        
+        public void SetHint(RibbonListViewItem model) {
+            //Image memoImage = null;
+            //if (!string.IsNullOrEmpty(model.ModelLargeImage)) {
+            //    memoImage = RibbonUISkinHelper.GetPathImage(model.ModelLargeImage);
+            //    if (memoImage == null) {
+            //        memoImage = RibbonUISkinHelper.GetPathImage("skin\\res\\nofind_large.png");
+            //    }
+            //}
+            //if (this.pb_Thumbnail.BackgroundImage != null) {
+            //    this.pb_Thumbnail.BackgroundImage.Dispose();
+            //}
+            //this.pb_Thumbnail.BackgroundImage = memoImage;
+            m_lblName.Text = model.Text;
+            //if (model.Memo.Contains("#")) {
+            //    string[] s = model.Memo.Split('#');
+            //    m_lblVer.Text = s[0];
+            //    m_lblMemo.Text = s[1];
+            //}
+            //else {
+            //    m_lblVer.Text = "";
+            //    m_lblMemo.Text = model.Memo;
+            //}
         }
-        */
+        
     }
 }
