@@ -123,6 +123,16 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap ExpandDown_32 {
             get {
                 object obj = ResourceManager.GetObject("ExpandDown_32", resourceCulture);
@@ -173,6 +183,26 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap htmlmsgbox {
+            get {
+                object obj = ResourceManager.GetObject("htmlmsgbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap htmlmsgbox_small {
+            get {
+                object obj = ResourceManager.GetObject("htmlmsgbox_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap large {
             get {
                 object obj = ResourceManager.GetObject("large", resourceCulture);
@@ -196,6 +226,16 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         internal static System.Drawing.Bitmap list {
             get {
                 object obj = ResourceManager.GetObject("list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap listback3 {
+            get {
+                object obj = ResourceManager.GetObject("listback3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +276,26 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         internal static System.Drawing.Bitmap Magnifier___Plus {
             get {
                 object obj = ResourceManager.GetObject("Magnifier - Plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap memo {
+            get {
+                object obj = ResourceManager.GetObject("memo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap modellistback {
+            get {
+                object obj = ResourceManager.GetObject("modellistback", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -416,6 +476,16 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         internal static System.Drawing.Bitmap sprite_zoomreset {
             get {
                 object obj = ResourceManager.GetObject("sprite-zoomreset", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap st_listback4 {
+            get {
+                object obj = ResourceManager.GetObject("st_listback4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

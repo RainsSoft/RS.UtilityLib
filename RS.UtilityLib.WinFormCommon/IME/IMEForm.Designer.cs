@@ -31,6 +31,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
             // 
             // imeControl1
             // 
+            this.imeControl1.BackColor = System.Drawing.Color.White;
             this.imeControl1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.imeControl1.Location = new System.Drawing.Point(188, 129);
             this.imeControl1.Name = "imeControl1";

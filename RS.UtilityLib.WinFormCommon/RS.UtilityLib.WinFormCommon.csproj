@@ -55,6 +55,12 @@
     <Compile Include="IME\IMEInputKeyHelper.cs" />
     <Compile Include="IME\ImmExtensions.cs" />
     <Compile Include="IME\NativeIME.cs" />
+    <Compile Include="RibbonHintWindowMemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RibbonUI\RibbonTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TextRender\TextGlowRender.cs" />
     <Compile Include="TextRender\TextShadowRender.cs" />
     <Compile Include="FastBitmap.cs" />
@@ -223,6 +229,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RibbonHintWindowMemo.resx">
+      <DependentUpon>RibbonHintWindowMemo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ContextMenuForm.resx">
       <DependentUpon>ContextMenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,7 +344,9 @@
   <ItemGroup>
     <None Include="Resources\suolue.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\region-circle32x32-2.png" />
   </ItemGroup>
@@ -383,6 +394,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\官方.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htmlmsgbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htmlmsgbox_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listback3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modellistback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\st_listback4.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

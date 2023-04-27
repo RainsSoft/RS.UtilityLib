@@ -1,4 +1,6 @@
 ﻿
+
+
 namespace RS.UtilityLib.WinFormCommon
 {
     partial class Form1
@@ -27,11 +29,11 @@ namespace RS.UtilityLib.WinFormCommon
         /// </summary>
         private void InitializeComponent() {
             this.button1 = new System.Windows.Forms.Button();
-            this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
-            this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
-            this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
-            this.ribbonSysListView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonSysListView();
             this.button2 = new System.Windows.Forms.Button();
+            this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
+            this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
+            this.lV_ModelList = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonListView();
+            this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
             this.SuspendLayout();
             // 
             // button1
@@ -43,6 +45,16 @@ namespace RS.UtilityLib.WinFormCommon
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(255, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lineEditor1
             // 
@@ -57,6 +69,58 @@ namespace RS.UtilityLib.WinFormCommon
             this.lineEditor1.Size = new System.Drawing.Size(100, 50);
             this.lineEditor1.TabIndex = 3;
             this.lineEditor1.YScroll = 0;
+            // 
+            // ribbonTreeView1
+            // 
+            this.ribbonTreeView1.Location = new System.Drawing.Point(255, 50);
+            this.ribbonTreeView1.Name = "ribbonTreeView1";
+            this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
+            this.ribbonTreeView1.TabIndex = 1;
+            // 
+            // lV_ModelList
+            // 
+            this.lV_ModelList.BackgroundImage = global::RS.UtilityLib.WinFormCommon.Properties.Resources.listback3;
+            this.lV_ModelList.ColorEnd = System.Drawing.Color.Transparent;
+            this.lV_ModelList.ColorFactor = 0.4F;
+            this.lV_ModelList.ColorLinearAngle = 90F;
+            this.lV_ModelList.ColorStart = System.Drawing.SystemColors.Control;
+            this.lV_ModelList.ColorUserSet = false;
+            this.lV_ModelList.ColumnCount = 4;
+            this.lV_ModelList.ColumnSp = 4;
+            this.lV_ModelList.CurPosition = new System.Drawing.Point(0, 0);
+            this.lV_ModelList.DockFlag = 0;
+            this.lV_ModelList.FixHintPostion = true;
+            this.lV_ModelList.Hint = null;
+            this.lV_ModelList.HintType = RS.UtilityLib.WinFormCommon.RibbonUI.RibbonListView.ShowHintType.OnlyEnableItem;
+            this.lV_ModelList.HoverItem = null;
+            this.lV_ModelList.ImageLayout = 0;
+            this.lV_ModelList.ImageList = null;
+            this.lV_ModelList.ImagePath = null;
+            this.lV_ModelList.ImageShowFormat = System.Windows.Forms.ImageLayout.Zoom;
+            this.lV_ModelList.ImageSize = new System.Drawing.Point(48, 48);
+            this.lV_ModelList.IsDrawBoard = false;
+            this.lV_ModelList.IsShowHover = true;
+            this.lV_ModelList.IsShowItemText = false;
+            this.lV_ModelList.IsShowToolTip = false;
+            this.lV_ModelList.IsToLagerHoverItem = true;
+            this.lV_ModelList.ItemAutoSize = false;
+            this.lV_ModelList.ItemBoard = null;
+            this.lV_ModelList.LevelTab = 12;
+            this.lV_ModelList.Location = new System.Drawing.Point(12, 12);
+            this.lV_ModelList.MulitSelect = false;
+            this.lV_ModelList.Name = "lV_ModelList";
+            this.lV_ModelList.RectDisable = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lV_ModelList.RectDown = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lV_ModelList.RectHover = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lV_ModelList.RectNormal = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lV_ModelList.RibbonImageLayout = RS.UtilityLib.WinFormCommon.RibbonUI.RibbonImageLayout.Table;
+            this.lV_ModelList.RowHeight = 48;
+            this.lV_ModelList.RowSp = 4;
+            this.lV_ModelList.SelectedMask = null;
+            this.lV_ModelList.SetFlag = 0;
+            this.lV_ModelList.Size = new System.Drawing.Size(232, 496);
+            this.lV_ModelList.TabIndex = 4;
+            this.lV_ModelList.ZOrder = 0;
             // 
             // degreePiePicture1
             // 
@@ -75,44 +139,17 @@ namespace RS.UtilityLib.WinFormCommon
             this.degreePiePicture1.Size = new System.Drawing.Size(150, 150);
             this.degreePiePicture1.TabIndex = 2;
             // 
-            // ribbonTreeView1
-            // 
-            this.ribbonTreeView1.Location = new System.Drawing.Point(255, 50);
-            this.ribbonTreeView1.Name = "ribbonTreeView1";
-            this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
-            this.ribbonTreeView1.TabIndex = 1;
-            // 
-            // ribbonSysListView1
-            // 
-            this.ribbonSysListView1.HideSelection = false;
-            this.ribbonSysListView1.Location = new System.Drawing.Point(26, 50);
-            this.ribbonSysListView1.Name = "ribbonSysListView1";
-            this.ribbonSysListView1.Size = new System.Drawing.Size(207, 249);
-            this.ribbonSysListView1.TabIndex = 0;
-            this.ribbonSysListView1.UseCompatibleStateImageBehavior = false;
-            this.ribbonSysListView1.View = System.Windows.Forms.View.Details;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(255, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.lV_ModelList);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lineEditor1);
             this.Controls.Add(this.degreePiePicture1);
             this.Controls.Add(this.ribbonTreeView1);
-            this.Controls.Add(this.ribbonSysListView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -120,12 +157,11 @@ namespace RS.UtilityLib.WinFormCommon
         }
 
         #endregion
-
-        private RibbonUI.RibbonSysListView ribbonSysListView1;
         private RibbonUI.RibbonTreeView ribbonTreeView1;
         private UI.DegreePiePicture degreePiePicture1;
         private UI.LineEditor lineEditor1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private RibbonUI.RibbonListView lV_ModelList;
     }
 }
