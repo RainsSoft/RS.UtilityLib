@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RS.UtilityLib.WinFormCommon.IME;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,11 @@ namespace RS.UtilityLib.WinFormCommon
 
         private void button1_Click(object sender, EventArgs e) {
             ShineControlHelper.Show(this.degreePiePicture1,3);
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            IMEForm imeForm = new IMEForm();
+            imeForm.Show();
         }
     }
 }

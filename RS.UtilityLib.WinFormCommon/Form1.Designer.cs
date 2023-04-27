@@ -26,29 +26,23 @@ namespace RS.UtilityLib.WinFormCommon
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.ribbonSysListView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonSysListView();
-            this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
+            this.button1 = new System.Windows.Forms.Button();
             this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
+            this.ribbonSysListView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonSysListView();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // ribbonSysListView1
+            // button1
             // 
-            this.ribbonSysListView1.HideSelection = false;
-            this.ribbonSysListView1.Location = new System.Drawing.Point(26, 50);
-            this.ribbonSysListView1.Name = "ribbonSysListView1";
-            this.ribbonSysListView1.Size = new System.Drawing.Size(207, 249);
-            this.ribbonSysListView1.TabIndex = 0;
-            this.ribbonSysListView1.UseCompatibleStateImageBehavior = false;
-            this.ribbonSysListView1.View = System.Windows.Forms.View.Details;
-            // 
-            // ribbonTreeView1
-            // 
-            this.ribbonTreeView1.Location = new System.Drawing.Point(255, 50);
-            this.ribbonTreeView1.Name = "ribbonTreeView1";
-            this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
-            this.ribbonTreeView1.TabIndex = 1;
+            this.button1.Location = new System.Drawing.Point(565, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lineEditor1
             // 
@@ -81,21 +75,39 @@ namespace RS.UtilityLib.WinFormCommon
             this.degreePiePicture1.Size = new System.Drawing.Size(150, 150);
             this.degreePiePicture1.TabIndex = 2;
             // 
-            // button1
+            // ribbonTreeView1
             // 
-            this.button1.Location = new System.Drawing.Point(520, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ribbonTreeView1.Location = new System.Drawing.Point(255, 50);
+            this.ribbonTreeView1.Name = "ribbonTreeView1";
+            this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
+            this.ribbonTreeView1.TabIndex = 1;
+            // 
+            // ribbonSysListView1
+            // 
+            this.ribbonSysListView1.HideSelection = false;
+            this.ribbonSysListView1.Location = new System.Drawing.Point(26, 50);
+            this.ribbonSysListView1.Name = "ribbonSysListView1";
+            this.ribbonSysListView1.Size = new System.Drawing.Size(207, 249);
+            this.ribbonSysListView1.TabIndex = 0;
+            this.ribbonSysListView1.UseCompatibleStateImageBehavior = false;
+            this.ribbonSysListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(255, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lineEditor1);
             this.Controls.Add(this.degreePiePicture1);
@@ -114,5 +126,6 @@ namespace RS.UtilityLib.WinFormCommon
         private UI.DegreePiePicture degreePiePicture1;
         private UI.LineEditor lineEditor1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

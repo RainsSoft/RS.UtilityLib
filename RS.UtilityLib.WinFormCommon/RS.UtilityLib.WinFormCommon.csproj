@@ -42,6 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IME\IIMEControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IME\IMEForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IME\IMEForm.Designer.cs">
+      <DependentUpon>IMEForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IME\IMEHandler.cs" />
+    <Compile Include="IME\ImmExtensions.cs" />
+    <Compile Include="IME\NativeIME.cs" />
+    <Compile Include="TextRender\TextGlowRender.cs" />
+    <Compile Include="TextRender\TextShadowRender.cs" />
     <Compile Include="FastBitmap.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -67,6 +81,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RibbonUI\ControlAnimation.cs" />
+    <Compile Include="RibbonUI\RibbonUIDrawHelper.cs" />
+    <Compile Include="TextRender\TextRendererEasy.cs" />
     <Compile Include="UIRes.cs" />
     <Compile Include="RibbonUI\NativeAPI.cs" />
     <Compile Include="RibbonUI\RibbonButton.cs">
@@ -199,6 +215,9 @@
     <EmbeddedResource Include="FormUIControlTest.resx">
       <DependentUpon>FormUIControlTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IME\IMEForm.resx">
+      <DependentUpon>IMEForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -315,9 +334,7 @@
   <ItemGroup>
     <None Include="Resources\suolue.bmp" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UIRender\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\region-circle32x32-2.png" />
   </ItemGroup>
