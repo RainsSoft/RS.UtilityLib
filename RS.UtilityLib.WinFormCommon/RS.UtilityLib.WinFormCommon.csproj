@@ -52,6 +52,7 @@
       <DependentUpon>IMEForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IME\IMEHandler.cs" />
+    <Compile Include="IME\IMEInputKeyHelper.cs" />
     <Compile Include="IME\ImmExtensions.cs" />
     <Compile Include="IME\NativeIME.cs" />
     <Compile Include="TextRender\TextGlowRender.cs" />

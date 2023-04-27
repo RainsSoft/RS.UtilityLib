@@ -309,6 +309,52 @@ namespace RS.UtilityLib.WinFormCommon.IME
                     );
             }
         }
+
+        #region
+        /*
+        protected override void OnMouseDown(MouseEventArgs e) {
+            base.OnMouseDown(e);
+            int x = getMatchGUIX(e.X, m_renderWnd, m_RenderCtl);
+            int y = getMatchGUIY(e.Y, m_renderWnd, m_RenderCtl);
+            InputManager.Instance.InjectMousePress(
+               x,
+               y,
+               IMEInputKeyHelper.MouseFlagToMouseButton(e.Button));
+        }
+        protected override void OnMouseUp(MouseEventArgs e) {
+            base.OnMouseUp(e);
+            int x = getMatchGUIX(e.X, m_renderWnd, m_RenderCtl);
+            int y = getMatchGUIY(e.Y, m_renderWnd, m_RenderCtl);
+            InputManager.Instance.InjectMouseRelease(
+                x,
+                y,
+                IMEInputKeyHelper.MouseFlagToMouseButton(e.Button));
+        }
+        private static IntPoint m_MouseInRenderPos = new IntPoint();
+        private static int getMatchGUIX(int oisX, Mogre.RenderWindow window, System.Windows.Forms.Control renderCtl) {
+            int matchWidth = (int)(((float)(oisX * window.Width)) / (float)renderCtl.Width);
+            m_MouseInRenderPos.left = matchWidth;
+            return matchWidth;
+        }
+        private static int getMatchGUIY(int oisY, Mogre.RenderWindow window, System.Windows.Forms.Control renderCtl) {
+            int matchHeight = (int)(((float)(oisY * window.Height)) / (float)renderCtl.Height);
+            m_MouseInRenderPos.top = matchHeight;
+            return matchHeight;
+        }
+        protected override void OnKeyDown(KeyEventArgs e) {
+            base.OnKeyDown(e);
+            InputManager.Instance.InjectKeyPress(
+                      IMEInputKeyHelper.VirtualKeyToScanCode(e.KeyCode),
+                      IMEInputKeyHelper.VirtualKeyToChar(e.KeyCode));
+        }
+        protected override void OnKeyUp(KeyEventArgs e) {
+            base.OnKeyUp(e);
+            InputManager.Instance.InjectKeyRelease(
+              IMEInputKeyHelper.VirtualKeyToScanCode(e.KeyCode));
+        }
+        */
+        #endregion
+
     }
 
 }
