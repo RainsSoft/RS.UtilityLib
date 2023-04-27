@@ -58,6 +58,7 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
             if(disposed)
                 return;
             if(disposing) {
+                RemoveScrollBars();
                 control = null;
                 vScrollBar.Dispose();
                 hScrollBar.Dispose();
@@ -71,14 +72,14 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
         /// </summary>
         protected virtual void InitScrollBars() {
             vScrollBar = new ScrollBarEx();
-            vScrollBar.Width = SystemInformation.VerticalScrollBarWidth; // Already scaled.
+            vScrollBar.Width = SystemInformation.VerticalScrollBarWidth+2; // Already scaled.
             // Should be odd for nice and crisp arrow points.
             if(vScrollBar.Width % 2 == 0)
                 ++vScrollBar.Width;
             vScrollBar.Orientation = ScrollBarOrientation.Vertical;
             vScrollBar.ContextMenuStrip.Renderer = new DockPanelStripRenderer();
             hScrollBar = new ScrollBarEx();
-            hScrollBar.Height = SystemInformation.HorizontalScrollBarHeight; // Already scaled.
+            hScrollBar.Height = SystemInformation.HorizontalScrollBarHeight+2; // Already scaled.
             // Should be odd for nice and crisp arrow points.
             if(hScrollBar.Height % 2 == 0)
                 ++hScrollBar.Width;
@@ -142,6 +143,9 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
             //hScrollBar.ActiveArrowColor = PluginBase.MainForm.GetThemeColor("ScrollBar.ActiveArrowColor", hScrollBar.ActiveForeColor);
             //hScrollBar.HotForeColor = PluginBase.MainForm.GetThemeColor("ScrollBar.HotForeColor", hScrollBar.ForeColor);
             //scrollerCorner.BackColor = PluginBase.MainForm.GetThemeColor("ScrollBar.BackColor", vScrollBar.BackColor);
+#if DEBUG
+            scrollerCorner.BackColor = Color.Red;
+#endif
         }
 
         /// <summary>
@@ -312,6 +316,11 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
         public RichTextBoxScroller(RichTextBox view) : base(view) {
             textBox = view;
             InitScrollBars();
+            textBox.TextChanged += TextBox_TextChanged;
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e) {
+            this.UpdateScrollState();
         }
 
         /// <summary>
@@ -321,6 +330,7 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
             if(disposed)
                 return;
             if(disposing) {
+                textBox.TextChanged -= TextBox_TextChanged;
                 textBox = null;
             }
             disposed = true;

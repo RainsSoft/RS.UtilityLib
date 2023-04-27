@@ -76,10 +76,10 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
             this.label2 = new System.Windows.Forms.Label();
             this.sysVScrollBar = new System.Windows.Forms.VScrollBar();
             this.sysHScrollBar = new System.Windows.Forms.HScrollBar();
-            this.hMyScrollBar = new RS.UtilityLib.WinFormCommon.UI.MyScrollBar.ScrollBarSimple();
-            this.vMyScrollBar = new RS.UtilityLib.WinFormCommon.UI.MyScrollBar.ScrollBarSimple();
             this.fctb = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.hMyScrollBar = new RS.UtilityLib.WinFormCommon.UI.MyScrollBar.ScrollBarSimple();
+            this.vMyScrollBar = new RS.UtilityLib.WinFormCommon.UI.MyScrollBar.ScrollBarSimple();
             this.SuspendLayout();
             // 
             // label2
@@ -107,6 +107,26 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
             this.sysHScrollBar.Size = new System.Drawing.Size(387, 17);
             this.sysHScrollBar.TabIndex = 9;
             this.sysHScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBar_Scroll);
+            // 
+            // fctb
+            // 
+            this.fctb.BackColor = System.Drawing.Color.Gold;
+            this.fctb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fctb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fctb.Font = new System.Drawing.Font("Consolas", 9.75F);
+            this.fctb.Location = new System.Drawing.Point(41, 57);
+            this.fctb.Name = "fctb";
+            this.fctb.Size = new System.Drawing.Size(326, 222);
+            this.fctb.TabIndex = 3;
+            this.fctb.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(498, 59);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(257, 248);
+            this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.Text = "";
             // 
             // hMyScrollBar
             // 
@@ -143,26 +163,6 @@ namespace RS.UtilityLib.WinFormCommon.UI.MyScrollBar
             this.vMyScrollBar.ThumbSize = 10;
             this.vMyScrollBar.Value = 0;
             this.vMyScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBar_Scroll);
-            // 
-            // fctb
-            // 
-            this.fctb.BackColor = System.Drawing.Color.Gold;
-            this.fctb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fctb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fctb.Font = new System.Drawing.Font("Consolas", 9.75F);
-            this.fctb.Location = new System.Drawing.Point(41, 57);
-            this.fctb.Name = "fctb";
-            this.fctb.Size = new System.Drawing.Size(326, 222);
-            this.fctb.TabIndex = 3;
-            this.fctb.Text = "";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(498, 59);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(257, 248);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
             // 
             // CustomScrollBarsSample
             // 
