@@ -30,10 +30,10 @@ namespace RS.UtilityLib.WinFormCommon
         private void InitializeComponent() {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
-            this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
             this.lV_ModelList = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonListView();
+            this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
+            this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
             this.SuspendLayout();
             // 
             // button1
@@ -55,27 +55,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // lineEditor1
-            // 
-            this.lineEditor1.BottomAligned = true;
-            this.lineEditor1.Editable = false;
-            this.lineEditor1.Location = new System.Drawing.Point(520, 305);
-            this.lineEditor1.Name = "lineEditor1";
-            this.lineEditor1.Selectable = true;
-            this.lineEditor1.SelectedIndex = -1;
-            this.lineEditor1.SelectedLine = null;
-            this.lineEditor1.ShowSelection = true;
-            this.lineEditor1.Size = new System.Drawing.Size(100, 50);
-            this.lineEditor1.TabIndex = 3;
-            this.lineEditor1.YScroll = 0;
-            // 
-            // ribbonTreeView1
-            // 
-            this.ribbonTreeView1.Location = new System.Drawing.Point(255, 50);
-            this.ribbonTreeView1.Name = "ribbonTreeView1";
-            this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
-            this.ribbonTreeView1.TabIndex = 1;
             // 
             // lV_ModelList
             // 
@@ -122,6 +101,20 @@ namespace RS.UtilityLib.WinFormCommon
             this.lV_ModelList.TabIndex = 4;
             this.lV_ModelList.ZOrder = 0;
             // 
+            // lineEditor1
+            // 
+            this.lineEditor1.BottomAligned = true;
+            this.lineEditor1.Editable = false;
+            this.lineEditor1.Location = new System.Drawing.Point(520, 305);
+            this.lineEditor1.Name = "lineEditor1";
+            this.lineEditor1.Selectable = true;
+            this.lineEditor1.SelectedIndex = -1;
+            this.lineEditor1.SelectedLine = null;
+            this.lineEditor1.ShowSelection = true;
+            this.lineEditor1.Size = new System.Drawing.Size(100, 50);
+            this.lineEditor1.TabIndex = 3;
+            this.lineEditor1.YScroll = 0;
+            // 
             // degreePiePicture1
             // 
             this.degreePiePicture1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -139,6 +132,13 @@ namespace RS.UtilityLib.WinFormCommon
             this.degreePiePicture1.Size = new System.Drawing.Size(150, 150);
             this.degreePiePicture1.TabIndex = 2;
             // 
+            // ribbonTreeView1
+            // 
+            this.ribbonTreeView1.Location = new System.Drawing.Point(255, 50);
+            this.ribbonTreeView1.Name = "ribbonTreeView1";
+            this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
+            this.ribbonTreeView1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -152,6 +152,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.Controls.Add(this.ribbonTreeView1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
