@@ -120,7 +120,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
                     processImeInputSimple(this, ref m);
                 }
                 else {
-                    //比如容易继承到第3方不支持ime输入法的文本输入库输入
+                    //比如容易集成到第3方不支持ime输入法的文本输入库输入
                     processImeInput(this,ref m);
                 }
             }
@@ -217,7 +217,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
                     if (ret) {
                         //获取输入法内容
                         for (int i = 0; i < txt.Length; i++) {
-                            //InputManager.Instance.InjectKeyPress(KeyCode.None,
+                            //MyGui.InputManager.Instance.InjectKeyPress(KeyCode.None,
                             //txt[i]);
                         }
                         ctl.RenderText += txt;
