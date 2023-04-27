@@ -13,7 +13,7 @@ namespace RS.UtilityLib.WinFormCommon
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormDemo1());
             Application.Run(new FormUIControlTest());
         }
     }

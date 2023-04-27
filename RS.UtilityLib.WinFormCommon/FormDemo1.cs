@@ -1,5 +1,6 @@
 ﻿using RS.UtilityLib.WinFormCommon.IME;
 using RS.UtilityLib.WinFormCommon.RibbonUI;
+using RS.UtilityLib.WinFormCommon.UI.MyScrollBar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace RS.UtilityLib.WinFormCommon
 {
-    public partial class Form1 : Form
+    public partial class FormDemo1 : Form
     {
-        public Form1() {
+        public FormDemo1() {
             InitializeComponent();
         }
 
@@ -50,6 +51,11 @@ namespace RS.UtilityLib.WinFormCommon
                 (this.lV_ModelList.Hint as RibbonHintWindowMemo).SetHint(mi);
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            CustomScrollBarsSample cs = new CustomScrollBarsSample();
+            cs.Show();
         }
     }
 }

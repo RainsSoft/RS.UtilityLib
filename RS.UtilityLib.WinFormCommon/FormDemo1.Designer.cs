@@ -3,7 +3,7 @@
 
 namespace RS.UtilityLib.WinFormCommon
 {
-    partial class Form1
+    partial class FormDemo1
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
             this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -139,11 +141,31 @@ namespace RS.UtilityLib.WinFormCommon
             this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
             this.ribbonTreeView1.TabIndex = 1;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(255, 357);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(192, 137);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(255, 325);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lV_ModelList);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -164,5 +186,7 @@ namespace RS.UtilityLib.WinFormCommon
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private RibbonUI.RibbonListView lV_ModelList;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

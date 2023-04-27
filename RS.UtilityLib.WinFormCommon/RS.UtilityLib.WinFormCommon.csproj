@@ -54,7 +54,7 @@
     <Compile Include="IME\IMEHandler.cs" />
     <Compile Include="IME\IMEInputKeyHelper.cs" />
     <Compile Include="IME\ImmExtensions.cs" />
-    <Compile Include="IME\NativeIME.cs" />
+    <Compile Include="IME\IMENative.cs" />
     <Compile Include="RibbonHintWindowMemo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +64,11 @@
     <Compile Include="TextRender\TextGlowRender.cs" />
     <Compile Include="TextRender\TextShadowRender.cs" />
     <Compile Include="FastBitmap.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormDemo1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormDemo1.Designer.cs">
+      <DependentUpon>FormDemo1.cs</DependentUpon>
     </Compile>
     <Compile Include="PinyinHelper.cs" />
     <Compile Include="ContorlSafeCallHelper.cs" />
@@ -173,6 +173,22 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\ListViewEx.cs" />
+    <Compile Include="UI\MyScrollBar\ScrollBarSimple.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MyScrollBar\CustomScrollBarsSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MyScrollBar\DockDrawHelper.cs" />
+    <Compile Include="UI\MyScrollBar\DockPanelStripRenderer.cs" />
+    <Compile Include="UI\MyScrollBar\PlatformHelper.cs" />
+    <Compile Include="UI\MyScrollBar\ScaleHelper.cs" />
+    <Compile Include="UI\MyScrollBar\Win32.cs" />
+    <Compile Include="UI\MyScrollBar\ScrollBarDesigner.cs" />
+    <Compile Include="UI\MyScrollBar\ScrollBarEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MyScrollBar\ScrollerBase.cs" />
     <Compile Include="UI\PictureSelector.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -216,8 +232,8 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormDemo1.resx">
+      <DependentUpon>FormDemo1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUIControlTest.resx">
       <DependentUpon>FormUIControlTest.cs</DependentUpon>
@@ -234,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ContextMenuForm.resx">
       <DependentUpon>ContextMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MyScrollBar\CustomScrollBarsSample.resx">
+      <DependentUpon>CustomScrollBarsSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ScrollPanel\CustomScrollPanel.resx">
       <DependentUpon>CustomScrollPanel.cs</DependentUpon>

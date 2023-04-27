@@ -10,11 +10,11 @@ namespace RS.UtilityLib.WinFormCommon.IME
     public class IMEHandler
     {
         public static bool GetResult(IntPtr hwnd, uint lParam, out string text) {
-            var hIMC = NativeIME.ImmGetContext(hwnd);
+            var hIMC = IMENative.ImmGetContext(hwnd);
 
-            var ret = GetString(hIMC, lParam, NativeIME.GCS_RESULTSTR, out text);
+            var ret = GetString(hIMC, lParam, IMENative.GCS_RESULTSTR, out text);
 
-            NativeIME.ImmReleaseContext(hwnd, hIMC);
+            IMENative.ImmReleaseContext(hwnd, hIMC);
 
             return ret;
         }
@@ -25,14 +25,14 @@ namespace RS.UtilityLib.WinFormCommon.IME
                 return false;
             }
 
-            var strLen = NativeIME.ImmGetCompositionString(hIMC, type, null, 0);
+            var strLen = IMENative.ImmGetCompositionString(hIMC, type, null, 0);
             if (strLen <= 0) {
                 return false;
             }
 
             // buffer contains char (2 bytes)
             byte[] buffer = new byte[strLen];
-            NativeIME.ImmGetCompositionString(hIMC, type, buffer, strLen);
+            IMENative.ImmGetCompositionString(hIMC, type, buffer, strLen);
             text = Encoding.Unicode.GetString(buffer);
 
             return true;

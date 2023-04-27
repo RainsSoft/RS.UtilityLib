@@ -62,7 +62,7 @@ msg=0x100 (WM_KEYDOWN) hwnd=0x1602498 wparam=0x41 lparam=0x1e0001 result=0x0
                     }
                    
                 }
-                if (m.Msg == NativeIME.WM_IME_CHAR) {
+                if (m.Msg == IMENative.WM_IME_CHAR) {
                     //输入法输出字符
                     char c = (char)m.WParam.ToInt32();
                     ctl.RenderText += c.ToString();
@@ -70,18 +70,18 @@ msg=0x100 (WM_KEYDOWN) hwnd=0x1602498 wparam=0x41 lparam=0x1e0001 result=0x0
                    
                 }
             }
-            if (m.Msg == NativeIME.WM_IME_SETCONTEXT) {
+            if (m.Msg == IMENative.WM_IME_SETCONTEXT) {
                 if (m.WParam.ToInt32() == 1) {                    
                     //必须在自定义控件内的onload先获取ime的handle
                     //这里这样调用不起作用
                     var FhImc = imeControl.HImcHandle;//NativeIME.ImmGetContext(ctl.Handle);
-                    NativeIME.ImmAssociateContext(ctl.Handle, FhImc);
-                    NativeIME.ImmReleaseContext(ctl.Handle, FhImc);
+                    IMENative.ImmAssociateContext(ctl.Handle, FhImc);
+                    IMENative.ImmReleaseContext(ctl.Handle, FhImc);
                 }
             }
             return;
-            if (m.Msg == NativeIME.WM_IME_COMPOSITION) {
-                if ((m.LParam.ToInt32() & (int)NativeIME.GCS_RESULTSTR) != 0) {
+            if (m.Msg == IMENative.WM_IME_COMPOSITION) {
+                if ((m.LParam.ToInt32() & (int)IMENative.GCS_RESULTSTR) != 0) {
                     string txt;
                     bool ret = IMEHandler.GetResult(ctl.Handle, (uint)m.LParam.ToInt32(), out txt);
                     if (ret) {

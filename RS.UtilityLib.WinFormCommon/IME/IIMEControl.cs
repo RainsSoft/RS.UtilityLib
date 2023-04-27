@@ -154,21 +154,21 @@ namespace RS.UtilityLib.WinFormCommon.IME
                 }
 
             }
-            if (m.Msg == NativeIME.WM_IME_CHAR) {
+            if (m.Msg == IMENative.WM_IME_CHAR) {
                 //输入法输出字符
                 char c = (char)m.WParam.ToInt32();
                 ctl.RenderText += c.ToString();
                 ctl.Invalidate();
 
             }
-            if (m.Msg == NativeIME.WM_IME_SETCONTEXT) {
+            if (m.Msg == IMENative.WM_IME_SETCONTEXT) {
                 //打开输入法
                 if (m.WParam.ToInt32() == 1) {
                     //必须在自定义控件内的onload先获取ime的handle
                     //这里这样调用不起作用
                     var FhImc = imeControl.HImcHandle;//NativeIME.ImmGetContext(ctl.Handle);
-                    NativeIME.ImmAssociateContext(ctl.Handle, FhImc);
-                    NativeIME.ImmReleaseContext(ctl.Handle, FhImc);
+                    IMENative.ImmAssociateContext(ctl.Handle, FhImc);
+                    IMENative.ImmReleaseContext(ctl.Handle, FhImc);
                 }
             }
         }
@@ -200,18 +200,18 @@ namespace RS.UtilityLib.WinFormCommon.IME
 
             }
             //下面为输入法输入处理
-            if (m.Msg == NativeIME.WM_IME_SETCONTEXT) {
+            if (m.Msg == IMENative.WM_IME_SETCONTEXT) {
                 //打开输入法
                 if (m.WParam.ToInt32() == 1) {
                     //必须在自定义控件内的onload先获取ime的handle
                     //这里这样调用不起作用
                     var FhImc = imeControl.HImcHandle;//NativeIME.ImmGetContext(ctl.Handle);
-                    NativeIME.ImmAssociateContext(ctl.Handle, FhImc);
-                    NativeIME.ImmReleaseContext(ctl.Handle, FhImc);
+                    IMENative.ImmAssociateContext(ctl.Handle, FhImc);
+                    IMENative.ImmReleaseContext(ctl.Handle, FhImc);
                 }
             }
-            if (m.Msg == NativeIME.WM_IME_COMPOSITION) {
-                if ((m.LParam.ToInt32() & (int)NativeIME.GCS_RESULTSTR) != 0) {
+            if (m.Msg == IMENative.WM_IME_COMPOSITION) {
+                if ((m.LParam.ToInt32() & (int)IMENative.GCS_RESULTSTR) != 0) {
                     string txt;
                     bool ret = IMEHandler.GetResult(ctl.Handle, (uint)m.LParam.ToInt32(), out txt);
                     if (ret) {
@@ -232,7 +232,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             //需要在onload的时候取得ime输入法句柄，其他地方不一定能取到输入法句柄
-            m_hImc = NativeIME.ImmGetContext(Handle);
+            m_hImc = IMENative.ImmGetContext(Handle);
         }
 
         private const int IME_CMODE_FULLSHAPE = 0x8;
@@ -243,9 +243,9 @@ namespace RS.UtilityLib.WinFormCommon.IME
             //
             this.FindForm().ImeMode = ImeMode.On;
             var handle = this.FindForm().Handle;
-            IntPtr HIme = NativeIME.ImmGetContext(handle);
+            IntPtr HIme = IMENative.ImmGetContext(handle);
             //如果输入法处于打开状态  
-            if (NativeIME.ImmGetOpenStatus(HIme)) {
+            if (IMENative.ImmGetOpenStatus(HIme)) {
                 int iMode = 0;
                 int iSentence = 0;
                 //检索输入法信息   
