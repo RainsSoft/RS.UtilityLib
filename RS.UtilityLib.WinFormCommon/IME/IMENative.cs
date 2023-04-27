@@ -9,7 +9,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
     /// <summary>
     /// pinvoke系统输入法辅助方法
     /// </summary>
-    public static class NativeIME
+    public static class IMENative
     {
         #region
         public const int WM_INPUTLANGCHANGE = 0x51;
