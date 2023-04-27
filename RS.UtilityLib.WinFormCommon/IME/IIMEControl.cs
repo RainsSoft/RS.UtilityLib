@@ -115,7 +115,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
                 //if (m.Msg == WM_IME_SETCONTEXT && m.WParam.ToInt32() == 1) {
                 //    NativeIME.ImmAssociateContext(Handle, m_hImc);
                 //}
-                bool simpleProcessImeInput = true;
+                bool simpleProcessImeInput = false;
                 if (simpleProcessImeInput) {
                     processImeInputSimple(this, ref m);
                 }
@@ -147,7 +147,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
                 else if (imeControl.IsEnterChar(c)) {
                     ctl.RenderText += "\n";
                 }
-                else if (imeControl.IsAsciiPrintChar(c)) {
+                else if (imeControl.IsAsciiPrintChar(c)||c==' ') {
                     ctl.RenderText += c.ToString();
                     ctl.Invalidate();
                     return;
@@ -192,7 +192,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
                 else if (imeControl.IsEnterChar(c)) {
                     ctl.RenderText += "\n";
                 }
-                else if (imeControl.IsAsciiPrintChar(c)) {
+                else if (imeControl.IsAsciiPrintChar(c) || c == ' ') {
                     ctl.RenderText += c.ToString();
                     ctl.Invalidate();
                     return;
@@ -231,6 +231,7 @@ namespace RS.UtilityLib.WinFormCommon.IME
         }
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
+            //需要在onload的时候取得ime输入法句柄，其他地方不一定能取到输入法句柄
             m_hImc = NativeIME.ImmGetContext(Handle);
         }
 
