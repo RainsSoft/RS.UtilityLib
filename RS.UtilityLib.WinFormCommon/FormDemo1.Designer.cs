@@ -28,6 +28,7 @@ namespace RS.UtilityLib.WinFormCommon
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -36,6 +37,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
             this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
+           
             this.SuspendLayout();
             // 
             // button1
@@ -158,12 +160,14 @@ namespace RS.UtilityLib.WinFormCommon
             this.ribbonTreeView1.Name = "ribbonTreeView1";
             this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
             this.ribbonTreeView1.TabIndex = 1;
+       
             // 
             // FormDemo1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 542);
+        
             this.Controls.Add(this.button3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lV_ModelList);
@@ -176,6 +180,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -188,5 +193,6 @@ namespace RS.UtilityLib.WinFormCommon
         private RibbonUI.RibbonListView lV_ModelList;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button3;
+       
     }
 }

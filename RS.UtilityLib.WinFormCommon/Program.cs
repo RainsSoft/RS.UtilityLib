@@ -1,3 +1,4 @@
+using RS.UtilityLib.WinFormCommon.UINotifier;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace RS.UtilityLib.WinFormCommon
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            UIStartForm.ShowForm();
             Application.Run(new FormDemo1());
             Application.Run(new FormUIControlTest());
         }

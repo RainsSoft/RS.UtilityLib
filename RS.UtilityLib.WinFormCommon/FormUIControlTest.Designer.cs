@@ -33,6 +33,7 @@ namespace RS.UtilityLib.WinFormCommon
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "33",
             "44"}, -1);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUIControlTest));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup2", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("123");
@@ -53,11 +54,11 @@ namespace RS.UtilityLib.WinFormCommon
             System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "33",
             "44"}, -1);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUIControlTest));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ToolStripColorPicker();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
@@ -82,7 +83,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.waterMarkTextBox1 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.toolTipEx1 = new RS.UtilityLib.WinFormCommon.UI.ToolTipEx(this.components);
             this.pictureSelector1 = new RS.UtilityLib.WinFormCommon.UI.PictureSelector();
-            this.toolStripColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ToolStripColorPicker();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSelector1)).BeginInit();
             this.SuspendLayout();
@@ -113,6 +113,19 @@ namespace RS.UtilityLib.WinFormCommon
             this.toolStrip1.Size = new System.Drawing.Size(1113, 26);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripColorPicker1
+            // 
+            this.toolStripColorPicker1.AutoSize = false;
+            this.toolStripColorPicker1.ButtonDisplayStyle = RS.UtilityLib.WinFormCommon.UI.ToolStripColorPickerDisplayType.UnderLineAndImage;
+            this.toolStripColorPicker1.Color = System.Drawing.Color.Black;
+            this.toolStripColorPicker1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripColorPicker1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripColorPicker1.Image")));
+            this.toolStripColorPicker1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripColorPicker1.Name = "toolStripColorPicker1";
+            this.toolStripColorPicker1.Size = new System.Drawing.Size(30, 23);
+            this.toolStripColorPicker1.Text = "toolStripColorPicker1";
+            this.toolStripColorPicker1.ToolTipText = "";
             // 
             // button1
             // 
@@ -262,6 +275,7 @@ namespace RS.UtilityLib.WinFormCommon
             "Color",
             "Color",
             "Color",
+            "Color",
             "Color"});
             this.comboBoxColorPicker1.Location = new System.Drawing.Point(170, 56);
             this.comboBoxColorPicker1.Name = "comboBoxColorPicker1";
@@ -385,25 +399,12 @@ namespace RS.UtilityLib.WinFormCommon
             this.pictureSelector1.DefaultRect = new System.Drawing.Rectangle(0, 0, 32, 32);
             this.pictureSelector1.EffectImage = global::RS.UtilityLib.WinFormCommon.Properties.Resources.PanelScrollBar;
             this.pictureSelector1.HoverMaskRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.pictureSelector1.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.官方;
+            this.pictureSelector1.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.loading_txt;
             this.pictureSelector1.Location = new System.Drawing.Point(48, 501);
             this.pictureSelector1.Name = "pictureSelector1";
             this.pictureSelector1.Size = new System.Drawing.Size(161, 128);
             this.pictureSelector1.TabIndex = 18;
             this.pictureSelector1.TabStop = false;
-            // 
-            // toolStripColorPicker1
-            // 
-            this.toolStripColorPicker1.AutoSize = false;
-            this.toolStripColorPicker1.ButtonDisplayStyle = RS.UtilityLib.WinFormCommon.UI.ToolStripColorPickerDisplayType.UnderLineAndImage;
-            this.toolStripColorPicker1.Color = System.Drawing.Color.Black;
-            this.toolStripColorPicker1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripColorPicker1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripColorPicker1.Image")));
-            this.toolStripColorPicker1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripColorPicker1.Name = "toolStripColorPicker1";
-            this.toolStripColorPicker1.Size = new System.Drawing.Size(30, 23);
-            this.toolStripColorPicker1.Text = "toolStripColorPicker1";
-            this.toolStripColorPicker1.ToolTipText = "";
             // 
             // FormUIControlTest
             // 

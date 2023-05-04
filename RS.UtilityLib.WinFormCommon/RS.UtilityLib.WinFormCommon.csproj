@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitmapToRegion.cs" />
+    <Compile Include="DrawRoundRectangleHelper.cs" />
     <Compile Include="IME\IIMEControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +121,19 @@
     <Compile Include="UIAnimatorNS\Flags.cs" />
     <Compile Include="UIAnimatorNS\PointFConverter.cs" />
     <Compile Include="UIAnimatorNS\TransfromHelper.cs" />
+    <Compile Include="UINotifier\FolderSelectDialog.cs" />
+    <Compile Include="UINotifier\UIStartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UINotifier\UIBalloonHelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UINotifier\UIBalloonWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UINotifier\UITaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UIRes.cs" />
     <Compile Include="RibbonUI\NativeAPI.cs" />
     <Compile Include="RibbonUI\RibbonButton.cs">
@@ -173,6 +187,11 @@
     <Compile Include="RibbonUI\RibbonListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UISamples\RoomPaintCtl.cs" />
+    <Compile Include="UI\LabelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToggleButton.cs" />
     <Compile Include="UI\ContextMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +217,12 @@
     </Compile>
     <Compile Include="UI\ImageComboBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISamples\MouseThroughForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RollMsgControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\LineEditor.cs">
       <SubType>UserControl</SubType>
@@ -290,8 +315,17 @@
     <EmbeddedResource Include="UIAnimatorNS\DoubleBitmapForm.resx">
       <DependentUpon>DoubleBitmapForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UINotifier\UIBalloonHelpForm.resx">
+      <DependentUpon>UIBalloonHelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UINotifier\UIStartForm.resx">
+      <DependentUpon>UIStartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ContextMenuForm.resx">
       <DependentUpon>ContextMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UISamples\MouseThroughForm.resx">
+      <DependentUpon>MouseThroughForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MyScrollBar\CustomScrollBarsSample.resx">
       <DependentUpon>CustomScrollBarsSample.cs</DependentUpon>
@@ -473,6 +507,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\st_listback4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_txt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

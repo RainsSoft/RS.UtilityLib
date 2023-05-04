@@ -383,3 +383,6 @@ RS.UtilityLib.WinFormCommon/obj/Debug/RS.UtilityLib.WinFormCommon.UI.MyScrollBar
 RS.UtilityLib/obj/Debug/RS.UtilityLib.dll
 RS.UtilityLib/obj/Debug/RS.UtilityLib.pdb
 RS.UtilityLib.WinFormCommon/obj/Debug/AnimatorNS.DoubleBitmapForm.resources
+RS.UtilityLib.WinFormCommon/obj/Debug/RS.UtilityLib.WinFormCommon.UI.MouseThroughForm.resources
+RS.UtilityLib.WinFormCommon/obj/Debug/RS.UtilityLib.WinFormCommon.UINotifier.UIBalloonHelpForm.resources
+RS.UtilityLib.WinFormCommon/obj/Debug/RS.UtilityLib.WinFormCommon.UINotifier.UIStartForm.resources

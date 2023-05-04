@@ -263,6 +263,16 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap loading_txt {
+            get {
+                object obj = ResourceManager.GetObject("loading_txt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap loginchoose {
             get {
                 object obj = ResourceManager.GetObject("loginchoose", resourceCulture);
