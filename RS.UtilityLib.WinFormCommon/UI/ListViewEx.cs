@@ -94,7 +94,8 @@ namespace RS.UtilityLib.WinFormCommon.UI
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wPar, IntPtr lPar);
         [DllImport("user32.dll", CharSet = CharSet.Ansi)]
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, int len, ref int[] order);
-
+        [DllImport("uxtheme", CharSet = CharSet.Unicode)]
+        public static extern int SetWindowTheme(IntPtr hWnd, string textSubAppName, string textSubIdList);
         // ListView messages
         private const int LVM_FIRST = 0x1000;
         private const int LVM_GETCOLUMNORDERARRAY = (LVM_FIRST + 59);
@@ -128,7 +129,11 @@ namespace RS.UtilityLib.WinFormCommon.UI
             base.View = View.Details;
             base.AllowColumnReorder = true;
         }
-
+        protected override void OnHandleCreated(EventArgs e) {
+            base.OnHandleCreated(e);
+            //使用系统主题
+            SetWindowTheme(this.Handle, "explorer", null);
+        }
         ///	<summary>
         ///	Clean up any resources being used.
         ///	</summary>
