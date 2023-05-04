@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D125D0DA-B402-4CE8-B8B5-9A67DE2E134C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BetterListView</RootNamespace>
+    <AssemblyName>BetterListViewExpress</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BetterListView\ActivateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BetterListView\ActivateOfflineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BetterListView\ActivationException.cs" />
+    <Compile Include="BetterListView\ActivationResponse.cs" />
+    <Compile Include="BetterListView\AdjustedText.cs" />
+    <Compile Include="BetterListView\BetterListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BetterListView\BetterListViewAccessibleObject.cs" />
+    <Compile Include="BetterListView\BetterListViewActionList.cs" />
+    <Compile Include="BetterListView\BetterListViewAddress.cs" />
+    <Compile Include="BetterListView\BetterListViewAfterItemSortEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewAfterItemSortEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewAllowDropPropertyDescriptor.cs" />
+    <Compile Include="BetterListView\BetterListViewAutoScrollMode.cs" />
+    <Compile Include="BetterListView\BetterListViewBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BetterListView\BetterListViewBasePainter.cs" />
+    <Compile Include="BetterListView\BetterListViewBeforeDragEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewBeforeDragEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewBeforeItemSortEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewBeforeItemSortEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewCachedCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewCachedImage.cs" />
+    <Compile Include="BetterListView\BetterListViewCachedItemCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewCheckBoxAppearance.cs" />
+    <Compile Include="BetterListView\BetterListViewCheckBoxes.cs" />
+    <Compile Include="BetterListView\BetterListViewCheckedIndexCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewCheckedItemCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewCheckedItemsChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewCheckedItemsChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewCheckStateChangeMode.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnClickedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnClickedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnClickEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnClickEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeader.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderAccessibleObject.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderAutoResizeStyle.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderBounds.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderCollectionConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderCollectionEditor.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderDisplayMode.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderState.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnHeaderStyle.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnReorderMode.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnReorderOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnReorderStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnResizeStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnSelectionStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnWidthChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnWidthChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnWidthChangeSource.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnWidthChangingEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewColumnWidthChangingEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewComboBoxEmbeddedControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BetterListView\BetterListViewCommonMeasurementColumns.cs" />
+    <Compile Include="BetterListView\BetterListViewCommonMeasurementGroups.cs" />
+    <Compile Include="BetterListView\BetterListViewCommonMeasurementItems.cs" />
+    <Compile Include="BetterListView\BetterListViewContentMeasurement.cs" />
+    <Compile Include="BetterListView\BetterListViewCursorType.cs" />
+    <Compile Include="BetterListView\BetterListViewDateTimePickerEmbeddedControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BetterListView\BetterListViewDesigner.cs" />
+    <Compile Include="BetterListView\BetterListViewDragDropDisplay.cs" />
+    <Compile Include="BetterListView\BetterListViewDragDropEffectSettingEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDragDropEffectSettingEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDragDropExceptionEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDragDropExceptionEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDragDropType.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawBackgroundEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawBackgroundEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawColumnHeaderBackgroundEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawColumnHeaderBackgroundEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawColumnHeaderEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawColumnHeaderEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawGroupBackgroundEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawGroupBackgroundEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawGroupEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawGroupEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawInsertionMarkEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawInsertionMarkEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawItemBackgroundEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawItemBackgroundEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawItemEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewDrawItemEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewDropPart.cs" />
+    <Compile Include="BetterListView\BetterListViewElement.cs" />
+    <Compile Include="BetterListView\BetterListViewElementBase.cs" />
+    <Compile Include="BetterListView\BetterListViewElementBaseIndexComparer.cs" />
+    <Compile Include="BetterListView\BetterListViewElementBounds.cs" />
+    <Compile Include="BetterListView\BetterListViewElementBoundsBase.cs" />
+    <Compile Include="BetterListView\BetterListViewElementCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewElementCollectionBase.cs" />
+    <Compile Include="BetterListView\BetterListViewElementCollectionChangedDelegate.cs" />
+    <Compile Include="BetterListView\BetterListViewElementCollectionChangeInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewElementCollectionChangeType.cs" />
+    <Compile Include="BetterListView\BetterListViewElementCollectionChangingDelegate.cs" />
+    <Compile Include="BetterListView\BetterListViewElementDesigner.cs" />
+    <Compile Include="BetterListView\BetterListViewElementPropertyChangedDelegate.cs" />
+    <Compile Include="BetterListView\BetterListViewElementPropertyType.cs" />
+    <Compile Include="BetterListView\BetterListViewElementState.cs" />
+    <Compile Include="BetterListView\BetterListViewElementStateBox.cs" />
+    <Compile Include="BetterListView\BetterListViewElementStateChange.cs" />
+    <Compile Include="BetterListView\BetterListViewEmbeddedControlPlacement.cs" />
+    <Compile Include="BetterListView\BetterListViewEnsureVisibleData.cs" />
+    <Compile Include="BetterListView\BetterListViewFocusedItemChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewFocusedItemChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewFocusInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewFormatItemEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewFormatItemEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewGenerateMemberPropertyDescriptor.cs" />
+    <Compile Include="BetterListView\BetterListViewGridLines.cs" />
+    <Compile Include="BetterListView\BetterListViewGroup.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupBounds.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupCollectionConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupCollectionEditor.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupExpandButtonState.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupHeaderBehavior.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupItemCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupItemEnumerator.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupState.cs" />
+    <Compile Include="BetterListView\BetterListViewGroupStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewHeaderAccessibleObject.cs" />
+    <Compile Include="BetterListView\BetterListViewHeaderStyle.cs" />
+    <Compile Include="BetterListView\BetterListViewHideSelectionMode.cs" />
+    <Compile Include="BetterListView\BetterListViewHitPart.cs" />
+    <Compile Include="BetterListView\BetterListViewHitTestChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewHitTestChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewHitTestInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewHitTestLocations.cs" />
+    <Compile Include="BetterListView\BetterListViewImageAlignmentHorizontal.cs" />
+    <Compile Include="BetterListView\BetterListViewImageAlignmentVertical.cs" />
+    <Compile Include="BetterListView\BetterListViewImageSize.cs" />
+    <Compile Include="BetterListView\BetterListViewInsertionLocation.cs" />
+    <Compile Include="BetterListView\BetterListViewInsertionMark.cs" />
+    <Compile Include="BetterListView\BetterListViewInvalidationFlags.cs" />
+    <Compile Include="BetterListView\BetterListViewInvalidationInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewInvalidationLevel.cs" />
+    <Compile Include="BetterListView\BetterListViewItem.cs" />
+    <Compile Include="BetterListView\BetterListViewItemAccessibleObject.cs" />
+    <Compile Include="BetterListView\BetterListViewItemActivateEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemActivateEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemActivationSource.cs" />
+    <Compile Include="BetterListView\BetterListViewItemBeforeCheckStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewItemBounds.cs" />
+    <Compile Include="BetterListView\BetterListViewItemBoundsPortion.cs" />
+    <Compile Include="BetterListView\BetterListViewItemCheckedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemCheckedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemCheckEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemCheckEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewItemCollectionConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewItemCollectionEditor.cs" />
+    <Compile Include="BetterListView\BetterListViewItemComparer.cs" />
+    <Compile Include="BetterListView\BetterListViewItemConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewItemDesigner.cs" />
+    <Compile Include="BetterListView\BetterListViewItemDragData.cs" />
+    <Compile Include="BetterListView\BetterListViewItemDragEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemDragEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemDragStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewItemDropEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemDropEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemExpandButtonState.cs" />
+    <Compile Include="BetterListView\BetterListViewItemIndexComparer.cs" />
+    <Compile Include="BetterListView\BetterListViewItemMouseHoverEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemMouseHoverEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemReorderInvalidationReasons.cs" />
+    <Compile Include="BetterListView\BetterListViewItemReorderMode.cs" />
+    <Compile Include="BetterListView\BetterListViewItemReorderOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewItemSearchEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemSearchEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemSearchSource.cs" />
+    <Compile Include="BetterListView\BetterListViewItemSelectionChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewItemSelectionChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewItemSelectionStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewItemSet.cs" />
+    <Compile Include="BetterListView\BetterListViewItemState.cs" />
+    <Compile Include="BetterListView\BetterListViewItemStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewLabelEditActivation.cs" />
+    <Compile Include="BetterListView\BetterListViewLabelEditCancelEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewLabelEditCancelEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewLabelEditEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewLabelEditEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewLabelEditMode.cs" />
+    <Compile Include="BetterListView\BetterListViewLabelEditStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewLayout.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutBase.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutColumns.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutCommon.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutGroups.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutGroupsHorizontal.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutGroupsVertical.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItems.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsDetails.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsDetailsBase.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsDetailsColumns.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsLargeIcon.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsLargeIconBase.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsList.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsSmallIcon.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutItemsTile.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutMeasurement.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutPositioningOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutPropertyType.cs" />
+    <Compile Include="BetterListView\BetterListViewLayoutVisibleRange.cs" />
+    <Compile Include="BetterListView\BetterListViewPainter.cs" />
+    <Compile Include="BetterListView\BetterListViewPainterElementColumnHeader.cs" />
+    <Compile Include="BetterListView\BetterListViewPainterElementGroup.cs" />
+    <Compile Include="BetterListView\BetterListViewPainterElementGroupExpandButton.cs" />
+    <Compile Include="BetterListView\BetterListViewPainterElementItem.cs" />
+    <Compile Include="BetterListView\BetterListViewPainterElementNode.cs" />
+    <Compile Include="BetterListView\BetterListViewPainterElementSortGlyph.cs" />
+    <Compile Include="BetterListView\BetterListViewPainterGlyphAlignment.cs" />
+    <Compile Include="BetterListView\BetterListViewPostponedCallData.cs" />
+    <Compile Include="BetterListView\BetterListViewPostponedCallType.cs" />
+    <Compile Include="BetterListView\BetterListViewPropertyDescriptor.cs" />
+    <Compile Include="BetterListView\BetterListViewReadOnlyGroupSet.cs" />
+    <Compile Include="BetterListView\BetterListViewReadOnlyItemSet.cs" />
+    <Compile Include="BetterListView\BetterListViewRequestEmbeddedControlEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewRequestEmbeddedControlEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewScrollBarDisplayMode.cs" />
+    <Compile Include="BetterListView\BetterListViewScrollProperties.cs" />
+    <Compile Include="BetterListView\BetterListViewScrollPropertiesChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewScrollPropertiesChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewSearchMode.cs" />
+    <Compile Include="BetterListView\BetterListViewSearchOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewSearchSettings.cs" />
+    <Compile Include="BetterListView\BetterListViewSearchSettingsConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectedIndexCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectedItemCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectedItemsChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectedItemsChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectionChangeMode.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectionInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectionOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewSelectionRenderingOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewSortedColumnsRowsHighlight.cs" />
+    <Compile Include="BetterListView\BetterListViewSortInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewSortList.cs" />
+    <Compile Include="BetterListView\BetterListViewSortMethod.cs" />
+    <Compile Include="BetterListView\BetterListViewSortOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewSortOrder.cs" />
+    <Compile Include="BetterListView\BetterListViewState.cs" />
+    <Compile Include="BetterListView\BetterListViewStateInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItem.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemAccessibleObject.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemBounds.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemCollectionConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemCollectionEditor.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemDesigner.cs" />
+    <Compile Include="BetterListView\BetterListViewSubItemFocusBehavior.cs" />
+    <Compile Include="BetterListView\BetterListViewTargetElement.cs" />
+    <Compile Include="BetterListView\BetterListViewTextBoxEmbeddedControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BetterListView\BetterListViewTextWrapping.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipInfo.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipInfoCollection.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipInfoCollectionConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipInfoCollectionEditor.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipInfoConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipLocation.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipOptions.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipOptionsConverter.cs" />
+    <Compile Include="BetterListView\BetterListViewToolTipTarget.cs" />
+    <Compile Include="BetterListView\BetterListViewUnselectionBehavior.cs" />
+    <Compile Include="BetterListView\BetterListViewView.cs" />
+    <Compile Include="BetterListView\BetterListViewViewChangedEventArgs.cs" />
+    <Compile Include="BetterListView\BetterListViewViewChangedEventHandler.cs" />
+    <Compile Include="BetterListView\BetterListViewViewInternal.cs" />
+    <Compile Include="BetterListView\CachedAdjustedText.cs" />
+    <Compile Include="BetterListView\CachedLineCount.cs" />
+    <Compile Include="BetterListView\Checks.cs" />
+    <Compile Include="BetterListView\Collections\HashList.cs" />
+    <Compile Include="BetterListView\Collections\IExtendedCollection.cs" />
+    <Compile Include="BetterListView\Collections\IExtendedList.cs" />
+    <Compile Include="BetterListView\Collections\PriorityQueue.cs" />
+    <Compile Include="BetterListView\Collections\ReadOnlyDictionary.cs" />
+    <Compile Include="BetterListView\Collections\ReadOnlySet.cs" />
+    <Compile Include="BetterListView\Collections\ReadWriteDictionary.cs" />
+    <Compile Include="BetterListView\Collections\Set.cs" />
+    <Compile Include="BetterListView\Collections\SortedList.cs" />
+    <Compile Include="BetterListView\Collections\SortedSet.cs" />
+    <Compile Include="BetterListView\Conversions.cs" />
+    <Compile Include="BetterListView\Design\FlagCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BetterListView\Design\FlagCheckedListBoxItem.cs" />
+    <Compile Include="BetterListView\Design\FlagEnumUITypeEditor.cs" />
+    <Compile Include="BetterListView\DictionaryBase.cs" />
+    <Compile Include="BetterListView\EditorServiceContext.cs" />
+    <Compile Include="BetterListView\ElementCheckType.cs" />
+    <Compile Include="BetterListView\HashType.cs" />
+    <Compile Include="BetterListView\IBetterListViewElementCollection.cs" />
+    <Compile Include="BetterListView\IBetterListViewEmbeddedControl.cs" />
+    <Compile Include="BetterListView\IBetterListViewEmbeddedControlExtended.cs" />
+    <Compile Include="BetterListView\IBetterListViewLayoutElementDisplayable.cs" />
+    <Compile Include="BetterListView\IBetterListViewLayoutElementSelectable.cs" />
+    <Compile Include="BetterListView\IBetterListViewStateElement.cs" />
+    <Compile Include="BetterListView\ImageBorderType.cs" />
+    <Compile Include="BetterListView\IOUtils.cs" />
+    <Compile Include="BetterListView\MultilineText.cs" />
+    <Compile Include="BetterListView\MultilineTextRenderer.cs" />
+    <Compile Include="BetterListView\Painter.cs" />
+    <Compile Include="BetterListView\SerializationUtils.cs" />
+    <Compile Include="BetterListView\SetBase.cs" />
+    <Compile Include="BetterListView\StringUtils.cs" />
+    <Compile Include="BetterListView\SubItemIndicesConverter.cs" />
+    <Compile Include="BetterListView\TextAlignmentHorizontal.cs" />
+    <Compile Include="BetterListView\TextAlignmentVertical.cs" />
+    <Compile Include="BetterListView\TextBreak.cs" />
+    <Compile Include="BetterListView\TextLine.cs" />
+    <Compile Include="BetterListView\TextOptions.cs" />
+    <Compile Include="BetterListView\TextSize.cs" />
+    <Compile Include="BetterListView\TextTrimming.cs" />
+    <Compile Include="BetterListView\TrialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BetterListView\WebRequestResult.cs" />
+    <Compile Include="BetterListView\WinFormsUtils.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BetterListView.Resources.BetterListView.bmp" />
+    <Content Include="BetterListView.Resources.TrialHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties.Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

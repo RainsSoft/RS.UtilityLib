@@ -99,7 +99,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.lV_ModelList.RowSp = 4;
             this.lV_ModelList.SelectedMask = null;
             this.lV_ModelList.SetFlag = 0;
-            this.lV_ModelList.Size = new System.Drawing.Size(232, 496);
+            this.lV_ModelList.Size = new System.Drawing.Size(232, 336);
             this.lV_ModelList.TabIndex = 4;
             this.lV_ModelList.ZOrder = 0;
             // 
@@ -159,7 +159,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Form1
+            // FormDemo1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,7 +172,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.Controls.Add(this.lineEditor1);
             this.Controls.Add(this.degreePiePicture1);
             this.Controls.Add(this.ribbonTreeView1);
-            this.Name = "Form1";
+            this.Name = "FormDemo1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
