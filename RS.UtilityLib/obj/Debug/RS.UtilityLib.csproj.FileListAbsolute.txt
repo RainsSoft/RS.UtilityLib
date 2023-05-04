@@ -1,6 +1,0 @@
-G:\GitHub\RS.UtilityLib\RS.UtilityLib\bin\Debug\RS.UtilityLib.dll
-G:\GitHub\RS.UtilityLib\RS.UtilityLib\bin\Debug\RS.UtilityLib.pdb
-G:\GitHub\RS.UtilityLib\RS.UtilityLib\obj\Debug\RS.UtilityLib.csproj.AssemblyReference.cache
-G:\GitHub\RS.UtilityLib\RS.UtilityLib\obj\Debug\RS.UtilityLib.csproj.CoreCompileInputs.cache
-G:\GitHub\RS.UtilityLib\RS.UtilityLib\obj\Debug\RS.UtilityLib.dll
-G:\GitHub\RS.UtilityLib\RS.UtilityLib\obj\Debug\RS.UtilityLib.pdb
