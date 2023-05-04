@@ -30,12 +30,12 @@ namespace RS.UtilityLib.WinFormCommon
         private void InitializeComponent() {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.lV_ModelList = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonListView();
             this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
             this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -57,6 +57,24 @@ namespace RS.UtilityLib.WinFormCommon
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(255, 357);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(192, 137);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(255, 325);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lV_ModelList
             // 
@@ -140,24 +158,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.ribbonTreeView1.Name = "ribbonTreeView1";
             this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
             this.ribbonTreeView1.TabIndex = 1;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(255, 357);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(192, 137);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(255, 325);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormDemo1
             // 

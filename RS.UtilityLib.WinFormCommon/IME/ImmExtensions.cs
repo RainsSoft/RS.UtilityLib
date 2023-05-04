@@ -233,4 +233,5 @@ namespace RS.UtilityLib.WinFormCommon.IME
         public static extern int MultiByteToWideChar(int CodePage, int dwFlags, char[] lpMultiByteStr, int cchMultiByte, char[] lpWideCharStr, int cchWideChar);
 
     }
+
 }
