@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapToRegion.cs" />
     <Compile Include="IME\IIMEControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +158,9 @@
     <Compile Include="UI\DegreePiePicture.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\GroupBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\GroupListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -173,6 +177,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\ListViewEx.cs" />
+    <Compile Include="UI\MyOpaqueLayerCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\MyScrollBar\ScrollBarSimple.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -189,6 +196,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\MyScrollBar\ScrollerBase.cs" />
+    <Compile Include="UI\PictureBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\PictureSelector.cs">
       <SubType>Component</SubType>
     </Compile>
