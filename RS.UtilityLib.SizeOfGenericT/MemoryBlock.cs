@@ -246,7 +246,11 @@ namespace RS.UtilityLib.SizeOfGenericT
             this.voidStar = Allocate(bytes).ToPointer();
             this.valid = true;
         }
-
+        /// <summary>
+        /// 申请 BGRA 格式图片内存
+        /// </summary>
+        /// <param name="width">图片宽</param>
+        /// <param name="height">图片高</param>
         public MemoryBlock(int width, int height) {
             if (width < 0 && height < 0) {
                 throw new ArgumentOutOfRangeException("width/height", new Size(width, height), "width and height must be >= 0");

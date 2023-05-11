@@ -212,7 +212,11 @@ namespace RS.UtilityLib.SizeOfGenericT
         public static void SetToZero(void* dst, ulong length) {
             SafeNativeMethods.memset(dst, 0, new UIntPtr(length));
         }
+
+        //补充
+       
+
     }
 
-  
+
 }
