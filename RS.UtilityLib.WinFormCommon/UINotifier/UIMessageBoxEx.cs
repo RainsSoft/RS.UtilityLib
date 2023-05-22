@@ -6,9 +6,9 @@ using System.Diagnostics;
 
 namespace RS.UtilityLib.WinFormCommon.UINotifier
 {
-    public partial class MessageBoxEx : Form
+    public partial class UIMessageBoxEx : Form
     {
-        public MessageBoxEx() {
+        public UIMessageBoxEx() {
             InitializeComponent();
         }
         public static DialogResult ShowOkAfter10Close(IWin32Window owner, string text, string caption, int secends = 10) {
@@ -16,7 +16,7 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
             return Show(owner, text, caption, MessageBoxButtons.OK, MessageBoxIcon.Information, secends, DialogResult.OK);
         }
         public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, int closeAfter, DialogResult defaultRet) {
-            using (MessageBoxEx mb = new MessageBoxEx()) {
+            using (UIMessageBoxEx mb = new UIMessageBoxEx()) {
                 mb.m_buttons = buttons;
                 mb.m_icon = icon;
                 mb.m_closeAfter = closeAfter;
@@ -292,3 +292,4 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
 
         #endregion
     }
+}
