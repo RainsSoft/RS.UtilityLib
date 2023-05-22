@@ -36,6 +36,51 @@ namespace RS.UtilityLib.WinFormCommon.UI
             //SetLayeredWindowAttributes(Handle, 0, 255, LWA_ALPHA);
 
         }
+
+        /// <summary>
+        /// Sets a form's opacity.
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="opacity"></param>
+        /// <remarks>
+        /// Note to implementors: This may be implemented as just "form.Opacity = opacity".
+        /// This method works around some visual clumsiness in .NET 2.0 related to
+        /// transitioning between opacity == 1.0 and opacity != 1.0.</remarks>
+        public static void SetFormOpacity(Form form, double opacity) {
+            if (opacity < 0.0 || opacity > 1.0) {
+                throw new ArgumentOutOfRangeException("opacity", "must be in the range [0, 1]");
+            }
+
+            form.Opacity = opacity;
+
+        }
+        public const int WM_MOUSEACTIVATE = 0x0021;
+        public const uint MA_ACTIVATEANDEAT = 2;
+        public const uint MA_ACTIVATE = 1;
+        /// <summary>
+        /// This WndProc implements click-through functionality. Some controls (MenuStrip, ToolStrip) will not
+        /// recognize a click unless the form they are hosted in is active. So the first click will activate the
+        /// form and then a second is required to actually make the click happen.
+        /// </summary>
+        /// <param name="m">The Message that was passed to your WndProc.</param>
+        /// <returns>true if the message was processed, false if it was not</returns>
+        /// <remarks>
+        /// You should first call base.WndProc(), and then call this method. This method is only intended to
+        /// change a return value, not to change actual processing before that.
+        /// </remarks>
+        internal static bool ClickThroughWndProc(ref Message m) {
+            bool returnVal = false;
+
+            if (m.Msg == WM_MOUSEACTIVATE) {
+                if (m.Result == (IntPtr)MA_ACTIVATEANDEAT) {
+                    m.Result = (IntPtr)MA_ACTIVATE;
+                    returnVal = true;
+                }
+            }
+
+            return returnVal;
+        }
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
