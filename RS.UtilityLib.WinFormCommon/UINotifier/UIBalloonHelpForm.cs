@@ -304,7 +304,7 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(151, 0);
+            this.closeButton.Location = new System.Drawing.Point(167, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(17, 15);
             this.closeButton.TabIndex = 0;
@@ -315,12 +315,12 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // IRQ_BalloonHelpFrm
+            // UIBalloonHelpForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
-            this.ClientSize = new System.Drawing.Size(168, 110);
+            this.ClientSize = new System.Drawing.Size(184, 126);
             this.Controls.Add(this.closeButton);
-            this.Name = "IRQ_BalloonHelpFrm";
+            this.Name = "UIBalloonHelpForm";
             this.ResumeLayout(false);
 
         }
