@@ -33,11 +33,12 @@ namespace RS.UtilityLib.WinFormCommon
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.toolBox1 = new Silver.UI.ToolBox();
             this.lV_ModelList = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonListView();
             this.lineEditor1 = new RS.UtilityLib.WinFormCommon.UI.LineEditor();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
             this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
-           
+            this.ruler1 = new RS.UtilityLib.WinFormCommon.UISystemLayer.Ruler();
             this.SuspendLayout();
             // 
             // button1
@@ -77,6 +78,40 @@ namespace RS.UtilityLib.WinFormCommon
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // toolBox1
+            // 
+            this.toolBox1.AllowDrop = true;
+            this.toolBox1.AllowSwappingByDragDrop = true;
+            this.toolBox1.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.download;
+            this.toolBox1.InitialScrollDelay = 500;
+            this.toolBox1.ItemBackgroundColor = System.Drawing.Color.Empty;
+            this.toolBox1.ItemBorderColor = System.Drawing.Color.Empty;
+            this.toolBox1.ItemHeight = 20;
+            this.toolBox1.ItemHoverColor = System.Drawing.SystemColors.Control;
+            this.toolBox1.ItemHoverTextColor = System.Drawing.SystemColors.ControlText;
+            this.toolBox1.ItemNormalColor = System.Drawing.SystemColors.Control;
+            this.toolBox1.ItemNormalTextColor = System.Drawing.SystemColors.ControlText;
+            this.toolBox1.ItemSelectedColor = System.Drawing.Color.White;
+            this.toolBox1.ItemSelectedTextColor = System.Drawing.SystemColors.ControlText;
+            this.toolBox1.ItemSpacing = 2;
+            this.toolBox1.LargeItemSize = new System.Drawing.Size(64, 64);
+            this.toolBox1.LayoutDelay = 10;
+            this.toolBox1.Location = new System.Drawing.Point(12, 370);
+            this.toolBox1.Name = "toolBox1";
+            this.toolBox1.ScrollDelay = 60;
+            this.toolBox1.SelectAllTextWhileRenaming = true;
+            this.toolBox1.SelectedTabIndex = -1;
+            this.toolBox1.ShowOnlyOneItemPerRow = false;
+            this.toolBox1.Size = new System.Drawing.Size(150, 150);
+            this.toolBox1.SmallItemSize = new System.Drawing.Size(32, 32);
+            this.toolBox1.TabHeight = 18;
+            this.toolBox1.TabHoverTextColor = System.Drawing.SystemColors.ControlText;
+            this.toolBox1.TabIndex = 8;
+            this.toolBox1.TabNormalTextColor = System.Drawing.SystemColors.ControlText;
+            this.toolBox1.TabSelectedTextColor = System.Drawing.SystemColors.ControlText;
+            this.toolBox1.TabSpacing = 1;
+            this.toolBox1.UseItemColorInRename = false;
             // 
             // lV_ModelList
             // 
@@ -160,14 +195,27 @@ namespace RS.UtilityLib.WinFormCommon
             this.ribbonTreeView1.Name = "ribbonTreeView1";
             this.ribbonTreeView1.Size = new System.Drawing.Size(192, 256);
             this.ribbonTreeView1.TabIndex = 1;
-       
+            // 
+            // ruler1
+            // 
+            this.ruler1.HighlightEnabled = false;
+            this.ruler1.HighlightLength = 0F;
+            this.ruler1.HighlightStart = 0F;
+            this.ruler1.Location = new System.Drawing.Point(511, 370);
+            this.ruler1.MeasurementUnit = RS.UtilityLib.WinFormCommon.UISystemLayer.MeasurementUnit.Inch;
+            this.ruler1.Name = "ruler1";
+            this.ruler1.Offset = 0F;
+            this.ruler1.Size = new System.Drawing.Size(150, 150);
+            this.ruler1.TabIndex = 9;
+            this.ruler1.Value = 0F;
             // 
             // FormDemo1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 542);
-        
+            this.ClientSize = new System.Drawing.Size(911, 542);
+            this.Controls.Add(this.ruler1);
+            this.Controls.Add(this.toolBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lV_ModelList);
@@ -180,7 +228,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -193,6 +240,7 @@ namespace RS.UtilityLib.WinFormCommon
         private RibbonUI.RibbonListView lV_ModelList;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button3;
-       
+        private Silver.UI.ToolBox toolBox1;
+        private UISystemLayer.Ruler ruler1;
     }
 }
