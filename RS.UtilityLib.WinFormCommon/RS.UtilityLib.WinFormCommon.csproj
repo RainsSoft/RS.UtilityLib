@@ -42,8 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimatedGif\AnimatedGif.cs" />
+    <Compile Include="AnimatedGif\AnimatedGifCreator.cs" />
+    <Compile Include="AnimatedGif\Extensions.cs" />
+    <Compile Include="AnimatedGif\GifClass.cs" />
+    <Compile Include="AnimatedGif\GifProperties.cs" />
+    <Compile Include="AnimatedGif\GrayscaleQuantizer.cs" />
+    <Compile Include="AnimatedGif\Helper.cs" />
+    <Compile Include="AnimatedGif\OctreeQuantizer.cs" />
+    <Compile Include="AnimatedGif\PaletteQuantizer.cs" />
+    <Compile Include="AnimatedGif\Quantizer.cs" />
+    <Compile Include="AnimatedGif\VideoEncoder.cs" />
     <Compile Include="BitmapToRegion.cs" />
     <Compile Include="DrawRoundRectangleHelper.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="IME\IIMEControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,7 +138,11 @@
     <Compile Include="UIAnimatorNS\Flags.cs" />
     <Compile Include="UIAnimatorNS\PointFConverter.cs" />
     <Compile Include="UIAnimatorNS\TransfromHelper.cs" />
+    <Compile Include="UIFirefoxTheme\FirefoxTheme.cs" />
     <Compile Include="UINotifier\FolderSelectDialog.cs" />
+    <Compile Include="UINotifier\UIMessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UINotifier\UIStartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +209,92 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UISamples\RoomPaintCtl.cs" />
+    <Compile Include="UISystemLayer\ContextMenuStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\FormEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\MenuStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\NativeConstants.cs" />
+    <Compile Include="UISystemLayer\NativeMethods.cs" />
+    <Compile Include="UISystemLayer\NativeStructs.cs" />
+    <Compile Include="UISystemLayer\OS.cs" />
+    <Compile Include="UISystemLayer\PDN\BitVector2D.cs" />
+    <Compile Include="UISystemLayer\PDN\NullGraphics.cs" />
+    <Compile Include="UISystemLayer\PDN\PdnBanner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\PDN\PdnBaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\PDN\PdnBaseForm.cs" />
+    <Compile Include="UISystemLayer\PDN\PdnGraphics.cs" />
+    <Compile Include="UISystemLayer\PDN\PdnGraphicsPath.cs" />
+    <Compile Include="UISystemLayer\PDN\PdnInfo.cs" />
+    <Compile Include="UISystemLayer\PDN\PdnRegion.cs" />
+    <Compile Include="UISystemLayer\PDN\PropertyItem2.cs" />
+    <Compile Include="UISystemLayer\PDN\Tracing.cs" />
+    <Compile Include="UISystemLayer\PDN\Vector`1.cs" />
+    <Compile Include="UISystemLayer\SafeNativeMethods.cs" />
+    <Compile Include="UISystemLayer\testPDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\testPDN.Designer.cs">
+      <DependentUpon>testPDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UISystemLayer\ToolStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\Utility.cs" />
+    <Compile Include="UI\AxisControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\ControlShadow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GlassButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\LoadingCircle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MediaSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ProgressCircle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\Ruler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ToolBox\Collections.cs" />
+    <Compile Include="UI\ToolBox\Delegates.cs" />
+    <Compile Include="UI\ToolBox\Enums.cs" />
+    <Compile Include="UI\ToolBox\TestToolBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ToolBox\TestToolBox.Designer.cs">
+      <DependentUpon>TestToolBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ToolBox\ToolBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ToolBox\ToolBoxItem.cs" />
+    <Compile Include="UI\ToolBox\ToolBoxTab.cs" />
+    <Compile Include="UI\ToolBox\ToolObject.cs" />
+    <Compile Include="UI\ToolBox\ToolScrollButton.cs" />
+    <Compile Include="UI\ToolStripPopup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolWnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\LabelEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -290,12 +397,16 @@
     <Compile Include="UI\ToolTipWindow.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UISystemLayer\UI.cs" />
     <Compile Include="UI\WaterMarkTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDemo1.resx">
       <DependentUpon>FormDemo1.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,11 +432,23 @@
     <EmbeddedResource Include="UINotifier\UIStartForm.resx">
       <DependentUpon>UIStartForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UISystemLayer\testPDN.resx">
+      <DependentUpon>testPDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AxisControl.resx">
+      <DependentUpon>AxisControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ContextMenuForm.resx">
       <DependentUpon>ContextMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UISamples\MouseThroughForm.resx">
       <DependentUpon>MouseThroughForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolBox\ToolBox.resx">
+      <DependentUpon>ToolBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ToolWnd.resx">
+      <DependentUpon>ToolWnd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MyScrollBar\CustomScrollBarsSample.resx">
       <DependentUpon>CustomScrollBarsSample.cs</DependentUpon>
@@ -510,6 +633,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loading_txt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoundedEdgeLL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoundedEdgeLR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoundedEdgeUL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoundedEdgeUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransparentLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
