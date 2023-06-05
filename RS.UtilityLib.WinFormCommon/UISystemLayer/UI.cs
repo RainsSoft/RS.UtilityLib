@@ -15,6 +15,11 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
     /// </summary>
     public static class UI
     {
+        public static bool IsInitScales {
+            get {
+                return initScales;
+            }
+        }
         private static bool initScales = false;
         private static float xScale;
         private static float yScale;
