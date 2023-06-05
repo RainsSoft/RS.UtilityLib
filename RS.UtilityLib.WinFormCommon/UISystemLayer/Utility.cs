@@ -729,109 +729,87 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
         /// <param name="startIndex"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        //public static PdnRegion RectanglesToRegion(RectangleF[] rectsF, int startIndex, int length)
-        //{
-        //    PdnRegion region;
+        public static PdnRegion RectanglesToRegion(RectangleF[] rectsF, int startIndex, int length) {
+            PdnRegion region;
 
-        //    if (rectsF == null || rectsF.Length == 0 || length == 0)
-        //    {
-        //        region = PdnRegion.CreateEmpty();
-        //    }
-        //    else
-        //    {
-        //        using (PdnGraphicsPath path = new PdnGraphicsPath())
-        //        {
-        //            path.FillMode = FillMode.Winding;
+            if (rectsF == null || rectsF.Length == 0 || length == 0) {
+                region = PdnRegion.CreateEmpty();
+            }
+            else {
+                using (PdnGraphicsPath path = new PdnGraphicsPath()) {
+                    path.FillMode = FillMode.Winding;
 
-        //            if (startIndex == 0 && length == rectsF.Length)
-        //            {
-        //                path.AddRectangles(rectsF);
-        //            }
-        //            else
-        //            {
-        //                for (int i = startIndex; i < startIndex + length; ++i)
-        //                {
-        //                    path.AddRectangle(rectsF[i]);
-        //                }
-        //            }
+                    if (startIndex == 0 && length == rectsF.Length) {
+                        path.AddRectangles(rectsF);
+                    }
+                    else {
+                        for (int i = startIndex; i < startIndex + length; ++i) {
+                            path.AddRectangle(rectsF[i]);
+                        }
+                    }
 
-        //            region = new PdnRegion(path);
-        //        }
-        //    }
+                    region = new PdnRegion(path);
+                }
+            }
 
-        //    return region;
-        //}
+            return region;
+        }
 
-        //public static PdnRegion RectanglesToRegion(RectangleF[] rectsF)
-        //{
-        //    return RectanglesToRegion(rectsF, 0, rectsF != null ? rectsF.Length : 0);
-        //}
+        public static PdnRegion RectanglesToRegion(RectangleF[] rectsF) {
+            return RectanglesToRegion(rectsF, 0, rectsF != null ? rectsF.Length : 0);
+        }
 
-        //public static PdnRegion RectanglesToRegion(RectangleF[] rectsF1, RectangleF[] rectsF2, params RectangleF[][] rectsFA)
-        //{
-        //    using (PdnGraphicsPath path = new PdnGraphicsPath())
-        //    {
-        //        path.FillMode = FillMode.Winding;
+        public static PdnRegion RectanglesToRegion(RectangleF[] rectsF1, RectangleF[] rectsF2, params RectangleF[][] rectsFA) {
+            using (PdnGraphicsPath path = new PdnGraphicsPath()) {
+                path.FillMode = FillMode.Winding;
 
-        //        if (rectsF1 != null && rectsF1.Length > 0)
-        //        {
-        //            path.AddRectangles(rectsF1);
-        //        }
+                if (rectsF1 != null && rectsF1.Length > 0) {
+                    path.AddRectangles(rectsF1);
+                }
 
-        //        if (rectsF2 != null && rectsF2.Length > 0)
-        //        {
-        //            path.AddRectangles(rectsF2);
-        //        }
+                if (rectsF2 != null && rectsF2.Length > 0) {
+                    path.AddRectangles(rectsF2);
+                }
 
-        //        foreach (RectangleF[] rectsF in rectsFA)
-        //        {
-        //            if (rectsF != null && rectsF.Length > 0)
-        //            {
-        //                path.AddRectangles(rectsF);
-        //            }
-        //        }
+                foreach (RectangleF[] rectsF in rectsFA) {
+                    if (rectsF != null && rectsF.Length > 0) {
+                        path.AddRectangles(rectsF);
+                    }
+                }
 
-        //        return new PdnRegion(path);
-        //    }
-        //}
+                return new PdnRegion(path);
+            }
+        }
 
-        //public static PdnRegion RectanglesToRegion(Rectangle[] rects, int startIndex, int length)
-        //{
-        //    PdnRegion region;
+        public static PdnRegion RectanglesToRegion(Rectangle[] rects, int startIndex, int length) {
+            PdnRegion region;
 
-        //    if (length == 0)
-        //    {
-        //        region = PdnRegion.CreateEmpty();
-        //    }
-        //    else
-        //    {
-        //        using (PdnGraphicsPath path = new PdnGraphicsPath())
-        //        {
-        //            path.FillMode = FillMode.Winding;
-        //            if (startIndex == 0 && length == rects.Length)
-        //            {
-        //                path.AddRectangles(rects);
-        //            }
-        //            else
-        //            {
-        //                for (int i = startIndex; i < startIndex + length; ++i)
-        //                {
-        //                    path.AddRectangle(rects[i]);
-        //                }
-        //            }
+            if (length == 0) {
+                region = PdnRegion.CreateEmpty();
+            }
+            else {
+                using (PdnGraphicsPath path = new PdnGraphicsPath()) {
+                    path.FillMode = FillMode.Winding;
+                    if (startIndex == 0 && length == rects.Length) {
+                        path.AddRectangles(rects);
+                    }
+                    else {
+                        for (int i = startIndex; i < startIndex + length; ++i) {
+                            path.AddRectangle(rects[i]);
+                        }
+                    }
 
-        //            region = new PdnRegion(path);
-        //            path.Dispose();
-        //        }
-        //    }
+                    region = new PdnRegion(path);
+                    path.Dispose();
+                }
+            }
 
-        //    return region;
-        //}
+            return region;
+        }
 
-        //public static PdnRegion RectanglesToRegion(Rectangle[] rects)
-        //{
-        //    return RectanglesToRegion(rects, 0, rects.Length);
-        //}
+        public static PdnRegion RectanglesToRegion(Rectangle[] rects) {
+            return RectanglesToRegion(rects, 0, rects.Length);
+        }
 
         public static int GetRegionArea(RectangleF[] rectsF) {
             int area = 0;
