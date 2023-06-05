@@ -63,6 +63,16 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Banner {
+            get {
+                object obj = ResourceManager.GetObject("Banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap bug_green32 {
             get {
                 object obj = ResourceManager.GetObject("bug-green32", resourceCulture);
@@ -403,6 +413,46 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap RoundedEdgeLL {
+            get {
+                object obj = ResourceManager.GetObject("RoundedEdgeLL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap RoundedEdgeLR {
+            get {
+                object obj = ResourceManager.GetObject("RoundedEdgeLR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap RoundedEdgeUL {
+            get {
+                object obj = ResourceManager.GetObject("RoundedEdgeUL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap RoundedEdgeUR {
+            get {
+                object obj = ResourceManager.GetObject("RoundedEdgeUR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap search_128 {
             get {
                 object obj = ResourceManager.GetObject("search-128", resourceCulture);
@@ -556,6 +606,16 @@ namespace RS.UtilityLib.WinFormCommon.Properties {
         internal static System.Drawing.Bitmap tooltip_room {
             get {
                 object obj = ResourceManager.GetObject("tooltip_room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap TransparentLogo {
+            get {
+                object obj = ResourceManager.GetObject("TransparentLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
