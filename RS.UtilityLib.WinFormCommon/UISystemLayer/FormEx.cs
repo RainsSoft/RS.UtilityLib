@@ -13,6 +13,7 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
     /// by the PdnBaseForm class. This way there is no inheritance hierarchy 
     /// extending into the SystemLayer assembly.
     /// </summary>
+    [ToolboxItem(false)]
     public sealed class FormEx
         : Control
     {
