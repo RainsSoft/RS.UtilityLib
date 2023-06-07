@@ -7,6 +7,9 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
     /// This class adds on to the functionality provided in System.Windows.Forms.MenuStrip.
     /// </summary>
     /// <remarks>
+    /// 关于MenuStrip，我发现的第一件令人恼火的事情是它没有“点击通过”。
+    ///如果托管MenuStrip的表单没有处于活动状态，并且你点击了工具栏中的按钮，它会将焦点设置为表单，但不会点击按钮。
+    ///这在很多情况下都是有意义的，但对于Paint.NET来说绝对不是。
     /// The first aggravating thing I found out about the new toolstrips is that they do not "click through."
     /// If the form that is hosting a toolstrip is not active and you click on a button in the toolstrip, it 
     /// sets focus to the form but does NOT click the button. This makes sense in many situations, but 

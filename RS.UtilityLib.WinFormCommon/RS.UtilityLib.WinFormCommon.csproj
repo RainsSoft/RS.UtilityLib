@@ -34,6 +34,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RS.UtilityLib.SizeOfGenericT\LIB\Mono.Posix.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -222,8 +226,38 @@
     <Compile Include="UISystemLayer\NativeMethods.cs" />
     <Compile Include="UISystemLayer\NativeStructs.cs" />
     <Compile Include="UISystemLayer\OS.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\IDeferredSerializable.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\IPixelOp.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\Memory.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\PixelOp.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\Processor.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\ProcessorArchitecture.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\ResamplingAlgorithm.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\UnaryPixelOp.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\UnaryPixelOps.cs" />
+    <Compile Include="UISystemLayer\PDN\AngleChooserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\PDN\ArrowButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UISystemLayer\PDN\BitVector2D.cs" />
+    <Compile Include="UISystemLayer\PDN\ButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\PDNBitmap\ColorBgra.cs" />
+    <Compile Include="UISystemLayer\PDN\ColorWheel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\PDNEvents\EventArgs`1.cs" />
+    <Compile Include="UISystemLayer\PDNEvents\EventHandler`1.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\HsvColor.cs" />
+    <Compile Include="UISystemLayer\PDN\IPaintBackground.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\MemoryBlock.cs" />
     <Compile Include="UISystemLayer\PDN\NullGraphics.cs" />
+    <Compile Include="UISystemLayer\PDNEvents\PaintEventArgs2.cs" />
+    <Compile Include="UISystemLayer\PDNEvents\PaintEventHandler2.cs" />
+    <Compile Include="UISystemLayer\PDN\Pair`2.cs" />
     <Compile Include="UISystemLayer\PDN\PdnBanner.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -236,6 +270,15 @@
     <Compile Include="UISystemLayer\PDN\PdnInfo.cs" />
     <Compile Include="UISystemLayer\PDN\PdnRegion.cs" />
     <Compile Include="UISystemLayer\PDN\PropertyItem2.cs" />
+    <Compile Include="UISystemLayer\PDN\RenderArgs.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\RgbColor.cs" />
+    <Compile Include="UISystemLayer\PDNBitmap\Surface.cs" />
+    <Compile Include="UISystemLayer\PDN\SwatchControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\ScrollPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UISystemLayer\PDN\Tracing.cs" />
     <Compile Include="UISystemLayer\PDN\Vector`1.cs" />
     <Compile Include="UISystemLayer\SafeNativeMethods.cs" />
@@ -245,6 +288,10 @@
     <Compile Include="UISystemLayer\testPDN.Designer.cs">
       <DependentUpon>testPDN.cs</DependentUpon>
     </Compile>
+    <Compile Include="UISystemLayer\Threading\ThreadPool.cs" />
+    <Compile Include="UISystemLayer\Threading\WaitableCounter.cs" />
+    <Compile Include="UISystemLayer\Threading\WaitHandleArray.cs" />
+    <Compile Include="UISystemLayer\Threading\WorkerThreadException.cs" />
     <Compile Include="UISystemLayer\ToolStripEx.cs">
       <SubType>Component</SubType>
     </Compile>

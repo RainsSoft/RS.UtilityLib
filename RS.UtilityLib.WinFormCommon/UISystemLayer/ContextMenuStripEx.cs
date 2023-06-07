@@ -4,6 +4,11 @@ using System.Windows.Forms;
 
 namespace RS.UtilityLib.WinFormCommon.UISystemLayer
 {
+    /// <summary>
+    ///ContextMenuStrip，我发现的第一件令人恼火的事情是它没有“点击通过”。
+    ///如果托管ContextMenuStrip的表单没有处于活动状态，并且你点击了工具栏中的按钮，它会将焦点设置为表单，但不会点击按钮。
+    ///这在很多情况下都是有意义的，但对于Paint.NET来说绝对不是。
+    /// </summary>
     public class ContextMenuStripEx : ContextMenuStrip
     {
         private bool clickThrough = true;
