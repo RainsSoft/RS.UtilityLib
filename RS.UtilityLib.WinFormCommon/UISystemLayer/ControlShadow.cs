@@ -23,6 +23,9 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
         private System.ComponentModel.Container components = null;
         private LinearGradientBrush gradientBrush = null;
         private int gradientHeight = -1;
+        /// <summary>
+        /// ±ÕÈû¿Ø¼þ
+        /// </summary>
         private Control occludingControl;
 
         private static bool betaTagDone = false;
@@ -30,7 +33,9 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
         private int betaTagOpacity = 255;
         private Timer betaTagTimer;
         private DateTime betaTagStart;
-
+        /// <summary>
+        /// ±ÕÈû¿Ø¼þ
+        /// </summary>
         [Browsable(false)]
         public Control OccludingControl
         {
@@ -166,7 +171,7 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
                 outlineRect.Height += 2;
 
                 g.DrawLines(
-                    Pens.Black,
+                    Pens.Gray,
                     new Point[]
                     {
                         new Point(outlineRect.Left, outlineRect.Top),

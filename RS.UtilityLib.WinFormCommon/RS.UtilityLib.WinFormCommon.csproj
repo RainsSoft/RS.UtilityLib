@@ -216,7 +216,10 @@
     <Compile Include="UISystemLayer\ContextMenuStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UISystemLayer\FormEx.cs">
+    <Compile Include="UISystemLayer\PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UISystemLayer\PDN\FormEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UISystemLayer\MenuStripEx.cs">
@@ -255,8 +258,6 @@
     <Compile Include="UISystemLayer\PDN\IPaintBackground.cs" />
     <Compile Include="UISystemLayer\PDNBitmap\MemoryBlock.cs" />
     <Compile Include="UISystemLayer\PDN\NullGraphics.cs" />
-    <Compile Include="UISystemLayer\PDNEvents\PaintEventArgs2.cs" />
-    <Compile Include="UISystemLayer\PDNEvents\PaintEventHandler2.cs" />
     <Compile Include="UISystemLayer\PDN\Pair`2.cs" />
     <Compile Include="UISystemLayer\PDN\PdnBanner.cs">
       <SubType>Component</SubType>
@@ -481,6 +482,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UISystemLayer\testPDN.resx">
       <DependentUpon>testPDN.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AxisControl.resx">
       <DependentUpon>AxisControl.cs</DependentUpon>
