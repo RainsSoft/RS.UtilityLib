@@ -1032,12 +1032,22 @@ namespace Zeroit.Framework.Metro
         private void DoAnimation(Control Control1, Control Control2, bool isLeftScroll)
 		{
 			int i;
-			IEnumerator enumerator = null;
+			//IEnumerator enumerator = null;
 			IEnumerator enumerator1 = null;
 			IEnumerator enumerator2 = null;
 			IEnumerator enumerator3 = null;
+					
 			try
-			{
+			{	
+				//Todo:开始动画之前，先获取tabControl中的所有控制的隐藏属性
+				foreach (Control c in Control1.Controls) {
+					c.AccessibleName = c.Visible ? "1" : "0";
+				}
+				foreach (Control c in Control2.Controls) {
+					c.AccessibleName=c.Visible ? "1" : "0";
+				}
+				//
+
 				Graphics graphic = Control1.CreateGraphics();
 				Bitmap bitmap = new Bitmap(Control1.Width, Control1.Height);
 				Bitmap bitmap1 = new Bitmap(Control2.Width, Control2.Height);
@@ -1045,6 +1055,7 @@ namespace Zeroit.Framework.Metro
 				Control1.DrawToBitmap(bitmap, rectangle);
 				rectangle = new Rectangle(0, 0, Control2.Width, Control2.Height);
 				Control2.DrawToBitmap(bitmap1, rectangle);
+				/*
 				try
 				{
 					enumerator = Control2.Controls.GetEnumerator();
@@ -1053,7 +1064,7 @@ namespace Zeroit.Framework.Metro
 						Control current = (Control)enumerator.Current;
 						if (!current.Visible)
 						{
-							current.Tag = "0";
+							//current.Tag = "0";
 						}
 					}
 				}
@@ -1063,18 +1074,23 @@ namespace Zeroit.Framework.Metro
 					{
 						(enumerator as IDisposable).Dispose();
 					}
-				}
+				}*/
 				try
 				{
 					enumerator1 = Control1.Controls.GetEnumerator();
 					while (enumerator1.MoveNext())
 					{
 						Control control = (Control)enumerator1.Current;
-						if (!control.Visible)
+						//if (!control.Visible)
+						//{
+						//	control.Tag = "0";
+						//}
+						//control.Hide();
 						{
-							control.Tag = "0";
+							//fix:2023/8/7
+							if (control.AccessibleName == "1")
+								control.Hide();
 						}
-						control.Hide();
 					}
 				}
 				finally
@@ -1126,11 +1142,17 @@ namespace Zeroit.Framework.Metro
 					while (enumerator2.MoveNext())
 					{
 						Control current1 = (Control)enumerator2.Current;
-						if (current1.Tag != null)
+						//if (current1.Tag != null)
+						//{
+						//	current1.Show();
+						//}
+						//current1.Tag = null;
 						{
-							current1.Show();
+							//fixed:2023/8/7
+							if (current1.AccessibleName == "1") {
+								current1.Show();
+							}
 						}
-						current1.Tag = null;
 					}
 				}
 				finally
@@ -1146,11 +1168,17 @@ namespace Zeroit.Framework.Metro
 					while (enumerator3.MoveNext())
 					{
 						Control control1 = (Control)enumerator3.Current;
-						if (control1.Tag != null)
+						//if (control1.Tag != null)
+						//{
+						//	control1.Show();
+						//}
+						//control1.Tag = null;
 						{
-							control1.Show();
+							//fixed:203/8/7
+							if (control1.AccessibleName == "1") { 
+								control1.Show();
+							}
 						}
-						control1.Tag = null;
 					}
 				}
 				finally
