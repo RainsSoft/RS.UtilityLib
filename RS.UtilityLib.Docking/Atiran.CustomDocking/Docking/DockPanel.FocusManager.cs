@@ -155,7 +155,7 @@ namespace Atiran.CustomDocking.Docking
             {
                 if (!m_disposed && disposing)
                 {
-                    if (!Win32Helper.IsRunningOnMono)
+                    if (!Win32Helper.IsRunningOnMono&&sm_localWindowsHook!=null)
                     {
                         sm_localWindowsHook.HookInvoked -= m_hookEventHandler;
                     }
