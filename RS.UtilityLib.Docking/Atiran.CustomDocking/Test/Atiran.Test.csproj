@@ -45,6 +45,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmbedForm\ContorlSafeCallHelper.cs" />
+    <Compile Include="EmbedForm\DeskDriverFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmbedForm\ExtensionAttribute.cs" />
+    <Compile Include="EmbedForm\frm_EmbedContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmbedForm\frm_EmbedContainer.designer.cs">
+      <DependentUpon>frm_EmbedContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmbedForm\IHasProcess.cs" />
+    <Compile Include="EmbedForm\ProcessContext.cs" />
+    <Compile Include="EmbedForm\ProcessEmbed.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +67,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmbedForm\DeskDriverFrm.resx">
+      <DependentUpon>DeskDriverFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmbedForm\frm_EmbedContainer.resx">
+      <DependentUpon>frm_EmbedContainer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

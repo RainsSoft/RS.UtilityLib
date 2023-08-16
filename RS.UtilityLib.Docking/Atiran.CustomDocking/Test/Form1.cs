@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Atiran.CustomDocking.Docking;
 using Atiran.CustomDocking.Docking.Desk;
 using Atiran.CustomDocking.Docking.Theme.ThemeVS2012;
+using Test.EmbedForm;
 
 namespace Test
 {
@@ -45,6 +46,10 @@ namespace Test
         private void button2_Click(object sender, EventArgs e)
         {
             dockPanel1.ActiveDocumentPane?.TabStripControl.StripMenuShowDropDown();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            frm_EmbedContainer.ShowContainer(this);
         }
     }
 }
