@@ -1,0 +1,7 @@
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.MemoryInterop\bin\Release\net35\RS.UtilityLib.MemoryInterop.dll
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.MemoryInterop\bin\Release\net35\RS.UtilityLib.MemoryInterop.pdb
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.MemoryInterop\obj\Release\net35\RS.UtilityLib.MemoryInterop.csproj.AssemblyReference.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.MemoryInterop\obj\Release\net35\RS.UtilityLib.MemoryInterop.GeneratedMSBuildEditorConfig.editorconfig
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.MemoryInterop\obj\Release\net35\RS.UtilityLib.MemoryInterop.csproj.CoreCompileInputs.cache
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.MemoryInterop\obj\Release\net35\RS.UtilityLib.MemoryInterop.dll
+G:\GitHub\RS.UtilityLib\RS.UtilityLib.MemoryInterop\obj\Release\net35\RS.UtilityLib.MemoryInterop.pdb

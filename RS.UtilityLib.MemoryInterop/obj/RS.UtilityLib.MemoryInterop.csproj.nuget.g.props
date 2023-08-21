@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\rains\.nuget\packages\;C:\Users\rains\AppData\Roaming\Godot\mono\GodotNuGetFallbackFolder;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages;C:\Program Files (x86)\Microsoft\Xamarin\NuGet\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.11.2</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\rains\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\rains\AppData\Roaming\Godot\mono\GodotNuGetFallbackFolder\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft\Xamarin\NuGet\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net20' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMemoryInterop_ILPatcher Condition=" '$(PkgMemoryInterop_ILPatcher)' == '' ">C:\Users\rains\.nuget\packages\memoryinterop.ilpatcher\2.2.1</PkgMemoryInterop_ILPatcher>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net35' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMemoryInterop_ILPatcher Condition=" '$(PkgMemoryInterop_ILPatcher)' == '' ">C:\Users\rains\.nuget\packages\memoryinterop.ilpatcher\2.2.1</PkgMemoryInterop_ILPatcher>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net4' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMemoryInterop_ILPatcher Condition=" '$(PkgMemoryInterop_ILPatcher)' == '' ">C:\Users\rains\.nuget\packages\memoryinterop.ilpatcher\2.2.1</PkgMemoryInterop_ILPatcher>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMemoryInterop_ILPatcher Condition=" '$(PkgMemoryInterop_ILPatcher)' == '' ">C:\Users\rains\.nuget\packages\memoryinterop.ilpatcher\2.2.1</PkgMemoryInterop_ILPatcher>
+  </PropertyGroup>
+</Project>
