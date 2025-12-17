@@ -273,31 +273,27 @@
   },
   "packageFolders": {
     "C:\\Users\\rains\\.nuget\\packages\\": {},
-    "C:\\Users\\rains\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\GitHub\\RS.UtilityLib\\RS.UtilityLib.MemoryInterop\\RS.UtilityLib.MemoryInterop.csproj",
+      "projectUniqueName": "D:\\GitHub\\RS.UtilityLib\\RS.UtilityLib.MemoryInterop\\RS.UtilityLib.MemoryInterop.csproj",
       "projectName": "RS.UtilityLib.MemoryInterop",
-      "projectPath": "G:\\GitHub\\RS.UtilityLib\\RS.UtilityLib.MemoryInterop\\RS.UtilityLib.MemoryInterop.csproj",
+      "projectPath": "D:\\GitHub\\RS.UtilityLib\\RS.UtilityLib.MemoryInterop\\RS.UtilityLib.MemoryInterop.csproj",
       "packagesPath": "C:\\Users\\rains\\.nuget\\packages\\",
-      "outputPath": "G:\\GitHub\\RS.UtilityLib\\RS.UtilityLib.MemoryInterop\\obj\\",
+      "outputPath": "D:\\GitHub\\RS.UtilityLib\\RS.UtilityLib.MemoryInterop\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
-        "C:\\Users\\rains\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\rains\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\rains\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net20",
@@ -307,7 +303,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -345,7 +340,7 @@
             "version": "[2.2.1, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.116\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       },
       "net35": {
         "targetAlias": "net35",
@@ -357,7 +352,7 @@
             "version": "[2.2.1, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.116\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       },
       "net40": {
         "targetAlias": "net4",
@@ -369,7 +364,7 @@
             "version": "[2.2.1, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.116\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       },
       "netstandard2.0": {
         "targetAlias": "netstandard2.0",
@@ -397,7 +392,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.116\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
