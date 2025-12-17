@@ -1,0 +1,30 @@
+INFO: IL Repack - Version 2.1.8
+INFO: ------------- IL Repack Arguments -------------
+/out:RS.Capture2.exe /internalize RS.Capture.exe System.Threading.dll AsyncBridge.Net35.dll GreenshotImageEditor.dll HelpersLib.dll ScreenCapture.dll ImageEffectsLib.dll
+-----------------------------------------------
+INFO: Adding assembly for merge: RS.Capture.exe
+INFO: Adding assembly for merge: System.Threading.dll
+INFO: Adding assembly for merge: AsyncBridge.Net35.dll
+INFO: Adding assembly for merge: GreenshotImageEditor.dll
+INFO: Adding assembly for merge: HelpersLib.dll
+INFO: Adding assembly for merge: ScreenCapture.dll
+INFO: Adding assembly for merge: ImageEffectsLib.dll
+INFO: Merging Win32 resources
+INFO: Processing references
+INFO: Processing types
+INFO: Merging <Module>
+INFO: Merging <Module>
+INFO: Merging <Module>
+INFO: Merging <Module>
+INFO: Merging <Module>
+INFO: Renaming <PrivateImplementationDetails> into <e0da2033-c535-4657-a4d7-38878ba9db5b><PrivateImplementationDetails>
+INFO: Merging <Module>
+INFO: Renaming <PrivateImplementationDetails> into <9b23200c-4319-4388-9201-756e05320d9e><PrivateImplementationDetails>
+INFO: Merging <Module>
+INFO: Processing exported types
+INFO: Processing resources
+INFO: Fixing references
+INFO: Processing public types tree
+INFO: Writing output assembly to disk
+INFO: Patching Win32 resources
+INFO: Finished in 00:00:01.2225150

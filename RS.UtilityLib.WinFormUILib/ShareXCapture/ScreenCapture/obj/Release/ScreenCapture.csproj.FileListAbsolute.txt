@@ -1,0 +1,16 @@
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\ScreenCapture.dll
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\AsyncBridge.Net35.dll
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\HelpersLib.dll
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\System.Threading.dll
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\GreenshotImageEditor.dll
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\Newtonsoft.Json.dll
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\AsyncBridge.Net35.xml
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\System.Threading.xml
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\bin\Release\Newtonsoft.Json.xml
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\obj\Release\ScreenCapture.csproj.AssemblyReference.cache
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\obj\Release\ScreenCapture.RegionCapturePreview.resources
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\obj\Release\ScreenCapture.Properties.Resources.resources
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\obj\Release\ScreenCapture.csproj.GenerateResource.cache
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\obj\Release\ScreenCapture.csproj.CoreCompileInputs.cache
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\obj\Release\ScreenCapture.csproj.CopyComplete
+C:\Work\irobotq\probuct\src\第三方类库\ShareX-8.3.0\ScreenCapture\obj\Release\ScreenCapture.dll
