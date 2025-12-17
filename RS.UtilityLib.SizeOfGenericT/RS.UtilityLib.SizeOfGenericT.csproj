@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
@@ -48,13 +49,14 @@
     <Compile Include="BGRA\ColorBgra.cs" />
     <Compile Include="BGRA\IDeferredSerializable.cs" />
     <Compile Include="BGRA\Utility.cs" />
+    <Compile Include="Heap\HeapMemory.cs" />
+    <Compile Include="Heap\NativeInterop.cs" />
     <Compile Include="LinqHelper\ExtensionAttribute.cs" />
     <Compile Include="LinqHelper\LinqHelper.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="MemoryBlock.cs" />
-    <Compile Include="Memory2\Memory.cs" />
-    <Compile Include="Memory2\NativeInterop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SafeMemory.cs" />
     <Compile Include="SafeNativeMethods.cs" />
     <Compile Include="SizeOf_T_.cs" />
     <Compile Include="Threading\NativeConstants.cs" />
@@ -64,6 +66,9 @@
     <Compile Include="Threading\Processor.cs" />
     <Compile Include="Threading\ThreadPool.cs" />
     <Compile Include="Threading\WaitableCounter.cs" />
+    <Compile Include="webrtc\ExecutableUnitySynchronizationContext.cs" />
+    <Compile Include="webrtc\IntPtrExtension.cs" />
+    <Compile Include="webrtc\Marshalling.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AxiomUnsafeMemory\" />

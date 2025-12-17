@@ -71,7 +71,7 @@ namespace Axiom.Core
 		{
 			Copy( src, dest, 0, 0, length );
 		}
-
+		
 		/// <summary>
 		///		Method for copying data from one IntPtr to another.
 		/// </summary>

@@ -14,6 +14,8 @@ using System.Threading;
 namespace RS.UtilityLib.SizeOfGenericT.Threading
 {
     /// <summary>
+    /// 使用.NET线程池来创建我们自己类型的线程池。这里的主要区别在于，我们限制了线程池的使用，
+    /// 而且我们还可以耗尽现有的线程（“fence”）。默认的最大线程数是Processor.LogicalCpuCount。
     /// Uses the .NET ThreadPool to do our own type of thread pool. The main difference
     /// here is that we limit our usage of the thread pool, and that we can also drain
     /// the threads we have ("fence"). The default maximum number of threads is

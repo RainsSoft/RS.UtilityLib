@@ -32,7 +32,7 @@ namespace RS.UtilityLib.SizeOfGenericT
             if (init.Length > 15)
             {
                 data = Marshal.StringToHGlobalAnsi(init).ToPointer();
-                reserved = Memory2.SizeOf(data);
+                reserved = HeapMemory.SizeOf(data);
             }
             else
             {
@@ -99,7 +99,7 @@ namespace RS.UtilityLib.SizeOfGenericT
             if (init.Length > 7)
             {
                 data = Marshal.StringToHGlobalUni(init).ToPointer();
-                reserved = Memory2.SizeOf(data);
+                reserved = HeapMemory.SizeOf(data);
             }
             else
             {

@@ -76,7 +76,10 @@ namespace Axiom.Core
 			this._memoryPool.Add( buffer );
 			return buffer;
 		}
-
+		/// <summary>
+		/// 移除
+		/// </summary>
+		/// <param name="buffer"></param>
 		public void Deallocate( IMemoryBuffer buffer )
 		{
 			if( _memoryPool.Contains( buffer ) )

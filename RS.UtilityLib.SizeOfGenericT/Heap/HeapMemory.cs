@@ -2,13 +2,13 @@
 using System.Runtime.InteropServices;
 namespace RS.UtilityLib.SizeOfGenericT
 {
-    public unsafe class Memory2
+    public unsafe class HeapMemory
     {
         // Handle for the process heap. This handle is used in all calls to the
         // HeapXXX APIs in the methods below.
         static int ph = GetProcessHeap();
         // Private instance constructor to prevent instantiation.
-        private Memory2() { }
+        private HeapMemory() { }
         // Allocates a memory block of the given size. The allocated memory is
         // automatically initialized to zero.
         public static void* Alloc(int size) {

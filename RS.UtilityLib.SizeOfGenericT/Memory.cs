@@ -203,6 +203,7 @@ namespace RS.UtilityLib.SizeOfGenericT
         /// <param name="length">The number of bytes to copy</param>
         public static void Copy(void* dst, void* src, ulong length) {
             SafeNativeMethods.memcpy(dst, src, new UIntPtr(length));
+            //Buffer.MemoryCopy((byte*)SrcPtr, (byte*)DstPtr, len, len);
         }
 
         public static void SetToZero(IntPtr dst, ulong length) {

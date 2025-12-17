@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 namespace RS.UtilityLib.SizeOfGenericT.Threading
 {
     /// <summary>
+    /// CPU属性
     /// Provides static methods and properties related to the CPU.
     /// </summary>
     public static class Processor
