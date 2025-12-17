@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace RS.UtilityLib.WinFormCommon.UINotifier
 {
@@ -24,6 +25,33 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
 
             }
         }
+#if DEBUG
+        static void test() {
+            UIStartForm splashForm=null;
+            //show splash
+            Thread splashThread = new Thread(new ThreadStart(
+                delegate {
+                    splashForm= new UIStartForm();
+                    Application.Run(splashForm);
+                }
+                ));
+
+            splashThread.SetApartmentState(ApartmentState.STA);
+            splashThread.Start();
+
+            //run form - time taking operation
+            Form mainForm = new Form();
+            mainForm.Load += (sender,e)=> {
+                //close splash
+                if (splashForm == null) {
+                    return;
+                }
+                splashForm.Invoke(new Action(splashForm.Close));
+                splashForm.Dispose();
+                splashForm = null;
+            };
+        }
+#endif
         public UIStartForm() {
 
             InitializeComponent();

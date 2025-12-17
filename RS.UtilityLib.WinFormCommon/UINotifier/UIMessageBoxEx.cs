@@ -43,7 +43,15 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
             if (m_closeAfter <= 0) {
                 return;
             }
+            //if (m_Timer == null) {
+            //    m_Timer = new Timer();
+            //    m_Timer.Tick += new EventHandler(m_Timer_Tick);
+            //}
+            //m_Timer.Interval = closeAfterSeconds * 1000;
+            //m_Timer.Stop();
+            //m_Timer.Start();
             timer1.Enabled = true;
+            timer1.Stop();
             timer1.Start();
         }
         private void CreateIcon() {
@@ -204,7 +212,68 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
                 this.Close();
             }
         }
+        internal static void OpenWeb(string url) {
+            //int ret = ShellExecute(IntPtr.Zero, "open", url, IntPtr.Zero, IntPtr.Zero, 1);
+            //if (ret <= 32) {
+            //     Console.WriteLine("打开浏览器失败!错误号:" + ret.ToString());
+            //}
+            Console.WriteLine("访问URL：" + url);
+            bool isxp = false;
+            bool upxp = false;
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT
+                && Environment.OSVersion.Version.Major == 5) {
+                isxp = true;
+            }
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT
+                && Environment.OSVersion.Version.Major >= 6) {
+                upxp = true;
+            }
+            string strBrowse = string.Empty;
+            if (isxp) {
+                Microsoft.Win32.RegistryKey k = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey("http\\shell\\open\\command");
+                if (k != null) {
+                    object o = k.GetValue("");
+                    if (o != null) {
+                        string exe = o.ToString();
+                        int start = exe.IndexOf('"');
+                        int end = exe.IndexOf('"', start + 1);
+                        if (end > 0 && end > start) {
+                            strBrowse = exe.Substring(start + 1, end - start - 1);
+                        }
+                    }
+                }
+            }
+            if (upxp) {
+                Microsoft.Win32.RegistryKey k = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\http\\UserChoice");
+                if (k != null) {
+                    object o = k.GetValue("Progid");
+                    if (o != null) {
+                        string progid = o.ToString();
+                        k = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(progid + "\\shell\\open\\command");
+                        if (k != null) {
+                            o = k.GetValue("");
+                            string exe = o as string;
+                            if (string.IsNullOrEmpty(exe) == false) {
+                                int start = exe.IndexOf('"');
+                                int end = exe.IndexOf('"', start + 1);
+                                if (end > 0 && end > start) {
+                                    strBrowse = exe.Substring(start + 1, end - start - 1);
+                                }
+                            }
+                        }
 
+                    }
+                }
+            }
+            if (string.IsNullOrEmpty(strBrowse)) {
+                strBrowse = "iexplore.exe";
+            }
+            try {
+                Process.Start(strBrowse, url);
+            }
+            catch {
+            }
+        }
 
         #region designer
 

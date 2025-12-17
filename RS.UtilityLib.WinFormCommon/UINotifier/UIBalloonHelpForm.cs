@@ -304,7 +304,7 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(183, 0);
+            this.closeButton.Location = new System.Drawing.Point(199, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(17, 15);
             this.closeButton.TabIndex = 0;
@@ -318,7 +318,7 @@ namespace RS.UtilityLib.WinFormCommon.UINotifier
             // UIBalloonHelpForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
-            this.ClientSize = new System.Drawing.Size(200, 142);
+            this.ClientSize = new System.Drawing.Size(216, 158);
             this.Controls.Add(this.closeButton);
             this.Name = "UIBalloonHelpForm";
             this.ResumeLayout(false);
