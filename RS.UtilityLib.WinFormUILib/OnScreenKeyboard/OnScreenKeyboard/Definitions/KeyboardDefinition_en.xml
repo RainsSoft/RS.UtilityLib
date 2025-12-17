@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<KeyboardDefinition Rows="8" Cols="43" MarginWidth="4" MarginHeight="4" GutterWidth="5" GutterHeight="5">
+   <Key Top="0" Left="0" Height="2" Width="3">
+    <State Style="Default" Text="Esc" Code="{escape}" />
+    <State Style="Shift" Text="Esc" Code="{escape}" />
+    <State Style="AltGr" Text="Esc" Code="{escape}" />
+    <State Style="AltGrShift" Text="Esc" Code="{escape}" />
+  </Key>
+   <Key Top="0" Left="3" Height="2" Width="2">
+    <State Style="Default" Text="q" Code="q" />
+    <State Style="Shift" Text="Q" Code="Q" />
+    <State Style="AltGr" Text="ä" Code="ä" />
+    <State Style="AltGrShift" Text="Ä" Code="Ä" />
+  </Key>
+  <Key Top="0" Left="5" Height="2" Width="2">
+    <State Style="Default" Text="w" Code="w" />
+    <State Style="Shift" Text="W" Code="W" />
+    <State Style="AltGr" Text="å" Code="å" />
+    <State Style="AltGrShift" Text="Å" Code="Å" />
+  </Key>
+  <Key Top="0" Left="7" Height="2" Width="2">
+    <State Style="Default" Text="e" Code="e" DeadGrave="è" DeadAcute="é" DeadCircumflex="ê" DeadDiaeresis="ë" />
+    <State Style="Shift" Text="E" Code="E" DeadGrave="È" DeadAcute="É" DeadCircumflex="Ê" DeadDiaeresis="Ë" />
+    <State Style="AltGr" Text="é" Code="é" />
+    <State Style="AltGrShift" Text="É" Code="É" />
+  </Key>
+  <Key Top="0" Left="9" Height="2" Width="2">
+    <State Style="Default" Text="r" Code="r" />
+    <State Style="Shift" Text="R" Code="R" />
+    <State Style="AltGr" Text="®" Code="®" />
+    <State Style="AltGrShift" Text="®" Code="®" />
+  </Key>
+  <Key Top="0" Left="11" Height="2" Width="2">
+    <State Style="Default" Text="t" Code="t" />
+    <State Style="Shift" Text="T" Code="T" />
+    <State Style="AltGr" Text="þ" Code="þ" />
+    <State Style="AltGrShift" Text="þ" Code="þ" />
+  </Key>
+  <Key Top="0" Left="13" Height="2" Width="2">
+    <State Style="Default" Text="y" Code="y" DeadAcute="ý" DeadDiaeresis="ÿ" />
+    <State Style="Shift" Text="Y" KeyCode="Y" />
+    <State Style="AltGr" Text="ü" KeyCode="ü" />
+    <State Style="AltGrShift" Text="Ü" Code="Ü" />
+  </Key>
+  <Key Top="0" Left="15" Height="2" Width="2">
+    <State Style="Default" Text="u" Code="u" DeadGrave="ù" DeadAcute="ú" DeadCircumflex="û" DeadDiaeresis="ü" />
+    <State Style="Shift" Text="U" Code="U" DeadGrave="Ù" DeadAcute="Ú" DeadCircumflex="Û" DeadDiaeresis="Ü" />
+    <State Style="AltGr" Text="ú" Code="ú" />
+    <State Style="AltGrShift" Text="Ú" Code="Ú" />
+  </Key>
+  <Key Top="0" Left="17" Height="2" Width="2">
+    <State Style="Default" Text="i" Code="i" DeadGrave="ì" DeadAcute="í" DeadCircumflex="î" DeadDiaeresis="ï" />
+    <State Style="Shift" Text="I" Code="I" DeadGrave="Ì" DeadAcute="Í" DeadCircumflex="Î" DeadDiaeresis="Ï" />
+    <State Style="AltGr" Text="í" Code="í" />
+    <State Style="AltGrShift" Text="Í" Code="Í" />
+  </Key>
+  <Key Top="0" Left="19" Height="2" Width="2">
+    <State Style="Default" Text="o" Code="o" DeadTilde="õ" DeadGrave="ò" DeadAcute="ó" DeadCircumflex="ô" DeadDiaeresis="ö" />
+    <State Style="Shift" Text="O" Code="O" DeadTilde="Õ" DeadGrave="Ò" DeadAcute="Ó" DeadCircumflex="Ô" DeadDiaeresis="Ö" />
+    <State Style="AltGr" Text="ó" Code="ó" />
+    <State Style="AltGrShift" Text="Ó" Code="Ó" />
+  </Key>
+  <Key Top="0" Left="21" Height="2" Width="2">
+    <State Style="Default" Text="p" Code="p" />
+    <State Style="Shift" Text="P" Code="P" />
+    <State Style="AltGr" Text="ö" Code="ö" />
+    <State Style="AltGrShift" Text="Ö" Code="Ö" />
+  </Key>
+  <Key Top="0" Left="23" Height="2" Width="2">
+    <State Style="Default" Text="[" Code="{[}" />
+    <State Style="Shift" Text="{" Code="{{}" />
+    <State Style="AltGr" Text="«" Code="{«}" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="0" Left="25" Height="2" Width="2">
+    <State Style="Default" Text="]" Code="{]}" />
+    <State Style="Shift" Text="}" Code="{}}" />
+    <State Style="AltGr" Text="»" Code="{»}" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="0" Left="27" Height="2" Width="2">
+    <State Style="Default" Text="\" Code="{/}" />
+    <State Style="Shift" Text="|" Code="{|}" />
+    <State Style="AltGr" Text="¬" Code="{¬}" />
+    <State Style="AltGrShift" Text="¦" Code="{¦}" />
+  </Key>
+  <Key Top="0" Left="29" Height="2" Width="2">
+    <State Style="Default" Text="=" Code="{=}" />
+    <State Style="Shift" Text="+" Code="{+}" />
+    <State Style="AltGr" Text="×" Code="{×}" />
+    <State Style="AltGrShift" Text="÷" Code="{÷}" />
+  </Key>
+  <Key Top="0" Left="31" Height="2" Width="2">
+    <State Style="Default" Text="`" Code="{`}" Action="DeadGrave" />
+    <State Style="Shift" Text="~" Code="{~}" Action="DeadTilde" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="0" Height="2" Width="4">
+    <State Style="Default" Text="Tab" Code="{tab}" />
+    <State Style="Shift" Text="Tab" Code="{tab}" />
+    <State Style="AltGr" Text="Tab" Code="{tab}" />
+    <State Style="AltGrShift" Text="Tab" Code="{tab}" />
+  </Key>
+
+  <Key Top="2" Left="4" Height="2" Width="2">
+    <State Style="Default" Text="a" Code="a" DeadTilde="ã" DeadGrave="à" DeadAcute="á" DeadCircumflex="â" DeadDiaeresis="ä" />
+    <State Style="Shift" Text="A" Code="A" DeadTilde="Ã" DeadGrave="À" DeadAcute="Á" DeadCircumflex="Â" DeadDiaeresis="Ä" />
+    <State Style="AltGr" Text="á" Code="á" />
+    <State Style="AltGrShift" Text="Á" Code="Á" />
+  </Key>
+  <Key Top="2" Left="6" Height="2" Width="2">
+    <State Style="Default" Text="s" Code="s" />
+    <State Style="Shift" Text="S" Code="S" />
+    <State Style="AltGr" Text="ß" Code="ß" />
+    <State Style="AltGrShift" Text="§" Code="§" />
+  </Key>
+  <Key Top="2" Left="8" Height="2" Width="2">
+    <State Style="Default" Text="d" Code="d" />
+    <State Style="Shift" Text="D" Code="D" />
+    <State Style="AltGr" Text="ð" Code="ð" />
+    <State Style="AltGrShift" Text="D" Code="D" />
+  </Key>
+  <Key Top="2" Left="10" Height="2" Width="2">
+    <State Style="Default" Text="f" Code="f" />
+    <State Style="Shift" Text="F" Code="F" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="12" Height="2" Width="2">
+    <State Style="Default" Text="g" Code="g" />
+    <State Style="Shift" Text="G" Code="G" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="14" Height="2" Width="2">
+    <State Style="Default" Text="h" Code="h" />
+    <State Style="Shift" Text="H" Code="H" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="16" Height="2" Width="2">
+    <State Style="Default" Text="j" Code="j" />
+    <State Style="Shift" Text="J" Code="J" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="18" Height="2" Width="2">
+    <State Style="Default" Text="k" Code="k" />
+    <State Style="Shift" Text="K" Code="K" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="20" Height="2" Width="2">
+    <State Style="Default" Text="l" Code="l" />
+    <State Style="Shift" Text="L" Code="L" />
+    <State Style="AltGr" Text="ø" Code="ø" />
+    <State Style="AltGrShift" Text="Ø" Code="Ø" />
+  </Key>
+  <Key Top="2" Left="22" Height="2" Width="2">
+    <State Style="Default" Text=";" Code="{;}" />
+    <State Style="Shift" Text=":" Code="{:}" />
+    <State Style="AltGr" Text="¶" Code="{¶}" />
+    <State Style="AltGrShift" Text="°" Code="{°}" />
+  </Key>
+  <Key Top="2" Left="24" Height="2" Width="2">
+    <State Style="Default" Text="'" Code="{'}" Action="DeadAcute" />
+    <State Style="Shift" Text="&quot;" Code="{&quot;}" Action="DeadDiaeresis" />
+    <State Style="AltGr" Text="’" Code="{’}" />
+    <State Style="AltGrShift" Text="¨" Code="¨" />
+  </Key>
+  <Key Top="2" Left="26" Height="2" Width="4">
+    <State Style="Default" Text="Enter" Code="{enter}" />
+    <State Style="Shift" Text="Enter" Code="{enter}" />
+    <State Style="AltGr" Text="Enter" Code="{enter}" />
+    <State Style="AltGrShift" Text="Enter" Code="{enter}" />
+  </Key>
+  <Key Top="2" Left="30" Height="2" Width="3">
+    <State Style="Default" Text="BackSp" Code="{BACKSPACE}" />
+    <State Style="Shift" Text="BackSp" Code="{BACKSPACE}" />
+    <State Style="AltGr" Text="BackSp" Code="{BACKSPACE}" />
+    <State Style="AltGrShift" Text="BackSp" Code="{BACKSPACE}" />
+  </Key>
+  <Key Top="4" Left="0" Height="2" Width="5">
+    <State Style="Default" Text="Shift" Code="" Action="Shift" />
+    <State Style="Shift" Text="Shift" Code="" Action="Shift" />
+    <State Style="AltGr" Text="Shift" Code="" Action="Shift" />
+    <State Style="AltGrShift" Text="Shift" Code="" Action="Shift" />
+  </Key>
+  <Key Top="4" Left="5" Height="2" Width="2">
+    <State Style="Default" Text="z" Code="z" />
+    <State Style="Shift" Text="Z" Code="Z" />
+    <State Style="AltGr" Text="æ" Code="æ" />
+    <State Style="AltGrShift" Text="Æ" Code="Æ" />
+  </Key>
+  <Key Top="4" Left="7" Height="2" Width="2">
+    <State Style="Default" Text="x" Code="x" />
+    <State Style="Shift" Text="X" Code="X" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="4" Left="9" Height="2" Width="2">
+    <State Style="Default" Text="c" Code="c" />
+    <State Style="Shift" Text="C" Code="C" />
+    <State Style="AltGr" Text="©" Code="©" />
+    <State Style="AltGrShift" Text="¢" Code="¢" />
+  </Key>
+  <Key Top="4" Left="11" Height="2" Width="2">
+    <State Style="Default" Text="v" Code="v" />
+    <State Style="Shift" Text="V" Code="V" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="4" Left="13" Height="2" Width="2">
+    <State Style="Default" Text="b" Code="b" />
+    <State Style="Shift" Text="B" Code="B" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="4" Left="15" Height="2" Width="2">
+    <State Style="Default" Text="n" Code="n" DeadTilde="ñ" />
+    <State Style="Shift" Text="N" Code="N" DeadTilde="Ñ" />
+    <State Style="AltGr" Text="ñ" Code="ñ" />
+    <State Style="AltGrShift" Text="Ñ" Code="Ñ" />
+  </Key>
+  <Key Top="4" Left="17" Height="2" Width="2">
+    <State Style="Default" Text="m" Code="m" />
+    <State Style="Shift" Text="M" Code="M" />
+    <State Style="AltGr" Text="m" Code="m" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="4" Left="19" Height="2" Width="2">
+    <State Style="Default" Text="," Code="{,}" />
+    <State Style="Shift" Text="&lt;" Code="{&lt;}" />
+    <State Style="AltGr" Text="ç" Code="{ç}" />
+    <State Style="AltGrShift" Text="Ç" Code="Ç" />
+  </Key>
+  <Key Top="4" Left="21" Height="2" Width="2">
+    <State Style="Default" Text="." Code="{.}" />
+    <State Style="Shift" Text="&gt;" Code="{&gt;}" />
+    <State Style="AltGr" Text="" Code="" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="4" Left="23" Height="2" Width="2">
+    <State Style="Default" Text="/" Code="{/}" />
+    <State Style="Shift" Text="?" Code="{?}" />
+    <State Style="AltGr" Text="¿" Code="¿" />
+    <State Style="AltGrShift" Text="¿" Code="¿" />
+  </Key>
+  <Key Top="4" Left="25" Height="2" Width="5">
+    <State Style="Default" Text="Shift" Code="" Action="Shift" />
+    <State Style="Shift" Text="Shift" Code="" Action="Shift" />
+    <State Style="AltGr" Text="Shift" Code="" Action="Shift" />
+    <State Style="AltGrShift" Text="Shift" Code="" Action="Shift" />
+  </Key>
+  <Key Top="4" Left="30" Height="2" Width="3">
+    <State Style="Default" Text="Delete" Code="{DELETE}" />
+    <State Style="Shift" Text="Delete" Code="{DELETE}" />
+    <State Style="AltGr" Text="Delete" Code="{DELETE}" />
+    <State Style="AltGrShift" Text="Delete" Code="{DELETE}" />
+  </Key>
+  <Key Top="6" Left="0" Height="2" Width="4">
+    <State Style="Default" Text="Ctrl" Code="" Action="Control" />
+    <State Style="Shift" Text="Ctrl" Code="" Action="Control" />
+    <State Style="AltGr" Text="Ctrl" Code="" Action="Control" />
+    <State Style="AltGrShift" Text="Ctrl" Code="" Action="Control" />
+  </Key>
+  <Key Top="6" Left="4" Height="2" Width="3">
+    <State Style="Default" Text="Alt" Code="%" Action="Alt" />
+    <State Style="Shift" Text="Alt" Code="%" Action="Alt" />
+    <State Style="AltGr" Text="Alt" Code="%" Action="Alt" />
+    <State Style="AltGrShift" Text="Alt" Code="%" Action="Alt" />
+  </Key>
+  <Key Top="6" Left="8" Height="2" Width="14">
+    <State Style="Default" Text="" Code="{SPACE}" />
+    <State Style="Shift" Text="" Code="{SPACE}" />
+    <State Style="AltGr" Text="" Code="{SPACE}" />
+    <State Style="AltGrShift" Text="" Code="{SPACE}" />
+  </Key>
+  <Key Top="6" Left="23" Height="2" Width="3">
+    <State Style="Default" Text="AltGr" Code="%" Action="AltGr" />
+    <State Style="Shift" Text="AltGr" Code="%" Action="AltGr" />
+    <State Style="AltGr" Text="AltGr" Code="%" Action="AltGr" />
+    <State Style="AltGrShift" Text="AltGr" Code="%" Action="AltGr" />
+  </Key>
+  <Key Top="6" Left="26" Height="2" Width="4">
+    <State Style="Default" Text="Ctrl" Code="" Action="Control" />
+    <State Style="Shift" Text="Ctrl" Code="" Action="Control" />
+    <State Style="AltGr" Text="Ctrl" Code="" Action="Control" />
+    <State Style="AltGrShift" Text="Ctrl" Code="" Action="Control" />
+  </Key>
+  <Key Top="0" Left="35" Height="2" Width="2">
+    <State Style="Default" Text="7" Code="7" />
+    <State Style="Shift" Text="(" Code="{(}" />
+    <State Style="AltGr" Text="½" Code="½" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="0" Left="37" Height="2" Width="2">
+    <State Style="Default" Text="8" Code="8" />
+    <State Style="Shift" Text=")" Code="{)}" />
+    <State Style="AltGr" Text="¾" Code="¾" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="0" Left="39" Height="2" Width="2">
+    <State Style="Default" Text="9" Code="9" />
+    <State Style="Shift" Text="*" Code="{MULTIPLY}" />
+    <State Style="AltGr" Text="‘" Code="‘" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="0" Left="41" Height="2" Width="2">
+    <State Style="Default" Text="-" Code="{SUBTRACT}" />
+    <State Style="Shift" Text="_" Code="{_}" />
+    <State Style="AltGr" Text="¥" Code="¥" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="35" Height="2" Width="2">
+    <State Style="Default" Text="4" Code="4" />
+    <State Style="Shift" Text="$" Code="{$}" />
+    <State Style="AltGr" Text="¤" Code="¤" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="37" Height="2" Width="2">
+    <State Style="Default" Text="5" Code="5" />
+    <State Style="Shift" Text="%" Code="{%}" />
+    <State Style="AltGr" Text="€" Code="€" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="39" Height="2" Width="2">
+    <State Style="Default" Text="6" Code="6" />
+    <State Style="Shift" Text="^" Code="{^}" Action="DeadCircumflex" />
+    <State Style="AltGr" Text="¼" Code="¼" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="2" Left="41" Height="4" Width="2">
+    <State Style="Default" Text="+" Code="{ADD}" />
+    <State Style="Shift" Text="+" Code="{ADD}" />
+    <State Style="AltGr" Text="+" Code="{ADD}" />
+    <State Style="AltGrShift" Text="+" Code="{ADD}" />
+  </Key>
+  <Key Top="4" Left="35" Height="2" Width="2">
+    <State Style="Default" Text="1" Code="1" />
+    <State Style="Shift" Text="!" Code="{!}" />
+    <State Style="AltGr" Text="¡" Code="¡" />
+    <State Style="AltGrShift" Text="¹" Code="¹" />
+  </Key>
+  <Key Top="4" Left="37" Height="2" Width="2">
+    <State Style="Default" Text="2" Code="2" />
+    <State Style="Shift" Text="@" Code="{@}" />
+    <State Style="AltGr" Text="²" Code="²" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="4" Left="39" Height="2" Width="2">
+    <State Style="Default" Text="3" Code="3" />
+    <State Style="Shift" Text="#" Code="{#}" />
+    <State Style="AltGr" Text="³" Code="³" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="6" Left="35" Height="2" Width="4">
+    <State Style="Default" Text="0" Code="0" />
+    <State Style="Shift" Text=")" Code="{)}" />
+    <State Style="AltGr" Text="’" Code="’" />
+    <State Style="AltGrShift" Text="" Code="" />
+  </Key>
+  <Key Top="6" Left="39" Height="2" Width="2">
+    <State Style="Default" Text="." Code="{.}" />
+    <State Style="Shift" Text="." Code="{.}" />
+    <State Style="AltGr" Text="." Code="{.}" />
+    <State Style="AltGrShift" Text="." Code="{.}" />
+  </Key>
+  <Key Top="6" Left="41" Height="2" Width="2">
+    <State Style="Default" Text="Ent" Code="{ENTER}" />
+    <State Style="Shift" Text="Ent" Code="{ENTER}" />
+    <State Style="AltGr" Text="Ent" Code="{ENTER}" />
+    <State Style="AltGrShift" Text="Ent" Code="{ENTER}" />
+  </Key>
+</KeyboardDefinition>
