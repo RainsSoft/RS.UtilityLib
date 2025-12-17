@@ -3,27 +3,23 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing.Drawing2D;
 
 namespace RS.UtilityLib.WinFormCommon.UI
 {
-    [ToolboxBitmap(typeof(MyOpaqueLayerCtl))]
-    public partial class MyOpaqueLayerCtl : UserControl
+    [ToolboxBitmap(typeof(MyMaskLayerCtl))]
+    public partial class MyMaskLayerCtl : UserControl
     {
 
-        private bool _transparentBG = true;
+        private bool _transparentBG = false;
         private int _alpha = 125;
         private bool _showText = false;
-        private string _text = "遮罩层";
-        //    public MyOpaqueLayerCtl() {
-        //        InitializeComponent();
-        //    }
+        private string _text = "mask layer";
+        private Color _borderColor = Color.Gray;
+        private int _borderWidth = 1;
+        private DashStyle _borderStyle = DashStyle.Solid;
 
-        public MyOpaqueLayerCtl()
-            : this(125, false) {
-
-        }
-
-        public MyOpaqueLayerCtl(int Alpha, bool showText) {
+        public MyMaskLayerCtl() {
             SetStyle(System.Windows.Forms.ControlStyles.Opaque, true);
             //SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             //SetStyle(ControlStyles.Opaque |
@@ -35,22 +31,20 @@ namespace RS.UtilityLib.WinFormCommon.UI
             //SetStyle(ControlStyles.ResizeRedraw, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             ////SetStyle(ControlStyles.DoubleBuffer, true);
-            //SetStyle(ControlStyles.UserPaint, true);
-            this._alpha = Alpha;
-            this._showText = showText;
+            //SetStyle(ControlStyles.UserPaint, true);            
             //if(showLoadingImage) {
-            //    PictureBox pictureBox_Loading = new PictureBox();
-            //    pictureBox_Loading.BackColor = System.Drawing.Color.White;
-            //    pictureBox_Loading.Image = global::MyOpaqueLayer.Properties.Resources.loading;
-            //    pictureBox_Loading.Name = "pictureBox_Loading";
-            //    pictureBox_Loading.Size = new System.Drawing.Size(48, 48);
-            //    pictureBox_Loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            //    Point Location = new Point(this.Location.X + (this.Width - pictureBox_Loading.Width) / 2, this.Location.Y + (this.Height - pictureBox_Loading.Height) / 2);
-            //    pictureBox_Loading.Location = Location;
-            //    pictureBox_Loading.Anchor = AnchorStyles.None;
-            //    this.Controls.Add(pictureBox_Loading);
+            PictureBox pictureBox_Loading = new PictureBox();
+            pictureBox_Loading.BackColor = Color.FromArgb(255,this.BackColor);
+            pictureBox_Loading.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.loading;
+            pictureBox_Loading.Name = "pictureBox_Loading";
+            pictureBox_Loading.Size = new System.Drawing.Size(48, 48);
+            pictureBox_Loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            Point Location = new Point(this.Location.X + (this.Width - pictureBox_Loading.Width) / 2, this.Location.Y + (this.Height - pictureBox_Loading.Height) / 2);
+            pictureBox_Loading.Location = Location;
+            pictureBox_Loading.Anchor = AnchorStyles.None;
+            this.Controls.Add(pictureBox_Loading);
             //}
-
+            this.Font = System.Drawing.SystemFonts.CaptionFont;
         }
 
         #region Designer      
@@ -64,44 +58,42 @@ namespace RS.UtilityLib.WinFormCommon.UI
             }
         }
         #endregion
+        protected override void OnPaintBackground(PaintEventArgs e) {
+            //不绘制
+            //base.OnPaintBackground(e);
 
+        }
         /// <summary>
         /// 自定义绘制窗体
         /// </summary>
         /// <param name="e"></param>
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) {
-            if (_transparentBG) {
+            if (_transparentBG || _alpha == 0) {
                 //完全透明，不用画了
                 return;
             }
-            //
-            float vlblControlWidth;
-            float vlblControlHeight;
-
-            Pen labelBorderPen;
-            SolidBrush labelBackColorBrush;
-            //if(_transparentBG) {
-            Color drawColor = Color.FromArgb(this._alpha, this.BackColor);
-            labelBorderPen = new Pen(drawColor, 0);
-            labelBackColorBrush = new SolidBrush(drawColor);
-            //}          
-            //            
-            base.OnPaint(e);
-            //
-
-            vlblControlWidth = this.Size.Width;
-            vlblControlHeight = this.Size.Height;
-            e.Graphics.DrawRectangle(labelBorderPen, 0, 0, vlblControlWidth, vlblControlHeight);
-            e.Graphics.FillRectangle(labelBackColorBrush, 0, 0, vlblControlWidth, vlblControlHeight);
-            //
-            labelBorderPen.Dispose();
-            labelBackColorBrush.Dispose();
-
+            // 
+            float vlblControlWidth = this.Width;
+            float vlblControlHeight = this.Height;
+            if (_alpha > 0) {
+                Color drawColor = Color.FromArgb(this._alpha, this.BackColor);
+                using (SolidBrush labelBackColorBrush = new SolidBrush(drawColor)) {
+                    e.Graphics.FillRectangle(labelBackColorBrush, 0, 0, vlblControlWidth, vlblControlHeight);
+                    labelBackColorBrush.Dispose();
+                }
+            }
+            if (this._borderWidth > 0) {
+                using (Pen pen = new Pen(this._borderColor, this._borderWidth)) {
+                    pen.DashStyle = this._borderStyle;
+                    e.Graphics.DrawRectangle(pen, e.ClipRectangle.Left, e.ClipRectangle.Top, this.Width - 1, this.Height - 1);
+                    pen.Dispose();
+                }
+            }
             //画文本有一点不正常的地方就是在父容器状态变化时不能有效展现
             if (this._showText && !string.IsNullOrEmpty(this._text)) {
                 var sizef = e.Graphics.MeasureString(this._text, this.Font);
                 int pX = (int)((vlblControlWidth - sizef.Width) * 0.5f);
-                int pY = (int)((vlblControlHeight - sizef.Height) * 0.5f);
+                int pY = (int)((vlblControlHeight - sizef.Height-24) * 0.5f);
                 DrawText(e.Graphics, this._text, new Point(Math.Max(0, pX), Math.Max(0, pY)), this.ForeColor);
             }
         }
@@ -133,6 +125,14 @@ namespace RS.UtilityLib.WinFormCommon.UI
                 }
             }
         }
+
+        int clamp(int value, int min, int max) {
+            if (value < min)
+                return min;
+            if (value > max)
+                return max;
+            return value;
+        }
         /// <summary>
         /// 不支持双缓冲
         /// </summary>
@@ -140,12 +140,12 @@ namespace RS.UtilityLib.WinFormCommon.UI
         {
             get {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x20;  // 开启 WS_EX_TRANSPARENT,使控件支持透明
+                cp.ExStyle |= 0x00000020;  // 开启 WS_EX_TRANSPARENT,使控件支持透明
                 return cp;
             }
         }
 
-        [Category("myOpaqueLayer"), Description("是否完全透明,默认为True")]
+        [Category("MaskLayer"), Description("是否完全透明,默认为False")]
         public bool TransparentBG {
             get {
                 return _transparentBG;
@@ -156,17 +156,17 @@ namespace RS.UtilityLib.WinFormCommon.UI
             }
         }
 
-        [Category("myOpaqueLayer"), Description("设置透明度")]
+        [Bindable(true), Category("MaskLayer"), DefaultValue(125), Description("背景的透明度. 有效值1-255")]
         public int Alpha {
             get {
                 return _alpha;
             }
             set {
-                _alpha = value;
+                _alpha = clamp(value, 1, 255);
                 this.Invalidate();
             }
         }
-        [Category("myOpaqueLayer"), Description("是否显示文本,默认为True")]
+        [Category("MaskLayer"), Description("是否显示文本,默认为True")]
         public bool ShowText {
             get {
                 return _showText;
@@ -176,7 +176,7 @@ namespace RS.UtilityLib.WinFormCommon.UI
                 this.Invalidate();
             }
         }
-        [Category("myOpaqueLayer"), Description("显示文本内容")]
+        [Category("MaskLayer"), Description("显示文本内容")]
         public string TextDisplay {
             get {
                 return _text;
@@ -184,6 +184,39 @@ namespace RS.UtilityLib.WinFormCommon.UI
             set {
                 _text = value;
                 this.Invalidate();
+            }
+        }
+
+        [Category("MaskLayer"), Description("Border Color")]
+        public Color BorderColor {
+            set {
+                _borderColor = value;
+                this.Invalidate();
+            }
+            get {
+                return _borderColor;
+            }
+        }
+        [Category("MaskLayer"), Description("Border Width"), DefaultValue(1)]
+        public int BorderWidth {
+            set {
+                if (value < 0)
+                    value = 0;
+                _borderWidth = value;
+                this.Invalidate();
+            }
+            get {
+                return _borderWidth;
+            }
+        }
+        [Category("MaskLayer"), Description("Border Style"), DefaultValue(DashStyle.Solid)]
+        public DashStyle BorderStyle {
+            set {
+                this._borderStyle = value;
+                this.Invalidate();
+            }
+            get {
+                return this._borderStyle;
             }
         }
         //protected override void OnSizeChanged(EventArgs e) {
@@ -266,6 +299,8 @@ namespace RS.UtilityLib.WinFormCommon.UI
         //myOpaqueLayerCtl1_BackOLayer:msg=0x84 (WM_NCHITTEST) hwnd=0x4442d0 wparam=0x0 lparam=0x177fd2c result=0x1
         //myOpaqueLayerCtl1_BackOLayer:msg=0x20 (WM_SETCURSOR) hwnd=0x4442d0 wparam=0x4442d0 lparam=0x2000001 result=0x0
         //myOpaqueLayerCtl1_BackOLayer:msg=0x200 (WM_MOUSEMOVE) hwnd=0x4442d0 wparam=0x0 lparam=0x16104ac result=0x0
+
+
         #region designer
         /// <summary> 
         /// 必需的设计器变量。
