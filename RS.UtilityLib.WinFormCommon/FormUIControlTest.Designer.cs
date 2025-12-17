@@ -33,13 +33,13 @@ namespace RS.UtilityLib.WinFormCommon
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "33",
             "44"}, -1);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUIControlTest));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup2", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("123");
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("2131");
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("23421asd");
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("sasda");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUIControlTest));
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "11",
             "11-1",
@@ -58,11 +58,11 @@ namespace RS.UtilityLib.WinFormCommon
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ToolStripColorPicker();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
             this.radioListBox1 = new RS.UtilityLib.WinFormCommon.UI.RadioListBox();
+            this.pictureSelector1 = new RS.UtilityLib.WinFormCommon.UI.PictureSelector();
             this.imageComboBox1 = new RS.UtilityLib.WinFormCommon.UI.ImageComboBox();
             this.pingClient1 = new RS.UtilityLib.WinFormCommon.UI.PingClient();
             this.printRichTextBox1 = new RS.UtilityLib.WinFormCommon.UI.PrintRichTextBox();
@@ -70,6 +70,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.groupListView1 = new RS.UtilityLib.WinFormCommon.UI.GroupListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.myScrollPanel1 = new RS.UtilityLib.WinFormCommon.UI.ScrollPanel.MyVScrollPanel();
+            this.toolStripColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ToolStripColorPicker();
             this.comboBoxColorPicker1 = new RS.UtilityLib.WinFormCommon.UI.ComboBoxColorPicker();
             this.listViewEx21 = new RS.UtilityLib.WinFormCommon.UI.ListViewExp();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -82,7 +83,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.waterMarkTextBox2 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.waterMarkTextBox1 = new RS.UtilityLib.WinFormCommon.UI.WaterMarkTextBox();
             this.toolTipEx1 = new RS.UtilityLib.WinFormCommon.UI.ToolTipEx(this.components);
-            this.pictureSelector1 = new RS.UtilityLib.WinFormCommon.UI.PictureSelector();
+            this.ctl_ListBoxExItem1 = new RS.UtilityLib.WinFormCommon.UI.ctl_ListBoxExItem();
+            this.ctl_ListBoxExItem2 = new RS.UtilityLib.WinFormCommon.UI.ctl_ListBoxExItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSelector1)).BeginInit();
             this.SuspendLayout();
@@ -113,19 +115,6 @@ namespace RS.UtilityLib.WinFormCommon
             this.toolStrip1.Size = new System.Drawing.Size(1113, 26);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripColorPicker1
-            // 
-            this.toolStripColorPicker1.AutoSize = false;
-            this.toolStripColorPicker1.ButtonDisplayStyle = RS.UtilityLib.WinFormCommon.UI.ToolStripColorPickerDisplayType.UnderLineAndImage;
-            this.toolStripColorPicker1.Color = System.Drawing.Color.Black;
-            this.toolStripColorPicker1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripColorPicker1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripColorPicker1.Image")));
-            this.toolStripColorPicker1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripColorPicker1.Name = "toolStripColorPicker1";
-            this.toolStripColorPicker1.Size = new System.Drawing.Size(30, 23);
-            this.toolStripColorPicker1.Text = "toolStripColorPicker1";
-            this.toolStripColorPicker1.ToolTipText = "";
             // 
             // button1
             // 
@@ -176,6 +165,24 @@ namespace RS.UtilityLib.WinFormCommon
             this.radioListBox1.Name = "radioListBox1";
             this.radioListBox1.Size = new System.Drawing.Size(120, 88);
             this.radioListBox1.TabIndex = 19;
+            // 
+            // pictureSelector1
+            // 
+            this.pictureSelector1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureSelector1.BrowseHoverRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.pictureSelector1.BrowseNormalRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.pictureSelector1.Checked = false;
+            this.pictureSelector1.CheckedMaskRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.pictureSelector1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureSelector1.DefaultRect = new System.Drawing.Rectangle(0, 0, 32, 32);
+            this.pictureSelector1.EffectImage = global::RS.UtilityLib.WinFormCommon.Properties.Resources.PanelScrollBar;
+            this.pictureSelector1.HoverMaskRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.pictureSelector1.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.loading_txt;
+            this.pictureSelector1.Location = new System.Drawing.Point(48, 501);
+            this.pictureSelector1.Name = "pictureSelector1";
+            this.pictureSelector1.Size = new System.Drawing.Size(161, 128);
+            this.pictureSelector1.TabIndex = 18;
+            this.pictureSelector1.TabStop = false;
             // 
             // imageComboBox1
             // 
@@ -252,6 +259,19 @@ namespace RS.UtilityLib.WinFormCommon
             this.myScrollPanel1.Size = new System.Drawing.Size(230, 279);
             this.myScrollPanel1.TabIndex = 10;
             // 
+            // toolStripColorPicker1
+            // 
+            this.toolStripColorPicker1.AutoSize = false;
+            this.toolStripColorPicker1.ButtonDisplayStyle = RS.UtilityLib.WinFormCommon.UI.ToolStripColorPickerDisplayType.UnderLineAndImage;
+            this.toolStripColorPicker1.Color = System.Drawing.Color.Black;
+            this.toolStripColorPicker1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripColorPicker1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripColorPicker1.Image")));
+            this.toolStripColorPicker1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripColorPicker1.Name = "toolStripColorPicker1";
+            this.toolStripColorPicker1.Size = new System.Drawing.Size(30, 23);
+            this.toolStripColorPicker1.Text = "toolStripColorPicker1";
+            this.toolStripColorPicker1.ToolTipText = "";
+            // 
             // comboBoxColorPicker1
             // 
             this.comboBoxColorPicker1.Color = System.Drawing.Color.Black;
@@ -263,6 +283,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.comboBoxColorPicker1.IntegralHeight = false;
             this.comboBoxColorPicker1.ItemHeight = 16;
             this.comboBoxColorPicker1.Items.AddRange(new object[] {
+            "Color",
             "Color",
             "Color",
             "Color",
@@ -388,23 +409,21 @@ namespace RS.UtilityLib.WinFormCommon
             this.toolTipEx1.TipTxtOffset = new System.Drawing.Point(0, 0);
             this.toolTipEx1.TitleTxtOffset = new System.Drawing.Point(0, 0);
             // 
-            // pictureSelector1
+            // ctl_ListBoxExItem1
             // 
-            this.pictureSelector1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureSelector1.BrowseHoverRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.pictureSelector1.BrowseNormalRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.pictureSelector1.Checked = false;
-            this.pictureSelector1.CheckedMaskRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.pictureSelector1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureSelector1.DefaultRect = new System.Drawing.Rectangle(0, 0, 32, 32);
-            this.pictureSelector1.EffectImage = global::RS.UtilityLib.WinFormCommon.Properties.Resources.PanelScrollBar;
-            this.pictureSelector1.HoverMaskRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.pictureSelector1.Image = global::RS.UtilityLib.WinFormCommon.Properties.Resources.loading_txt;
-            this.pictureSelector1.Location = new System.Drawing.Point(48, 501);
-            this.pictureSelector1.Name = "pictureSelector1";
-            this.pictureSelector1.Size = new System.Drawing.Size(161, 128);
-            this.pictureSelector1.TabIndex = 18;
-            this.pictureSelector1.TabStop = false;
+            this.ctl_ListBoxExItem1.ItemObj = null;
+            this.ctl_ListBoxExItem1.Location = new System.Drawing.Point(0, 0);
+            this.ctl_ListBoxExItem1.Name = "ctl_ListBoxExItem1";
+            this.ctl_ListBoxExItem1.Size = new System.Drawing.Size(189, 26);
+            this.ctl_ListBoxExItem1.TabIndex = 0;
+            // 
+            // ctl_ListBoxExItem2
+            // 
+            this.ctl_ListBoxExItem2.ItemObj = null;
+            this.ctl_ListBoxExItem2.Location = new System.Drawing.Point(0, 0);
+            this.ctl_ListBoxExItem2.Name = "ctl_ListBoxExItem2";
+            this.ctl_ListBoxExItem2.Size = new System.Drawing.Size(189, 26);
+            this.ctl_ListBoxExItem2.TabIndex = 0;
             // 
             // FormUIControlTest
             // 
@@ -472,5 +491,7 @@ namespace RS.UtilityLib.WinFormCommon
         private UI.PictureSelector pictureSelector1;
         private UI.RadioListBox radioListBox1;
         private UI.DegreePiePicture degreePiePicture1;
+        private UI.ctl_ListBoxExItem ctl_ListBoxExItem1;
+        private UI.ctl_ListBoxExItem ctl_ListBoxExItem2;
     }
 }

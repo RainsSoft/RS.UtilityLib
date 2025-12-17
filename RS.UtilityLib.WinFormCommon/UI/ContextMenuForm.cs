@@ -5,6 +5,7 @@ using System.Windows.Forms;
 namespace RS.UtilityLib.WinFormCommon.UI
 {
     /// <summary>
+    /// 提供具有ContextMenu行为的System.Windows.Forms.Form。
     /// Provides a System.Windows.Forms.Form that have a ContextMenu behavior.
     /// Use this Form by extending it or by adding the control using the method:
     /// <code>SetContainingControl(Control control)</code>

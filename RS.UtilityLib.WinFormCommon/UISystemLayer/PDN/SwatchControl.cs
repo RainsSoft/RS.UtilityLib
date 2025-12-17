@@ -68,7 +68,7 @@ namespace RS.UtilityLib.WinFormCommon.UISystemLayer
             }
         }
 
-        [Browsable(false),NonSerialized()]
+        [Browsable(false)]//,NonSerialized()]
         public ColorBgra[] Colors
         {
             get

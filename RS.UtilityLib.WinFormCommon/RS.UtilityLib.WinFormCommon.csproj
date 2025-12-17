@@ -59,6 +59,14 @@
     <Compile Include="AnimatedGif\VideoEncoder.cs" />
     <Compile Include="BitmapToRegion.cs" />
     <Compile Include="DrawRoundRectangleHelper.cs" />
+    <Compile Include="EmbedForm\MainContentHolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmbedForm\MainContentHolder.designer.cs">
+      <DependentUpon>MainContentHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmbedForm\ProcessEmbed.cs" />
+    <Compile Include="EmbedForm\ProcessMainWinHandleHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +152,7 @@
     <Compile Include="UIAnimatorNS\TransfromHelper.cs" />
     <Compile Include="UIFirefoxTheme\FirefoxTheme.cs" />
     <Compile Include="UINotifier\FolderSelectDialog.cs" />
+    <Compile Include="UINotifier\UIFollowFormHelper.cs" />
     <Compile Include="UINotifier\UIMessageBoxEx.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,7 +221,18 @@
     <Compile Include="RibbonUI\RibbonListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UISamples\BFieldInfo.cs" />
+    <Compile Include="UISamples\FormShadow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UISamples\IBFieldView.cs" />
     <Compile Include="UISamples\RoomPaintCtl.cs" />
+    <Compile Include="UISamples\ScreenMask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UISamples\ScreenMask.Designer.cs">
+      <DependentUpon>ScreenMask.cs</DependentUpon>
+    </Compile>
     <Compile Include="UISystemLayer\ContextMenuStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -306,6 +326,18 @@
     <Compile Include="UISystemLayer\ControlShadow.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\ctl_ListBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ctl_ListBoxEx.designer.cs">
+      <DependentUpon>ctl_ListBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ctl_ListBoxExItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ctl_ListBoxExItem.designer.cs">
+      <DependentUpon>ctl_ListBoxExItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\GlassButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -314,6 +346,9 @@
     </Compile>
     <Compile Include="UI\MediaSlider.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MyMaskForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\ProgressCircle.cs">
       <SubType>UserControl</SubType>
@@ -386,7 +421,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\ListViewEx.cs" />
-    <Compile Include="UI\MyOpaqueLayerCtl.cs">
+    <Compile Include="UI\MyMaskLayerCtl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\MyScrollBar\ScrollBarSimple.cs">
@@ -452,6 +487,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EmbedForm\MainContentHolder.resx">
+      <DependentUpon>MainContentHolder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +518,12 @@
     <EmbeddedResource Include="UINotifier\UIStartForm.resx">
       <DependentUpon>UIStartForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UISamples\FormShadow.resx">
+      <DependentUpon>FormShadow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UISamples\ScreenMask.resx">
+      <DependentUpon>ScreenMask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UISystemLayer\testPDN.resx">
       <DependentUpon>testPDN.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -492,6 +536,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UISamples\MouseThroughForm.resx">
       <DependentUpon>MouseThroughForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ctl_ListBoxEx.resx">
+      <DependentUpon>ctl_ListBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ctl_ListBoxExItem.resx">
+      <DependentUpon>ctl_ListBoxExItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ToolBox\ToolBox.resx">
       <DependentUpon>ToolBox.cs</DependentUpon>
@@ -592,9 +642,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\roomback.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\loading.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\官网.png" />
@@ -700,6 +747,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TransparentLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgLoadding.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brower_loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lazy-loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat_DefaultButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat_DefaultButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat_DefaultButton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_gray_32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_gray_32%402x.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading6.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer_both.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer_downloading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer_uploading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

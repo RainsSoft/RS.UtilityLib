@@ -340,6 +340,42 @@ namespace RS.UtilityLib.WinFormCommon
             graphicsImage.Dispose();
             return bitmap;
         }
+        /// <summary>
+        /// 修改图片亮度
+        /// </summary>
+        /// <param name="image">原始图片</param>
+        /// <param name="brightness">【-100,100】变暗使用负数，变亮使用正数</param>
+        /// <returns></returns>
+        public static Bitmap AdjustBrightness(Bitmap image, int brightness) {
+            Bitmap adjustedImage = new Bitmap(image.Width, image.Height);
+
+            using (Graphics graphics = Graphics.FromImage(adjustedImage)) {
+                float brightnessFactor = (float)brightness / 100f;
+
+                // 创建颜色矩阵
+                float[][] colorMatrix =
+                {
+            new float[] {1, 0, 0, 0, 0},
+            new float[] {0, 1, 0, 0, 0},
+            new float[] {0, 0, 1, 0, 0},
+            new float[] {0, 0, 0, 1, 0},
+            new float[] {brightnessFactor, brightnessFactor, brightnessFactor, 0, 1}
+        };
+
+                // 创建颜色矩阵相关属性
+                ColorMatrix colorMatrixInstance = new ColorMatrix(colorMatrix);
+                ImageAttributes imageAttributes = new ImageAttributes();
+
+                // 设置颜色矩阵属性
+                imageAttributes.SetColorMatrix(colorMatrixInstance);
+
+                // 绘制调整亮度后的图片
+                graphics.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height),
+                    0, 0, image.Width, image.Height, GraphicsUnit.Pixel, imageAttributes);
+            }
+
+            return adjustedImage;
+        }
         #endregion
     }
 }

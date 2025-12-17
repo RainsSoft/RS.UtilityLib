@@ -310,4 +310,58 @@
   <data name="TransparentLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TransparentLogo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading2.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brower_loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brower_loading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chat_DefaultButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chat_DefaultButton.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chat_DefaultButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chat_DefaultButton1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chat_DefaultButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chat_DefaultButton2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image_loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_loading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgLoadding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgLoadding.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lazy_loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lazy-loader.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\load.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading3.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading4.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading5.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading6.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Loading_gray_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loading_gray_32.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Loading_gray_32_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loading_gray_32@2x.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transfer_both" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transfer_both.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transfer_downloading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transfer_downloading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transfer_uploading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transfer_uploading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

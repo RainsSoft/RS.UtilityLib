@@ -15,6 +15,12 @@ namespace RS.UtilityLib.WinFormCommon
             InitializeComponent();
         
             this.myScrollPanel1.AddControl(this.pingClient1, new Point(4,400));
+           
+        }
+        
+        protected override void OnShown(EventArgs e) {
+            base.OnShown(e);
+                      
         }
         void initToolTipEx() {
             string tipImageBackPath = "Skin\\Res\\roomuserinfo.bmp";//

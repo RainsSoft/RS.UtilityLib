@@ -15,17 +15,16 @@ namespace RS.UtilityLib.WinFormCommon
     {
         public FormDemo1() {
             InitializeComponent();
+
+        }
+        protected override void OnShown(EventArgs e) {
+            base.OnShown(e);
+            var frm1 = new Form1();
+            frm1.Show();
+            UINotifier.UIFollowFormHelper uf = new UINotifier.UIFollowFormHelper(this, frm1,10,0, UINotifier.UIFollowMode.FixedRight);
            
         }
-
-        private void button1_Click(object sender, EventArgs e) {
-            ShineControlHelper.Show(this.degreePiePicture1,3);
-        }
-
-        private void button2_Click(object sender, EventArgs e) {
-            IMEForm imeForm = new IMEForm();
-            imeForm.Show();
-        }
+    
 
         private void Form1_Load(object sender, EventArgs e) {
             this.lV_ModelList.Hint = new RibbonHintWindowMemo();
@@ -33,8 +32,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.lV_ModelList.BeginUpdate();
             for (int i = 0; i < 32; i++) {
                 RibbonListViewItem li = new RibbonListViewItem();
-                li.Text ="test_"+i.ToString();              
-                li.SmallImage = new Bitmap(RS.UtilityLib.WinFormCommon.Properties.Resources.nofind,new Size(48,48)); //防止ListView在清除Items的时候把image给释放了.
+                li.Text = "test_" + i.ToString();
+                li.SmallImage = new Bitmap(RS.UtilityLib.WinFormCommon.Properties.Resources.nofind, new Size(48, 48)); //防止ListView在清除Items的时候把image给释放了.
                 //li.Enabled = modelinfo.Enable;
                 //li.Tag = modelinfo;
                 this.lV_ModelList.AddItem(li);
@@ -53,10 +52,32 @@ namespace RS.UtilityLib.WinFormCommon
             }
 
         }
+        private void button1_Click(object sender, EventArgs e) {
+            ShineControlHelper.Show(this.degreePiePicture1, 3);
+        }
 
+        private void button2_Click(object sender, EventArgs e) {
+            IMEForm imeForm = new IMEForm();
+            imeForm.ShowWithMask(this, this.ckb_mask.Checked);
+            //
+            CustomScrollBarsSample cs = new CustomScrollBarsSample();           
+            cs.ShowDialogWithMask(this,this.ckb_mask.Checked); 
+            //
+            this.ShowMsgDialogWithMask((maskOwner) => {
+                var ret = MessageBox.Show(maskOwner,"测试showdialogwithmask");
+                return ret;
+            },this.ckb_mask.Checked);
+        }
         private void button3_Click(object sender, EventArgs e) {
-            CustomScrollBarsSample cs = new CustomScrollBarsSample();
-            cs.Show();
+            UI.FormShadow fs = new UI.FormShadow();
+            fs.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
+            //this.ShowControlMaskByContextMenu("正在加载...", null, 0, 0, this.Width, this.Height);
+            //MessageBox.Show("test");
+            //button3_Click(null,null);            
+           
         }
     }
 }

@@ -39,6 +39,8 @@ namespace RS.UtilityLib.WinFormCommon
             this.degreePiePicture1 = new RS.UtilityLib.WinFormCommon.UI.DegreePiePicture();
             this.ribbonTreeView1 = new RS.UtilityLib.WinFormCommon.RibbonUI.RibbonTreeView();
             this.ruler1 = new RS.UtilityLib.WinFormCommon.UISystemLayer.Ruler();
+            this.button4 = new System.Windows.Forms.Button();
+            this.ckb_mask = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -209,11 +211,33 @@ namespace RS.UtilityLib.WinFormCommon
             this.ruler1.TabIndex = 9;
             this.ruler1.Value = 0F;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(773, 205);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ckb_mask
+            // 
+            this.ckb_mask.AutoSize = true;
+            this.ckb_mask.Location = new System.Drawing.Point(735, 305);
+            this.ckb_mask.Name = "ckb_mask";
+            this.ckb_mask.Size = new System.Drawing.Size(78, 16);
+            this.ckb_mask.TabIndex = 11;
+            this.ckb_mask.Text = "checkBox1";
+            this.ckb_mask.UseVisualStyleBackColor = true;
+            // 
             // FormDemo1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 542);
+            this.Controls.Add(this.ckb_mask);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.ruler1);
             this.Controls.Add(this.toolBox1);
             this.Controls.Add(this.button3);
@@ -228,6 +252,7 @@ namespace RS.UtilityLib.WinFormCommon
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -242,5 +267,7 @@ namespace RS.UtilityLib.WinFormCommon
         private System.Windows.Forms.Button button3;
         private Silver.UI.ToolBox toolBox1;
         private UISystemLayer.Ruler ruler1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox ckb_mask;
     }
 }
