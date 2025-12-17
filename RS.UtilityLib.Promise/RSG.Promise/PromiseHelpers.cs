@@ -1,4 +1,4 @@
-namespace RS.UtilityLib.PromiseLib.RSG
+namespace RSG
 {
     public static class PromiseHelpers
     {
@@ -24,11 +24,11 @@ namespace RS.UtilityLib.PromiseLib.RSG
                         promise.Resolve(Tuple.Create(val1, val2));
                     }
                 })
-                .Catch(e =>
+                .CatchAsResolved(e =>
                 {
                     if (!alreadyRejected)
                     {
-                        promise.Reject(e);
+                        promise.RejectSilent(e);
                     }
 
                     alreadyRejected = true;
@@ -45,11 +45,11 @@ namespace RS.UtilityLib.PromiseLib.RSG
                         promise.Resolve(Tuple.Create(val1, val2));
                     }
                 })
-                .Catch(e =>
+                .CatchAsResolved(e =>
                 {
                     if (!alreadyRejected)
                     {
-                        promise.Reject(e);
+                        promise.RejectSilent(e);
                     }
 
                     alreadyRejected = true;

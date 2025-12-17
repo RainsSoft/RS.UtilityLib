@@ -1,16 +1,17 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using RS.UtilityLib.PromiseLib.RSG.Exceptions;
+using RSG.Exceptions;
+using RSG.Promises;
 
-namespace RS.UtilityLib.PromiseLib.RSG
+// ReSharper disable once CheckNamespace
+namespace RSG
 {
     /// <summary>
     /// Implements a non-generic C# promise, this is a promise that simply resolves without delivering a value.
     /// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise
     /// </summary>
-    public interface IPromise
+    public interface IPromise : ICancellablePromise
     {
         /// <summary>
         /// ID of the promise, useful for debugging.
@@ -42,14 +43,19 @@ namespace RS.UtilityLib.PromiseLib.RSG
         void Done();
 
         /// <summary>
-        /// Handle errors for the promise. 
+        /// Handle errors for the promise. Rejects the promise after the Catch.
         /// </summary>
         IPromise Catch(Action<Exception> onRejected);
 
         /// <summary>
+        /// Handle errors for the promise. Resolves the promise afterwards.
+        /// </summary>
+        IPromise CatchAsResolved(Action<Exception> onRejected);
+
+        /// <summary>
         /// Add a resolved callback that chains a value promise (optionally converting to a different value type).
         /// </summary>
-        IPromise<ConvertedT> Then<ConvertedT>(Func<IPromise<ConvertedT>> onResolved);
+        IPromise<TConvertedT> Then<TConvertedT>(Func<IPromise<TConvertedT>> onResolved);
 
         /// <summary>
         /// Add a resolved callback that chains a non-value promise.
@@ -65,7 +71,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// Add a resolved callback and a rejected callback.
         /// The resolved callback chains a value promise (optionally converting to a different value type).
         /// </summary>
-        IPromise<ConvertedT> Then<ConvertedT>(Func<IPromise<ConvertedT>> onResolved, Func<Exception, IPromise<ConvertedT>> onRejected);
+        IPromise<TConvertedT> Then<TConvertedT>(Func<IPromise<TConvertedT>> onResolved, Func<Exception, IPromise<TConvertedT>> onRejected);
 
         /// <summary>
         /// Add a resolved callback and a rejected callback.
@@ -82,7 +88,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// Add a resolved callback, a rejected callback and a progress callback.
         /// The resolved callback chains a value promise (optionally converting to a different value type).
         /// </summary>
-        IPromise<ConvertedT> Then<ConvertedT>(Func<IPromise<ConvertedT>> onResolved, Func<Exception, IPromise<ConvertedT>> onRejected, Action<float> onProgress);
+        IPromise<TConvertedT> Then<TConvertedT>(Func<IPromise<TConvertedT>> onResolved, Func<Exception, IPromise<TConvertedT>> onRejected, Action<float> onProgress);
 
         /// <summary>
         /// Add a resolved callback, a rejected callback and a progress callback.
@@ -108,7 +114,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// The resulting promise is resolved when all of the promises have resolved.
         /// It is rejected as soon as any of the promises have been rejected.
         /// </summary>
-        IPromise<IEnumerable<ConvertedT>> ThenAll<ConvertedT>(Func<IEnumerable<IPromise<ConvertedT>>> chain);
+        IPromise<IEnumerable<TConvertedT>> ThenAll<TConvertedT>(Func<IEnumerable<IPromise<TConvertedT>>> chain);
 
         /// <summary>
         /// Chain a sequence of operations using promises.
@@ -129,14 +135,14 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// Converts to a value promise.
         /// Returns a promise that resolves when the first of the promises has resolved.
         /// </summary>
-        IPromise<ConvertedT> ThenRace<ConvertedT>(Func<IEnumerable<IPromise<ConvertedT>>> chain);
+        IPromise<TConvertedT> ThenRace<TConvertedT>(Func<IEnumerable<IPromise<TConvertedT>>> chain);
 
         /// <summary> 
         /// Add a finally callback. 
-        /// Finally callbacks will always be called, even if any preceding promise is rejected, or encounters an error.
+        /// Finally callbacks will always be called, even if any preceding promise is cancelled, rejected, or encounters an error.
         /// The returned promise will be resolved or rejected, as per the preceding promise.
         /// </summary> 
-        IPromise Finally(Action onComplete);
+        void Finally(Action onComplete);
 
         /// <summary>
         /// Add a callback that chains a non-value promise.
@@ -145,12 +151,19 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         IPromise ContinueWith(Func<IPromise> onResolved);
 
+        /// <summary>
+        /// Add a callback that chains a non-value promise.
+        /// ContinueWith callbacks will always be called, even if any preceding promise is rejected, or encounters an error.
+        /// The state of the returning promise will be based on the new non-value promise, not the preceding (rejected or resolved) promise.
+        /// </summary>
+        IPromise ContinueWithResolved(Action onResolved);
+
         /// <summary> 
         /// Add a callback that chains a value promise (optionally converting to a different value type).
         /// ContinueWith callbacks will always be called, even if any preceding promise is rejected, or encounters an error.
         /// The state of the returning promise will be based on the new value promise, not the preceding (rejected or resolved) promise.
         /// </summary> 
-        IPromise<ConvertedT> ContinueWith<ConvertedT>(Func<IPromise<ConvertedT>> onComplete);
+        IPromise<TConvertedT> ContinueWith<TConvertedT>(Func<IPromise<TConvertedT>> onComplete);
 
         /// <summary>
         /// Add a progress callback.
@@ -158,6 +171,11 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// of the promise.
         /// </summary>
         IPromise Progress(Action<float> onProgress);
+        
+        /// <summary>
+        /// Add a cancel callback 
+        /// </summary>
+        void OnCancel(Action onCancel);
     }
 
     /// <summary>
@@ -169,6 +187,11 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// ID of the promise, useful for debugging.
         /// </summary>
         int Id { get; }
+        
+        /// <summary>
+        /// A shortcut to detect whether a promise is in Pending state.
+        /// </summary>
+        bool CanBeResolved { get; }
 
         /// <summary>
         /// Resolve the promise with a particular value.
@@ -195,6 +218,17 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// Human-readable name for the promise.
         /// </summary>
         string Name { get; }
+        
+        /// <summary>
+        /// Loggable name.
+        /// </summary>
+        /// <returns></returns>
+        string GetName();
+        
+        /// <summary>
+        /// Current promise state.
+        /// </summary>
+        PromiseState CurState { get; }
     }
 
     /// <summary>
@@ -204,9 +238,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
     {
         internal ExceptionEventArgs(Exception exception)
         {
-//            Argument.NotNull(() => exception);
-
-            this.Exception = exception;
+            Exception = exception;
         }
 
         public Exception Exception
@@ -224,12 +256,12 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// <summary>
         /// Callback fn.
         /// </summary>
-        public Action<Exception> callback;
+        public Action<Exception> Callback;
 
         /// <summary>
         /// The promise that is rejected when there is an error while invoking the handler.
         /// </summary>
-        public IRejectable rejectable;
+        public IRejectable Rejectable;
     }
 
     public struct ProgressHandler
@@ -237,12 +269,12 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// <summary>
         /// Callback fn.
         /// </summary>
-        public Action<float> callback;
+        public Action<float> Callback;
 
         /// <summary>
         /// The promise that is rejected when there is an error while invoking the handler.
         /// </summary>
-        public IRejectable rejectable;
+        public IRejectable Rejectable;
     }
 
     /// <summary>
@@ -262,15 +294,15 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         public static event EventHandler<ExceptionEventArgs> UnhandledException
         {
-            add { unhandlerException += value; }
-            remove { unhandlerException -= value; }
+            add { _unhandlerException += value; }
+            remove { _unhandlerException -= value; }
         }
-        private static EventHandler<ExceptionEventArgs> unhandlerException;
+        private static EventHandler<ExceptionEventArgs> _unhandlerException;
 
         /// <summary>
         /// Id for the next promise that is created.
         /// </summary>
-        private static int nextPromiseId;
+        private static int _nextPromiseId;
 
         /// <summary>
         /// Information about pending promises.
@@ -286,16 +318,25 @@ namespace RS.UtilityLib.PromiseLib.RSG
         {
             return PendingPromises;
         }
+        
+        /// <summary>
+        /// Information about pending promises count, useful for debugging.
+        /// This is only populated when 'EnablePromiseTracking' is set to true.
+        /// </summary>
+        public static int GetPendingPromisesCount()
+        {
+            return PendingPromises.Count;
+        }
 
         /// <summary>
         /// The exception when the promise is rejected.
         /// </summary>
-        private Exception rejectionException;
+        private Exception _rejectionException;
 
         /// <summary>
         /// Error handlers.
         /// </summary>
-        private List<RejectHandler> rejectHandlers;
+        private List<RejectHandler> _rejectHandlers;
 
         /// <summary>
         /// Represents a handler invoked when the promise is resolved.
@@ -305,30 +346,35 @@ namespace RS.UtilityLib.PromiseLib.RSG
             /// <summary>
             /// Callback fn.
             /// </summary>
-            public Action callback;
+            public Action Callback;
 
             /// <summary>
             /// The promise that is rejected when there is an error while invoking the handler.
             /// </summary>
-            public IRejectable rejectable;
+            public IRejectable Rejectable;
         }
 
         /// <summary>
         /// Completed handlers that accept no value.
         /// </summary>
-        private List<ResolveHandler> resolveHandlers;
+        private List<ResolveHandler> _resolveHandlers;
 
         /// <summary>
         /// Progress handlers.
         /// </summary>
-        private List<ProgressHandler> progressHandlers;
+        private List<ProgressHandler> _progressHandlers;
+        
+        /// <summary>
+        /// Cancel handlers.
+        /// </summary>
+        private List<ResolveHandler> _cancelHandlers;
 
         /// <summary>
         /// ID of the promise, useful for debugging.
         /// </summary>
-        public int Id { get { return id; } }
+        public int Id { get { return _id; } }
 
-        private readonly int id;
+        private readonly int _id;
 
         /// <summary>
         /// Name of the promise, when set, useful for debugging.
@@ -340,10 +386,44 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         public PromiseState CurState { get; private set; }
 
+        /// <summary>
+        /// Promise state shortcut.
+        /// </summary>
+        public bool IsPending => CurState == PromiseState.Pending;
+        
+        /// <summary>
+        /// Promise state shortcut.
+        /// </summary>
+        public bool CanBeResolved => CurState == PromiseState.Pending;
+        
+        /// <summary>
+        /// Promise state shortcut.
+        /// </summary>
+        public bool CanBeCanceled => CurState == PromiseState.Pending;
+        
+        /// <summary>
+        /// A promise parent in chain.
+        /// </summary>
+        public ICancellablePromise Parent { get; private set; }
+        
+        /// <summary>
+        /// Promise children in chain.
+        /// </summary>
+        public HashSet<ICancellablePromise> Children { get; } = new HashSet<ICancellablePromise>();
+        
+        /// <summary>
+        /// Loggable name.
+        /// </summary>
+        /// <returns></returns>
+        public string GetName()
+        {
+            return string.IsNullOrEmpty(Name) ? "Promise" : $"Promise = {Name}";
+        }
+        
         public Promise()
         {
-            this.CurState = PromiseState.Pending;
-            this.id = NextId();
+            CurState = PromiseState.Pending;
+            _id = NextId();
             if (EnablePromiseTracking)
             {
                 PendingPromises.Add(this);
@@ -352,8 +432,8 @@ namespace RS.UtilityLib.PromiseLib.RSG
 
         public Promise(Action<Action, Action<Exception>> resolver)
         {
-            this.CurState = PromiseState.Pending;
-            this.id = NextId();
+            CurState = PromiseState.Pending;
+            _id = NextId();
             if (EnablePromiseTracking)
             {
                 PendingPromises.Add(this);
@@ -361,18 +441,41 @@ namespace RS.UtilityLib.PromiseLib.RSG
 
             try
             {
-                resolver(Resolve, Reject);
+                resolver(Resolve, RejectSilent);
             }
             catch (Exception ex)
             {
-                Reject(ex);
+                RejectSilent(ex);
             }
         }
 
         private Promise(PromiseState initialState)
         {
             CurState = initialState;
-            id = NextId();
+            _id = NextId();
+        }
+        
+        public void AttachParent(ICancellablePromise parent)
+        {
+            if (parent.Parent == this)
+            {
+                EventsReceiver.OnWarningMinor(
+                    $"Skip attempt to create cycled refs in promises parents {GetName()}");
+                return;
+            }
+
+            if (Parent != null && Parent != parent)
+            {
+                EventsReceiver.OnWarningMinor($"Overwriting existing parent {GetName()}");
+            }
+            
+            Parent = parent;
+            parent.AttachChild(this);
+        }
+
+        public void AttachChild(ICancellablePromise child)
+        {
+            Children.Add(child);
         }
 
         /// <summary>
@@ -380,7 +483,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         internal static int NextId()
         {
-            return ++nextPromiseId;
+            return ++_nextPromiseId;
         }
 
         /// <summary>
@@ -388,15 +491,34 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void AddRejectHandler(Action<Exception> onRejected, IRejectable rejectable)
         {
-            if (rejectHandlers == null)
+            if (_rejectHandlers == null)
             {
-                rejectHandlers = new List<RejectHandler>();
+                _rejectHandlers = new List<RejectHandler>();
             }
 
-            rejectHandlers.Add(new RejectHandler
+            _rejectHandlers.Add(new RejectHandler
             {
-                callback = onRejected,
-                rejectable = rejectable
+                Callback = onRejected,
+                Rejectable = rejectable
+            });
+        }
+
+        /// <summary>
+        /// Add a cancellation handler for this promise.
+        /// </summary>
+        /// <param name="onCanceled"></param>
+        /// <param name="rejectable"></param>
+        private void AddCancelHandler(Action onCanceled, IRejectable rejectable)
+        {
+            if (_cancelHandlers == null)
+            {
+                _cancelHandlers = new List<ResolveHandler>();
+            }
+
+            _cancelHandlers.Add(new ResolveHandler
+            {
+                Callback = onCanceled,
+                Rejectable = rejectable
             });
         }
 
@@ -405,15 +527,15 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void AddResolveHandler(Action onResolved, IRejectable rejectable)
         {
-            if (resolveHandlers == null)
+            if (_resolveHandlers == null)
             {
-                resolveHandlers = new List<ResolveHandler>();
+                _resolveHandlers = new List<ResolveHandler>();
             }
 
-            resolveHandlers.Add(new ResolveHandler
+            _resolveHandlers.Add(new ResolveHandler
             {
-                callback = onResolved,
-                rejectable = rejectable
+                Callback = onResolved,
+                Rejectable = rejectable
             });
         }
 
@@ -422,12 +544,12 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void AddProgressHandler(Action<float> onProgress, IRejectable rejectable)
         {
-            if (progressHandlers == null)
+            if (_progressHandlers == null)
             {
-                progressHandlers = new List<ProgressHandler>();
+                _progressHandlers = new List<ProgressHandler>();
             }
 
-            progressHandlers.Add(new ProgressHandler { callback = onProgress, rejectable = rejectable });
+            _progressHandlers.Add(new ProgressHandler { Callback = onProgress, Rejectable = rejectable });
         }
 
         /// <summary>
@@ -435,16 +557,14 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void InvokeRejectHandler(Action<Exception> callback, IRejectable rejectable, Exception value)
         {
-//            Argument.NotNull(() => callback);
-//            Argument.NotNull(() => rejectable);
-
             try
             {
                 callback(value);
             }
             catch (Exception ex)
             {
-                rejectable.Reject(ex);
+                EventsReceiver.OnHandlerException(ex);
+                rejectable.RejectSilent(ex);
             }
         }
 
@@ -453,16 +573,32 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void InvokeResolveHandler(Action callback, IRejectable rejectable)
         {
-//            Argument.NotNull(() => callback);
-//            Argument.NotNull(() => rejectable);
-
             try
             {
                 callback();
             }
             catch (Exception ex)
             {
-                rejectable.Reject(ex);
+                EventsReceiver.OnHandlerException(ex);
+                rejectable.RejectSilent(ex);
+            }
+        }
+
+        /// <summary>
+        /// Invoke a single cancel handler.
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="rejectable"></param>
+        private void InvokeCancelHandler(Action callback, IRejectable rejectable)
+        {
+            try
+            {
+                callback();
+            }
+            catch (Exception ex)
+            {
+                EventsReceiver.OnHandlerException(ex);
+                rejectable.RejectSilent(ex);
             }
         }
 
@@ -471,16 +607,14 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void InvokeProgressHandler(Action<float> callback, IRejectable rejectable, float progress)
         {
-//            Argument.NotNull(() => callback);
-//            Argument.NotNull(() => rejectable);
-
             try
             {
                 callback(progress);
             }
             catch (Exception ex)
             {
-                rejectable.Reject(ex);
+                EventsReceiver.OnHandlerException(ex);
+                rejectable.RejectSilent(ex);
             }
         }
 
@@ -489,9 +623,10 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void ClearHandlers()
         {
-            rejectHandlers = null;
-            resolveHandlers = null;
-            progressHandlers = null;
+            _rejectHandlers = null;
+            _resolveHandlers = null;
+            _progressHandlers = null;
+            _cancelHandlers = null;
         }
 
         /// <summary>
@@ -499,12 +634,10 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void InvokeRejectHandlers(Exception ex)
         {
-//            Argument.NotNull(() => ex);
-
-            if (rejectHandlers != null)
+            if (_rejectHandlers != null)
             {
-                for (int i = 0, maxI = rejectHandlers.Count; i < maxI; ++i)
-                    InvokeRejectHandler(rejectHandlers[i].callback, rejectHandlers[i].rejectable, ex);
+                for (int i = 0, maxI = _rejectHandlers.Count; i < maxI; ++i)
+                    InvokeRejectHandler(_rejectHandlers[i].Callback, _rejectHandlers[i].Rejectable, ex);
             }
 
             ClearHandlers();
@@ -515,11 +648,22 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void InvokeResolveHandlers()
         {
-            if (resolveHandlers != null)
+            if (_resolveHandlers != null)
             {
-                for (int i = 0, maxI = resolveHandlers.Count; i < maxI; i++)
-                    InvokeResolveHandler(resolveHandlers[i].callback, resolveHandlers[i].rejectable);
+                for (int i = 0, maxI = _resolveHandlers.Count; i < maxI; i++)
+                    InvokeResolveHandler(_resolveHandlers[i].Callback, _resolveHandlers[i].Rejectable);
             }
+
+            ClearHandlers();
+        }
+        
+                
+        /// <summary>
+        /// Invoke all cancel handlers.
+        /// </summary>
+        private void InvokeCancelHandlers()
+        {
+            _cancelHandlers?.Each(handler => InvokeCancelHandler(handler.Callback, handler.Rejectable));
 
             ClearHandlers();
         }
@@ -529,30 +673,54 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         private void InvokeProgressHandlers(float progress)
         {
-            if (progressHandlers != null)
+            if (_progressHandlers != null)
             {
-                for (int i = 0, maxI = progressHandlers.Count; i < maxI; i++)
-                    InvokeProgressHandler(progressHandlers[i].callback, progressHandlers[i].rejectable, progress);
+                for (int i = 0, maxI = _progressHandlers.Count; i < maxI; i++)
+                    InvokeProgressHandler(_progressHandlers[i].Callback, _progressHandlers[i].Rejectable, progress);
             }
         }
-
+        
         /// <summary>
-        /// Reject the promise with an exception.
+        /// Reject the promise with an exception. Calls OnError.
         /// </summary>
         public void Reject(Exception ex)
         {
-//            Argument.NotNull(() => ex);
-
             if (CurState != PromiseState.Pending)
             {
-                throw new PromiseStateException(
-                    "Attempt to reject a promise that is already in state: " + CurState 
-                    + ", a promise can only be rejected when it is still in state: " 
-                    + PromiseState.Pending
-                );
+                var message =
+                    "Attempt to reject a promise that is already in state: " 
+                    + CurState + ", a promise can only be rejected when it is still in state: " + PromiseState.Pending;
+                EventsReceiver.OnStateException(new PromiseStateException(message));
+                return;
             }
+            
+            var rejectException = ex ?? new Exception("Promise rejected");
+            EventsReceiver.OnRejectException(rejectException);
+            RejectInternal(rejectException);
+        }
 
-            rejectionException = ex;
+        /// <summary>
+        /// Reject the promise with an exception. Doesn't call LogError.
+        /// </summary>
+        public void RejectSilent(Exception ex)
+        {
+            if (CurState != PromiseState.Pending)
+            {
+                var message =
+                    "Attempt to reject a promise that is already in state: " 
+                    + CurState + ", a promise can only be rejected when it is still in state: " + PromiseState.Pending;
+                EventsReceiver.OnStateException(new PromiseStateException(message));
+                return;
+            }
+            
+            var rejectException = ex ?? new Exception("Promise rejected");
+            EventsReceiver.OnRejectSilentException(rejectException);
+            RejectInternal(rejectException);
+        }
+
+        private void RejectInternal(Exception ex)
+        {
+            _rejectionException = ex;
             CurState = PromiseState.Rejected;
 
             if (EnablePromiseTracking)
@@ -562,7 +730,49 @@ namespace RS.UtilityLib.PromiseLib.RSG
 
             InvokeRejectHandlers(ex);            
         }
+        
+        /// <summary>
+        /// Cancels the whole chain where this promise exists.
+        /// </summary>
+        public void Cancel()
+        {
+            var parent = this.FindLastPendingParent();
+            if (parent == null || parent == this)
+            {
+                CancelInternal();
+            }
+            else
+            {
+                parent.Cancel();
+            }
+        }
+        
+        private void CancelInternal()
+        {
+            if (CurState != PromiseState.Pending)
+            {
+                return;
+            }
 
+            CurState = PromiseState.Cancelled;
+            if (EnablePromiseTracking)
+            {
+                PendingPromises.Remove(this);
+            }
+            InvokeCancelHandlers();
+            ClearHandlers();
+        }
+
+        public bool TryResolve()
+        {
+            if (CurState != PromiseState.Pending)
+            {
+                return false;
+            }
+            
+            Resolve();
+            return true;
+        }
 
         /// <summary>
         /// Resolve the promise with a particular value.
@@ -571,11 +781,12 @@ namespace RS.UtilityLib.PromiseLib.RSG
         {
             if (CurState != PromiseState.Pending)
             {
-                throw new PromiseStateException(
+                EventsReceiver.OnStateException(new PromiseStateException(
                     "Attempt to resolve a promise that is already in state: " + CurState 
                     + ", a promise can only be resolved when it is still in state: " 
                     + PromiseState.Pending
-                );
+                ));
+                return;
             }
 
             CurState = PromiseState.Resolved;
@@ -588,7 +799,6 @@ namespace RS.UtilityLib.PromiseLib.RSG
             InvokeResolveHandlers();
         }
 
-
         /// <summary>
         /// Report progress on the promise.
         /// </summary>
@@ -596,11 +806,12 @@ namespace RS.UtilityLib.PromiseLib.RSG
         {
             if (CurState != PromiseState.Pending)
             {
-                throw new PromiseStateException(
+                EventsReceiver.OnStateException(new PromiseStateException(
                     "Attempt to report progress on a promise that is already in state: " 
                     + CurState + ", a promise can only report progress when it is still in state: " 
                     + PromiseState.Pending
-                );
+                ));
+                return;
             }
 
             InvokeProgressHandlers(progress);
@@ -615,7 +826,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
         public void Done(Action onResolved, Action<Exception> onRejected)
         {
             Then(onResolved, onRejected)
-                .Catch(ex =>
+                .CatchAsResolved(ex =>
                     PropagateUnhandledException(this, ex)
                 );
         }
@@ -628,7 +839,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
         public void Done(Action onResolved)
         {
             Then(onResolved)
-                .Catch(ex => 
+                .CatchAsResolved(ex => 
                     PropagateUnhandledException(this, ex)
                 );
         }
@@ -641,7 +852,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
             if (CurState == PromiseState.Resolved)
                 return;
 
-            Catch(ex => PropagateUnhandledException(this, ex));
+            CatchAsResolved(ex => PropagateUnhandledException(this, ex));
         }
 
         /// <summary>
@@ -649,17 +860,15 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         public IPromise WithName(string name)
         {
-            this.Name = name;
+            Name = name;
             return this;
         }
-
+        
         /// <summary>
-        /// Handle errors for the promise. 
+        /// Handle errors for the promise. Resolves the promise afterwards.
         /// </summary>
-        public IPromise Catch(Action<Exception> onRejected)
+        public IPromise CatchAsResolved(Action<Exception> onRejected)
         {
-//            Argument.NotNull(() => onRejected);
-
             if (CurState == PromiseState.Resolved)
             {
                 return this;
@@ -667,6 +876,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
 
             var resultPromise = new Promise();
             resultPromise.WithName(Name);
+            resultPromise.AttachParent(this);
 
             Action resolveHandler = () => resultPromise.Resolve();
 
@@ -679,20 +889,70 @@ namespace RS.UtilityLib.PromiseLib.RSG
                 }
                 catch (Exception callbackException)
                 {
-                    resultPromise.Reject(callbackException);
+                    EventsReceiver.OnHandlerException(callbackException);
+                    resultPromise.RejectSilent(callbackException);
                 }
             };
 
-            ActionHandlers(resultPromise, resolveHandler, rejectHandler);
+            Action cancelHandler = () => resultPromise.Cancel();
+
+            ActionHandlers(resultPromise, resolveHandler, rejectHandler, cancelHandler);
+            ProgressHandlers(resultPromise, v => resultPromise.ReportProgress(v));
+
+            return resultPromise;
+        }
+        
+        /// <summary>
+        /// Handle errors for the promise. Rejects the promise after the Catch.
+        /// </summary>
+        public IPromise Catch(Action<Exception> onRejected)
+        {
+            if (CurState == PromiseState.Resolved)
+            {
+                return this;
+            }
+
+            var resultPromise = new Promise();
+            resultPromise.WithName(Name);
+            resultPromise.AttachParent(this);
+
+            Action resolveHandler = () => resultPromise.Resolve();
+
+            Action<Exception> rejectHandler = ex =>
+            {
+                try
+                {
+                    onRejected(ex);
+                    resultPromise.RejectSilent(ex);
+                }
+                catch (Exception callbackException)
+                {
+                    EventsReceiver.OnHandlerException(callbackException);
+                    resultPromise.RejectSilent(callbackException);
+                }
+            };
+
+            Action cancelHandler = () => resultPromise.Cancel();
+
+            ActionHandlers(resultPromise, resolveHandler, rejectHandler, cancelHandler);
             ProgressHandlers(resultPromise, v => resultPromise.ReportProgress(v));
 
             return resultPromise;
         }
 
         /// <summary>
+        /// Add a cancel callback
+        /// </summary>
+        /// <param name="onCancel"></param>
+        public void OnCancel(Action onCancel)
+        {
+            ActionHandlers(this, () => { }, ex => { }, onCancel);
+        }
+
+        /// <summary>
         /// Add a resolved callback that chains a value promise (optionally converting to a different value type).
         /// </summary>
-        public IPromise<ConvertedT> Then<ConvertedT>(Func<IPromise<ConvertedT>> onResolved)
+        public IPromise<TConvertedT> Then<TConvertedT>(Func<IPromise<TConvertedT>> onResolved)
         {
             return Then(onResolved, null, null);
         }
@@ -717,7 +977,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// Add a resolved callback and a rejected callback.
         /// The resolved callback chains a value promise (optionally converting to a different value type).
         /// </summary>
-        public IPromise<ConvertedT> Then<ConvertedT>(Func<IPromise<ConvertedT>> onResolved, Func<Exception, IPromise<ConvertedT>> onRejected)
+        public IPromise<TConvertedT> Then<TConvertedT>(Func<IPromise<TConvertedT>> onResolved, Func<Exception, IPromise<TConvertedT>> onRejected)
         {
             return Then(onResolved, onRejected, null);
         }
@@ -743,9 +1003,9 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// Add a resolved callback, a rejected callback and a progress callback.
         /// The resolved callback chains a value promise (optionally converting to a different value type).
         /// </summary>
-        public IPromise<ConvertedT> Then<ConvertedT>(
-            Func<IPromise<ConvertedT>> onResolved,
-            Func<Exception, IPromise<ConvertedT>> onRejected,
+        public IPromise<TConvertedT> Then<TConvertedT>(
+            Func<IPromise<TConvertedT>> onResolved,
+            Func<Exception, IPromise<TConvertedT>> onRejected,
             Action<float> onProgress)
         {
             if (CurState == PromiseState.Resolved)
@@ -756,16 +1016,17 @@ namespace RS.UtilityLib.PromiseLib.RSG
                 } 
                 catch (Exception ex)
                 {
-                    return Promise<ConvertedT>.Rejected(ex);
+                    EventsReceiver.OnHandlerException(ex);
+                    return Promise<TConvertedT>.Rejected(ex);
                 }
             }
 
             // This version of the function must supply an onResolved.
             // Otherwise there is now way to get the converted value to pass to the resulting promise.
-            //            Argument.NotNull(() => onResolved);
 
-            var resultPromise = new Promise<ConvertedT>();
+            var resultPromise = new Promise<TConvertedT>();
             resultPromise.WithName(Name);
+            resultPromise.AttachParent(this);
 
             Action resolveHandler = () =>
             {
@@ -774,15 +1035,16 @@ namespace RS.UtilityLib.PromiseLib.RSG
                     .Then(
                         // Should not be necessary to specify the arg type on the next line, but Unity (mono) has an internal compiler error otherwise.
                         chainedValue => resultPromise.Resolve(chainedValue),
-                        ex => resultPromise.Reject(ex)
-                    );
+                        ex => resultPromise.RejectSilent(ex)
+                    )
+                    .OnCancel(() => resultPromise.Cancel());
             };
 
             Action<Exception> rejectHandler = ex =>
             {
                 if (onRejected == null)
                 {
-                    resultPromise.Reject(ex);
+                    resultPromise.RejectSilent(ex);
                     return;
                 }
 
@@ -791,16 +1053,19 @@ namespace RS.UtilityLib.PromiseLib.RSG
                     onRejected(ex)
                         .Then(
                             chainedValue => resultPromise.Resolve(chainedValue),
-                            callbackEx => resultPromise.Reject(callbackEx)
+                            callbackEx => resultPromise.RejectSilent(callbackEx)
                         );
                 }
                 catch (Exception callbackEx)
                 {
-                    resultPromise.Reject(callbackEx);
+                    EventsReceiver.OnHandlerException(callbackEx);
+                    resultPromise.RejectSilent(callbackEx);
                 }
             };
+            
+            Action cancelHandler = () => resultPromise.Cancel();
 
-            ActionHandlers(resultPromise, resolveHandler, rejectHandler);
+            ActionHandlers(resultPromise, resolveHandler, rejectHandler, cancelHandler);
             if (onProgress != null)
             {
                 ProgressHandlers(this, onProgress);
@@ -823,12 +1088,14 @@ namespace RS.UtilityLib.PromiseLib.RSG
                 }
                 catch (Exception ex)
                 {
+                    EventsReceiver.OnHandlerException(ex);
                     return Rejected(ex);
                 }
             }
 
             var resultPromise = new Promise();
             resultPromise.WithName(Name);
+            resultPromise.AttachParent(this);
 
             Action resolveHandler;
             if (onResolved != null)
@@ -839,8 +1106,9 @@ namespace RS.UtilityLib.PromiseLib.RSG
                         .Progress(progress => resultPromise.ReportProgress(progress))
                         .Then(
                             () => resultPromise.Resolve(),
-                            ex => resultPromise.Reject(ex)
-                        );
+                            ex => resultPromise.RejectSilent(ex)
+                        )
+                        .OnCancel(() => resultPromise.Cancel());
                 };
             }
             else
@@ -854,15 +1122,17 @@ namespace RS.UtilityLib.PromiseLib.RSG
                 rejectHandler = ex =>
                 {
                     onRejected(ex);
-                    resultPromise.Reject(ex);
+                    resultPromise.RejectSilent(ex);
                 };
             }
             else
             {
-                rejectHandler = resultPromise.Reject;
+                rejectHandler = resultPromise.RejectSilent;
             }
+            
+            Action cancelHandler = () => resultPromise.Cancel();
 
-            ActionHandlers(resultPromise, resolveHandler, rejectHandler);
+            ActionHandlers(resultPromise, resolveHandler, rejectHandler, cancelHandler);
             if (onProgress != null)
             {
                 ProgressHandlers(this, onProgress);
@@ -885,12 +1155,14 @@ namespace RS.UtilityLib.PromiseLib.RSG
                 }
                 catch (Exception ex)
                 {
+                    EventsReceiver.OnHandlerException(ex);
                     return Rejected(ex);
                 }
             }
 
             var resultPromise = new Promise();
             resultPromise.WithName(Name);
+            resultPromise.AttachParent(this);
 
             Action resolveHandler;
             if (onResolved != null)
@@ -918,15 +1190,17 @@ namespace RS.UtilityLib.PromiseLib.RSG
                         return;
                     }
 
-                    resultPromise.Reject(ex);
+                    resultPromise.RejectSilent(ex);
                 };
             }
             else
             {
-                rejectHandler = resultPromise.Reject;
+                rejectHandler = resultPromise.RejectSilent;
             }
+            
+            Action cancelHandler = () => resultPromise.Cancel();
 
-            ActionHandlers(resultPromise, resolveHandler, rejectHandler);
+            ActionHandlers(resultPromise, resolveHandler, rejectHandler, cancelHandler);
             if (onProgress != null)
             {
                 ProgressHandlers(this, onProgress);
@@ -938,7 +1212,8 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// <summary>
         /// Helper function to invoke or register resolve/reject handlers.
         /// </summary>
-        private void ActionHandlers(IRejectable resultPromise, Action resolveHandler, Action<Exception> rejectHandler)
+        private void ActionHandlers(IRejectable resultPromise, Action resolveHandler, 
+            Action<Exception> rejectHandler, Action cancelHandler)
         {
             if (CurState == PromiseState.Resolved)
             {
@@ -946,12 +1221,17 @@ namespace RS.UtilityLib.PromiseLib.RSG
             }
             else if (CurState == PromiseState.Rejected)
             {
-                InvokeRejectHandler(rejectHandler, resultPromise, rejectionException);
+                InvokeRejectHandler(rejectHandler, resultPromise, _rejectionException);
+            }
+            else if (CurState == PromiseState.Cancelled)
+            {
+                InvokeCancelHandler(cancelHandler, resultPromise);
             }
             else
             {
                 AddResolveHandler(resolveHandler, resultPromise);
                 AddRejectHandler(rejectHandler, resultPromise);
+                AddCancelHandler(cancelHandler, resultPromise);
             }
         }
 
@@ -982,9 +1262,9 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// The resulting promise is resolved when all of the promises have resolved.
         /// It is rejected as soon as any of the promises have been rejected.
         /// </summary>
-        public IPromise<IEnumerable<ConvertedT>> ThenAll<ConvertedT>(Func<IEnumerable<IPromise<ConvertedT>>> chain)
+        public IPromise<IEnumerable<TConvertedT>> ThenAll<TConvertedT>(Func<IEnumerable<IPromise<TConvertedT>>> chain)
         {
-            return Then(() => Promise<ConvertedT>.All(chain()));
+            return Then(() => Promise<TConvertedT>.All(chain()));
         }
 
         /// <summary>
@@ -1015,6 +1295,9 @@ namespace RS.UtilityLib.PromiseLib.RSG
 
             promisesArray.Each((promise, index) =>
             {
+                resultPromise.OnCancel(promise.Cancel);
+                promise.OnCancel(resultPromise.Cancel);
+                
                 promise
                     .Progress(v =>
                     {
@@ -1031,16 +1314,16 @@ namespace RS.UtilityLib.PromiseLib.RSG
                         --remainingCount;
                         if (remainingCount <= 0 && resultPromise.CurState == PromiseState.Pending)
                         {
-                            // This will never happen if any of the promises errorred.
+                            // This will never happen if any of the promises errored.
                             resultPromise.Resolve();
                         }
                     })
-                    .Catch(ex =>
+                    .CatchAsResolved(ex =>
                     {
                         if (resultPromise.CurState == PromiseState.Pending)
                         {
-                            // If a promise errorred and the result promise is still pending, reject it.
-                            resultPromise.Reject(ex);
+                            // If a promise errored and the result promise is still pending, reject it.
+                            resultPromise.RejectSilent(ex);
                         }
                     })
                     .Done();
@@ -1051,7 +1334,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
 
         /// <summary>
         /// Chain a sequence of operations using promises.
-        /// Reutrn a collection of functions each of which starts an async operation and yields a promise.
+        /// Return a collection of functions each of which starts an async operation and yields a promise.
         /// Each function will be called and each promise resolved in turn.
         /// The resulting promise is resolved after each promise is resolved in sequence.
         /// </summary>
@@ -1085,7 +1368,7 @@ namespace RS.UtilityLib.PromiseLib.RSG
                 {
                     int itemSequence = count;
                     ++count;
-
+                    
                     return prevPromise
                             .Then(() =>
                             {
@@ -1097,11 +1380,10 @@ namespace RS.UtilityLib.PromiseLib.RSG
                             {
                                 var sliceLength = 1f / count;
                                 promise.ReportProgress(sliceLength * (v + itemSequence));
-                            })
-                    ;
+                            });
                 }
             )
-            .Then((Action)promise.Resolve)
+            .Then(promise.Resolve)
             .Catch(promise.Reject);
 
             return promise;
@@ -1121,9 +1403,9 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// Converts to a value promise.
         /// Returns a promise that resolves when the first of the promises has resolved.
         /// </summary>
-        public IPromise<ConvertedT> ThenRace<ConvertedT>(Func<IEnumerable<IPromise<ConvertedT>>> chain)
+        public IPromise<TConvertedT> ThenRace<TConvertedT>(Func<IEnumerable<IPromise<TConvertedT>>> chain)
         {
-            return Then(() => Promise<ConvertedT>.Race(chain()));
+            return Then(() => Promise<TConvertedT>.Race(chain()));
         }
 
         /// <summary>
@@ -1144,7 +1426,9 @@ namespace RS.UtilityLib.PromiseLib.RSG
             var promisesArray = promises.ToArray();
             if (promisesArray.Length == 0)
             {
-                throw new InvalidOperationException("At least 1 input promise must be provided for Race");
+                var ex = new InvalidOperationException("At least 1 input promise must be provided for Race");
+                EventsReceiver.OnInternalException(ex);
+                return Rejected(ex);
             }
 
             var resultPromise = new Promise();
@@ -1154,17 +1438,19 @@ namespace RS.UtilityLib.PromiseLib.RSG
 
             promisesArray.Each((promise, index) =>
             {
+                resultPromise.OnCancel(promise.Cancel);
+                
                 promise
                     .Progress(v =>
                     {
                         progress[index] = v;
                         resultPromise.ReportProgress(progress.Max());
                     })
-                    .Catch(ex =>
+                    .CatchAsResolved(ex =>
                     {
                         if (resultPromise.CurState == PromiseState.Pending)
                         {
-                            // If a promise errorred and the result promise is still pending, reject it.
+                            // If a promise errored and the result promise is still pending, reject it.
                             resultPromise.Reject(ex);
                         }
                     })
@@ -1184,10 +1470,11 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// <summary>
         /// Convert a simple value directly into a resolved promise.
         /// </summary>
-        private static IPromise resolvedPromise = new Promise(PromiseState.Resolved);
+        private static readonly IPromise ResolvedPromise = new Promise(PromiseState.Resolved);
+        
         public static IPromise Resolved()
         {
-            return resolvedPromise;
+            return ResolvedPromise;
         }
 
         /// <summary>
@@ -1195,62 +1482,77 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         public static IPromise Rejected(Exception ex)
         {
-//            Argument.NotNull(() => ex);
-
             var promise = new Promise(PromiseState.Rejected);
-            promise.rejectionException = ex;
+            promise._rejectionException = ex;
             return promise;
         }
-
-        public IPromise Finally(Action onComplete)
+        
+        /// <summary>
+        /// Convert a simple value directly into a canceled promise.
+        /// </summary>
+        public static IPromise Canceled()
         {
-            if (CurState == PromiseState.Resolved)
-            {
-                try
-                {
-                    onComplete();
-                    return this;
-                }
-                catch (Exception ex)
-                {
-                    return Rejected(ex);
-                }
-            }
+            return new Promise(PromiseState.Cancelled);
+        }
 
-            var promise = new Promise();
+        public void Finally(Action onComplete)
+        {
+            Promise promise = new Promise();
             promise.WithName(Name);
+            promise.AttachParent(this);
 
-            this.Then((Action)promise.Resolve);
-            this.Catch(e => {
-                try {
-                    onComplete();
-                    promise.Reject(e);
-                } catch (Exception ne) {
-                    promise.Reject(ne);
-                }
-            });
+            Then(() => { promise.Resolve(); });
+            Catch(e => { promise.Resolve(); });
+            OnCancel(() => promise.Resolve());
 
-            return promise.Then(onComplete);
+            promise.Then(onComplete);
         }
 
         public IPromise ContinueWith(Func<IPromise> onComplete)
         {
             var promise = new Promise();
             promise.WithName(Name);
+            promise.AttachParent(this);
 
-            this.Then((Action)promise.Resolve);
-            this.Catch(e => promise.Resolve());
+            Then(promise.Resolve);
+            Catch(e => promise.Resolve());
 
             return promise.Then(onComplete);
         }
 
-        public IPromise<ConvertedT> ContinueWith<ConvertedT>(Func<IPromise<ConvertedT>> onComplete)
+        public IPromise ContinueWithResolved(Action onResolved)
         {
             var promise = new Promise();
             promise.WithName(Name);
+            promise.AttachParent(this);
 
-            this.Then((Action)promise.Resolve);
-            this.Catch(e => promise.Resolve());
+            Then(promise.Resolve);
+            Catch(e => promise.Resolve());
+
+            return promise.Then(() =>
+            {
+                try
+                {
+                    onResolved();
+                }
+                catch (Exception e)
+                {
+                    EventsReceiver.OnHandlerException(e);
+                    return Rejected(e);
+                }
+                
+                return Resolved();
+            });
+        }
+
+        public IPromise<TConvertedT> ContinueWith<TConvertedT>(Func<IPromise<TConvertedT>> onComplete)
+        {
+            var promise = new Promise();
+            promise.WithName(Name);
+            promise.AttachParent(this);
+
+            Then(promise.Resolve);
+            Catch(e => promise.Resolve());
 
             return promise.Then(onComplete);
         }
@@ -1269,9 +1571,9 @@ namespace RS.UtilityLib.PromiseLib.RSG
         /// </summary>
         internal static void PropagateUnhandledException(object sender, Exception ex)
         {
-            if (unhandlerException != null)
+            if (_unhandlerException != null)
             {
-                unhandlerException(sender, new ExceptionEventArgs(ex));
+                _unhandlerException(sender, new ExceptionEventArgs(ex));
             }
         }
     }

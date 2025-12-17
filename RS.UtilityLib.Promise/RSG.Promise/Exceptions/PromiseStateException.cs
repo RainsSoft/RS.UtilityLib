@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace RS.UtilityLib.PromiseLib.RSG.Exceptions
+namespace RSG.Exceptions
 {
     /// <summary>
     /// Exception thrown when an operation is performed on a promise that is in an invalid
